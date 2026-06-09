@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olayinka Abdullah — Product Designer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2308080e'/><text x='16' y='22' text-anchor='middle' font-family='Inter,sans-serif' font-size='16' fill='%23b8ff57' font-weight='500'>OA</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#08080e',
+            fg: '#f0ede6',
+            accent: '#f5a623',
+            muted: '#3a3a4a',
+            'muted-light': '#4a4a5a',
+            'bg-alt': '#0c0c14',
+            'bg-card': '#0a0a12',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Inter', 'sans-serif'],
+          },
+          maxWidth: {
+            'content': '1100px',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #08080e;
+      color: #f0ede6;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Inter, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      font-weight: 400;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+
+    ::selection { background: rgba(245, 166, 35, 0.15); color: #f0ede6; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #08080e; }
+    ::-webkit-scrollbar-thumb { background: #3a3a4a; border-radius: 2px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4a4a5a; }
+
+    .nav-glass {
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+    }
+    .nav-glass.scrolled {
+      background: rgba(8, 8, 14, 0.72);
+      backdrop-filter: blur(28px) saturate(1.4);
+      -webkit-backdrop-filter: blur(28px) saturate(1.4);
+      border-bottom: 1px solid rgba(58, 58, 74, 0.4);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(1.5rem);
+      transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.12s; }
+    .reveal-d2 { transition-delay: 0.24s; }
+    .reveal-d3 { transition-delay: 0.36s; }
+    .reveal-d4 { transition-delay: 0.48s; }
+    .reveal-d5 { transition-delay: 0.6s; }
+    .reveal-d6 { transition-delay: 0.72s; }
+
+    .ruled-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(58, 58, 74, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(58, 58, 74, 0.12) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    .ruled-grid-subtle {
+      background-image:
+        linear-gradient(rgba(58, 58, 74, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(58, 58, 74, 0.06) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    .glass {
+      background: rgba(10, 10, 18, 0.5);
+      backdrop-filter: blur(16px) saturate(1.2);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      border: 1px solid rgba(58, 58, 74, 0.3);
+    }
+
+    .glass-card {
+      background: rgba(10, 10, 18, 0.45);
+      backdrop-filter: blur(12px) saturate(1.2);
+      -webkit-backdrop-filter: blur(12px) saturate(1.2);
+      border: 1px solid rgba(58, 58, 74, 0.25);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), background 0.5s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(58, 58, 74, 0.5);
+      background: rgba(10, 10, 18, 0.6);
+    }
+
+    .hero-headline {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Inter, sans-serif;
+      font-size: 3.5rem;
+      line-height: 1.02;
+      font-weight: 200;
+      letter-spacing: -0.035em;
+      color: #f0ede6;
+    }
+    @media (min-width: 768px) {
+      .hero-headline { font-size: 4.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .hero-headline { font-size: 5.75rem; }
+    }
+
+    .section-heading {
+      font-weight: 600;
+      font-size: 2.25rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #f0ede6;
+    }
+    @media (max-width: 768px) {
+      .section-heading { font-size: 1.75rem; }
+    }
+
+    .body-text {
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: rgba(240, 237, 230, 0.55);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #f5a623;
+      margin-bottom: 0.75rem;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.25s ease;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: rgba(240, 237, 230, 0.45);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-link:hover { color: #f5a623; }
+
+    .nav-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: #f5a623;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid rgba(245, 166, 35, 0.2);
+      border-radius: 6px;
+      transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .nav-cv:hover {
+      background: rgba(245, 166, 35, 0.08);
+      border-color: rgba(245, 166, 35, 0.4);
+    }
+
+    .pill-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.72rem 1.6rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.005em;
+      border-radius: 980px;
+      transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      -webkit-font-smoothing: antialiased;
+    }
+    .pill-button.primary {
+      background: #f5a623;
+      color: #08080e;
+      border: 1px solid #f5a623;
+    }
+    .pill-button.primary:hover {
+      background: transparent;
+      color: #f5a623;
+    }
+    .pill-button.secondary {
+      border: 1px solid #3a3a4a;
+      color: rgba(240, 237, 230, 0.6);
+      background: transparent;
+    }
+    .pill-button.secondary:hover {
+      border-color: #4a4a5a;
+      color: #f0ede6;
+    }
+    .pill-button.ghost {
+      border: 1px solid rgba(245, 166, 35, 0.2);
+      color: #f5a623;
+      background: rgba(245, 166, 35, 0.06);
+    }
+    .pill-button.ghost:hover {
+      background: rgba(245, 166, 35, 0.12);
+      border-color: rgba(245, 166, 35, 0.35);
+    }
+
+    .btn-scale {
+      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .btn-scale:hover { transform: scale(1.02); }
+
+    .chevron-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      color: #f5a623;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.25s ease;
+    }
+    .chevron-link:hover { color: #f0ede6; }
+    .chevron-link svg { transition: transform 0.25s ease; }
+    .chevron-link:hover svg { transform: translateX(4px); }
+
+    .available-dot {
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #30d158;
+      vertical-align: middle;
+    }
+
+    .scroll-indicator {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      opacity: 0.3;
+    }
+    .scroll-label {
+      font-size: 0.5625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(240, 237, 230, 0.2);
+      font-weight: 500;
+    }
+    .scroll-indicator-line {
+      width: 1px; height: 32px;
+      background: linear-gradient(to bottom, #3a3a4a, transparent);
+      animation: scrollPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.2; transform: scaleY(0.5); }
+      50% { opacity: 0.6; transform: scaleY(1); }
+    }
+
+    .img-placeholder {
+      background: rgba(12, 12, 20, 0.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid #3a3a4a;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      min-height: 220px;
+      width: 100%;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .img-placeholder:has(img) {
+      padding: 0;
+      background: transparent;
+      backdrop-filter: none;
+      border: none;
+      min-height: auto;
+    }
+    .img-placeholder:hover {
+      border-color: #4a4a5a;
+      background: rgba(14, 14, 24, 0.7);
+    }
+    .img-placeholder:has(img):hover {
+      border-color: transparent;
+      background: transparent;
+    }
+    .img-placeholder .placeholder-label {
+      color: #f5a623;
+      font-size: 0.8125rem;
+      text-align: center;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .img-placeholder .placeholder-hint {
+      color: rgba(240, 237, 230, 0.3);
+      font-size: 0.6875rem;
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+    .placeholder-img, .img-placeholder img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #3a3a4a;
+      display: block;
+    }
+
+    .skill-tag {
+      border: 1px solid #3a3a4a;
+      color: rgba(240, 237, 230, 0.6);
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      border-radius: 100px;
+      transition: border-color 0.25s ease, color 0.25s ease;
+      cursor: default;
+    }
+    .skill-tag:hover {
+      border-color: #4a4a5a;
+      color: #f0ede6;
+    }
+
+    .case-number {
+      font-weight: 700;
+      font-size: 3rem;
+      color: rgba(245, 166, 35, 0.08);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      user-select: none;
+    }
+
+    .type-badge {
+      display: inline-block;
+      padding: 0.2rem 0.75rem;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #f5a623;
+      background: rgba(245, 166, 35, 0.06);
+      border: 1px solid rgba(245, 166, 35, 0.15);
+      border-radius: 100px;
+    }
+
+    .timeline-step {
+      position: relative;
+      padding-left: 2rem;
+      padding-bottom: 2rem;
+    }
+    .timeline-step:last-child { padding-bottom: 0; }
+    .timeline-step::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #f5a623;
+    }
+    .timeline-step::after {
+      content: '';
+      position: absolute;
+      left: 2.5px;
+      top: 1.3rem;
+      width: 1px;
+      height: calc(100% - 1.3rem);
+      background: #3a3a4a;
+    }
+    .timeline-step:last-child::after { display: none; }
+
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+    }
+    .outcomes-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(240, 237, 230, 0.6);
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(58, 58, 74, 0.4);
+    }
+    .outcomes-list li:last-child { border-bottom: none; }
+    .outcomes-list li::before {
+      content: '';
+      display: block;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: #f5a623;
+      margin-top: 0.65rem;
+      flex-shrink: 0;
+      opacity: 0.5;
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #3a3a4a 20%, #3a3a4a 80%, transparent);
+    }
+
+    .section-alt { background: #0c0c14; }
+
+    .footer-link {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: rgba(240, 237, 230, 0.3);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    .footer-link:hover { color: #f5a623; }
+
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(240, 237, 230, 0.35);
+      margin-bottom: 0.5rem;
+    }
+
+    .cs-heading {
+      font-weight: 600;
+      font-size: 2.5rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #f0ede6;
+    }
+    @media (max-width: 768px) {
+      .cs-heading { font-size: 1.75rem; }
+    }
+
+    .h-sub {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(240, 237, 230, 0.25);
+    }
+
+    .hero-dot-scatter {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(245, 166, 35, 0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse 70% 40% at 50% 20%, rgba(245, 166, 35, 0.04) 0%, transparent 70%);
+    }
+
+    .contact-glass {
+      background: rgba(10, 10, 18, 0.3);
+      backdrop-filter: blur(24px) saturate(1.3);
+      -webkit-backdrop-filter: blur(24px) saturate(1.3);
+      border: 1px solid rgba(58, 58, 74, 0.2);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .img-placeholder { min-height: 100px; padding: 1rem; border-radius: 8px; }
+      .img-placeholder:has(img) { min-height: auto; padding: 0; }
+      .placeholder-img, .img-placeholder img { border-radius: 8px; }
+      .hero-headline { font-size: 2.25rem; }
+      .body-text { font-size: 0.9375rem; }
+      .contact-glass { padding: 1.5rem 1.25rem; border-radius: 14px; }
+      .case-card, .glass-card { border-radius: 10px; }
+      .glass-card a { padding: 1.5rem !important; }
+    }
+    @media (max-width: 480px) {
+      .img-placeholder img { border-radius: 6px; }
+    }
+
+    .screen-grid, .screen-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    @media (min-width: 641px) {
+      .screen-grid, .screen-stack {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .screen-grid .img-placeholder:last-child:nth-child(3),
+      .screen-stack .img-placeholder:last-child:nth-child(3) {
+        grid-column: 1 / -1;
+        max-width: 60%;
+        justify-self: center;
+      }
+    }
+    @media (max-width: 640px) {
+      .screen-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 0.6rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+        margin: 0 -0.75rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+      .screen-grid::-webkit-scrollbar { height: 2px; }
+      .screen-grid::-webkit-scrollbar-track { background: transparent; }
+      .screen-grid::-webkit-scrollbar-thumb { background: #3a3a4a; border-radius: 1px; }
+      .screen-grid .img-placeholder {
+        flex: 0 0 72%;
+        scroll-snap-align: center;
+        min-height: auto;
+        padding: 0;
+      }
+      .screen-grid .img-placeholder img {
+        border-radius: 8px;
+        max-height: 65vh;
+        width: 100%;
+        object-fit: contain;
+      }
+      .screen-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .screen-stack .img-placeholder {
+        padding: 0;
+        min-height: auto;
+      }
+      .screen-stack .img-placeholder img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+
+    .campus-preview {
+      padding: 0 !important;
+      min-height: auto !important;
+      background: transparent !important;
+      backdrop-filter: none !important;
+      border: none !important;
+    }
+    .campus-preview img {
+      max-height: 360px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      border: 1px solid #3a3a4a;
+    }
+    @media (max-width: 640px) {
+      .campus-preview img { max-height: 240px; border-radius: 8px; }
+    }
+
+    .preview-image {
+      max-height: 260px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .preview-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 640px) {
+      .preview-image { max-height: 180px; border-radius: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav id="nav" class="nav-glass fixed top-0 left-0 right-0 z-50 border-b border-transparent">
+  <div class="max-w-content mx-auto px-6 h-12 md:h-14 flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-2.5 no-underline group">
+      <span class="w-7 h-7 rounded-[7px] border border-muted flex items-center justify-center text-[0.6875rem] font-medium text-accent transition-all duration-300 group-hover:border-muted-light">OA</span>
+      <span class="text-sm font-medium tracking-tight hidden sm:block" style="color:rgba(240,237,230,0.5);">Olayinka Abdullah</span>
+    </a>
+    <div class="flex items-center gap-6">
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <span class="flex items-center gap-1.5 text-sm font-normal" style="color:rgba(240,237,230,0.4);">
+        <span class="available-dot"></span>
+        Available
+      </span>
+      <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="nav-cv">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        CV
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="ruled-grid"></div>
+  <div class="hero-dot-scatter"></div>
+  <div class="hero-glow"></div>
+  <div class="max-w-content mx-auto px-6 w-full py-32 md:py-40 relative z-10">
+    <div class="max-w-[820px] mx-auto text-center">
+      <p class="reveal section-label mb-6">Product Designer &mdash; AI &amp; SaaS</p>
+      <h1 class="reveal reveal-d1 hero-headline mb-6">
+        I design systems that make AI feel&nbsp;<span style="color:#f5a623;">obvious</span>.
+      </h1>
+      <p class="reveal reveal-d2 body-text mx-auto mb-14" style="max-width:580px;">
+        Product designer focused on AI-native SaaS, workflow automation, and scalable UX architecture. Based in Lagos.
+      </p>
+      <div class="reveal reveal-d3 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="#work" class="pill-button primary btn-scale gap-2">
+          View Work
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="pill-button ghost btn-scale">
+          Contact
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span class="scroll-label">Scroll</span>
+    <div class="scroll-indicator-line"></div>
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section id="about" class="section-alt py-32 md:py-44">
+  <div class="max-w-content mx-auto px-6">
+    <div class="max-w-[740px] mx-auto">
+      <p class="reveal section-label">About</p>
+      <h2 class="reveal reveal-d1 section-heading mb-8">
+        Systems thinker building at the intersection of AI and human-centred design.
+      </h2>
+      <div class="reveal reveal-d2 space-y-5 body-text">
+        <p>
+          I'm a product design student at LASU, driven by a conviction that the best AI products are invisible — not because they're hidden, but because they feel <em style="color:#f0ede6;">obvious</em>. I design workflows that reduce cognitive load, dashboards that surface insight without noise, and systems that respect the user's attention as the scarcest resource.
+        </p>
+        <p>
+          My approach combines systems-level thinking with hands-on prototyping: I map the full ecosystem before opening Figma, and I validate interaction patterns through low-fidelity tests before committing to pixels. I'm equally comfortable discussing API architecture as I am refining a micro-interaction easing curve.
+        </p>
+        <p>
+          Right now, I'm exploring how AI-native UX patterns can transform productivity tools — and looking for a team where I can contribute, learn, and ship.
+        </p>
+      </div>
+      <div class="reveal reveal-d3 flex flex-col sm:flex-row gap-8 mt-14 pt-10 border-t" style="border-color:#3a3a4a;">
+        <div class="flex-1">
+          <p class="stat-label">Education</p>
+          <p style="font-size:1.0625rem;font-weight:500;color:#f0ede6;">LASU</p>
+          <p class="body-text" style="font-size:0.875rem;">B.Eng Electronics &amp; Computer Engineering &mdash; Expected 2027</p>
+        </div>
+        <div class="flex-1">
+          <p class="stat-label">Status</p>
+          <p style="font-size:0.875rem;color:#f5a623;">
+            <span class="available-dot" style="margin-right:6px;"></span>
+            Open to internships &amp; junior product design roles
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SKILLS ====== -->
+<section id="skills" class="py-32 md:py-44">
+  <div class="max-w-content mx-auto px-6">
+    <div class="max-w-[740px] mx-auto">
+      <p class="reveal section-label">Skills</p>
+      <h2 class="reveal reveal-d1 section-heading mb-14">Clusters of competence.</h2>
+    </div>
+    <div class="max-w-[740px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-14 gap-y-12">
+      <div class="reveal">
+        <p class="stat-label">Design Practice</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag">SaaS Interface Design</span>
+          <span class="skill-tag">Dashboard UX</span>
+          <span class="skill-tag">Interaction Design</span>
+          <span class="skill-tag">Information Architecture</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d1">
+        <p class="stat-label">Systems Thinking</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag">Workflow Design Systems</span>
+          <span class="skill-tag">AI-native UX</span>
+          <span class="skill-tag">Product Thinking</span>
+          <span class="skill-tag">API-aware Design</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <p class="stat-label">Tools</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Lovable</span>
+          <span class="skill-tag">Notion</span>
+          <span class="skill-tag">Supabase</span>
+          <span class="skill-tag">No-code / Low-code</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d3">
+        <p class="stat-label">Concepts</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag">Automation Logic</span>
+          <span class="skill-tag">Rapid Prototyping</span>
+          <span class="skill-tag">SaaS Architecture</span>
+          <span class="skill-tag">Human-centred AI UX</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== WORK ====== -->
+<section id="work" class="section-alt py-32 md:py-44">
+  <div class="max-w-content mx-auto px-6">
+    <div class="max-w-[740px] mx-auto mb-3">
+      <p class="reveal section-label">Selected Work</p>
+      <h2 class="reveal reveal-d1 section-heading mb-3">Case studies in craft.</h2>
+      <p class="reveal reveal-d2 body-text">Concept projects exploring AI-native SaaS, marketplace UX, and automation design.</p>
+    </div>
+    <div class="max-w-[740px] mx-auto mt-16 space-y-8">
+      <div class="reveal glass-card">
+        <a href="#case-opsflow" class="block p-8 md:p-10 no-underline">
+          <div class="flex items-start justify-between mb-5">
+            <span class="case-number">01</span>
+            <span class="type-badge">SaaS Concept</span>
+          </div>
+          <h3 style="font-size:1.5rem;font-weight:600;color:#f0ede6;letter-spacing:-0.015em;margin-bottom:0.5rem;">OpsFlow AI</h3>
+          <p class="body-text mb-6">One workspace for team tasks, AI insights, and automated workflows.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">AI-native UX</span>
+            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Workflow Design</span>
+            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Interaction Design</span>
+          </div>
+          <div class="img-placeholder preview-image mb-6">
+            <img src="assets/opsflow-dashboard.png" alt="OpsFlow AI Dashboard">
+          </div>
+          <span class="chevron-link">
+            Read Case Study
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+      <div class="reveal reveal-d1 glass-card">
+        <a href="#case-campus" class="block p-8 md:p-10 no-underline">
+          <div class="flex items-start justify-between mb-5">
+            <span class="case-number">02</span>
+            <span class="type-badge">Marketplace Concept</span>
+          </div>
+          <h3 style="font-size:1.5rem;font-weight:600;color:#f0ede6;letter-spacing:-0.015em;margin-bottom:0.5rem;">Campus Commerce System</h3>
+          <p class="body-text mb-6">A student-first marketplace and delivery system built for campus life.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Operational UX</span>
+            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Information Architecture</span>
+            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Rapid Prototyping</span>
+          </div>
+          <div class="img-placeholder mb-6 campus-preview">
+            <img src="assets/campus-browse.png" alt="Campus Vendor Browse Grid">
+          </div>
+          <span class="chevron-link">
+            Read Case Study
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+      <div class="reveal reveal-d2 glass-card">
+        <a href="#case-workflow" class="block p-8 md:p-10 no-underline">
+          <div class="flex items-start justify-between mb-5">
+            <span class="case-number">03</span>
+            <span class="type-badge">Automation UX Prototype</span>
+          </div>
+          <h3 style="font-size:1.5rem;font-weight:600;color:#f0ede6;letter-spacing:-0.015em;margin-bottom:0.5rem;">AI Workflow Builder</h3>
+          <p class="body-text mb-6">A no-code canvas for building AI-assisted process automations.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Automation Logic</span>
+            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">No-code / Low-code</span>
+            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">SaaS Architecture</span>
+          </div>
+          <div class="img-placeholder preview-image mb-6">
+            <img src="assets/workflow-canvas.png" alt="AI Workflow Builder Canvas">
+          </div>
+          <span class="chevron-link">
+            Read Case Study
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CASE STUDY: OPSFLOW AI ====== -->
+<section id="case-opsflow" class="py-32 md:py-44">
+  <div class="max-w-content mx-auto px-6">
+    <div class="reveal max-w-[740px] mx-auto mb-16">
+      <p class="section-label">Case Study 01</p>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-5">
+        <h2 class="cs-heading">OpsFlow AI</h2>
+        <span class="type-badge">SaaS Concept</span>
+      </div>
+      <div class="flex flex-wrap gap-x-8 gap-y-1" style="color:rgba(240,237,230,0.3);font-size:0.8125rem;">
+        <span>Role: Product Designer</span>
+        <span>Duration: 4 weeks</span>
+        <span>Tools: Figma &middot; Lovable &middot; Notion</span>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d1 max-w-[740px] mx-auto mb-14">
+      <p class="section-label">Problem</p>
+      <p class="body-text">
+        Remote teams juggling Slack, Notion, and Jira lose context switching between them. No single surface combines task management with AI-generated status insights and visual workflow automation — leaving PMs and ops leads manually stitching information together.
+      </p>
+    </div>
+
+    <div class="reveal reveal-d2 max-w-[740px] mx-auto mb-14">
+      <p class="section-label mb-8">Process</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Discovery</p>
+          <p class="body-text" style="font-size:0.875rem;">Mapped pain points of 5 remote team personas (PM, Dev, Designer, Ops Lead, Founder); identified top 3 context-switching triggers</p>
+        </div>
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Define</p>
+          <p class="body-text" style="font-size:0.875rem;">Narrowed to 3 core jobs-to-be-done: <em style="color:#f0ede6;">track work</em>, <em style="color:#f0ede6;">understand status</em>, <em style="color:#f0ede6;">automate repetition</em></p>
+        </div>
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Design</p>
+          <p class="body-text" style="font-size:0.875rem;">Built full IA, component library, and 12-screen high-fidelity Figma prototype; designed AI summary card system</p>
+        </div>
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Prototype</p>
+          <p class="body-text" style="font-size:0.875rem;">Built interactive workflow builder in Lovable; ran 3 peer usability sessions and iterated on node editor layout</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d3 max-w-[740px] mx-auto mb-14">
+      <p class="section-label mb-6">Key Screens</p>
+      <div class="screen-grid">
+        <div class="img-placeholder">
+          <img src="assets/opsflow-dashboard.png" alt="OpsFlow AI Dashboard">
+        </div>
+        <div class="img-placeholder">
+          <img src="assets/opsflow-workflow.png" alt="OpsFlow Workflow Builder">
+        </div>
+        <div class="img-placeholder">
+          <img src="assets/opsflow-analytics.png" alt="OpsFlow Analytics">
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d4 max-w-[740px] mx-auto mb-14">
+      <p class="section-label mb-6">Outcomes</p>
+      <ul class="outcomes-list">
+        <li>Task status lookup reduced from 4 clicks to 1 via persistent AI summary card</li>
+        <li>Workflow builder &ldquo;create a trigger&rdquo; task completed at 100% by 3 peer testers with no guidance</li>
+        <li>Dashboard layout scored 4.6/5 on perceived clarity (informal 5-person usability session)</li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-d5 max-w-[740px] mx-auto">
+      <p class="section-label mb-4">What I'd Do Next</p>
+      <p class="body-text">
+        Real Supabase backend for live task sync &middot; Multi-workspace support &middot; AI prompt customisation per team
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-content mx-auto px-6"><div class="section-divider"></div></div>
+
+<!-- ====== CASE STUDY: CAMPUS COMMERCE ====== -->
+<section id="case-campus" class="section-alt py-32 md:py-44">
+  <div class="max-w-content mx-auto px-6">
+    <div class="reveal max-w-[740px] mx-auto mb-16">
+      <p class="section-label">Case Study 02</p>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-5">
+        <h2 class="cs-heading">Campus Commerce System</h2>
+        <span class="type-badge">Marketplace Concept</span>
+      </div>
+      <div class="flex flex-wrap gap-x-8 gap-y-1" style="color:rgba(240,237,230,0.3);font-size:0.8125rem;">
+        <span>Role: Product Designer</span>
+        <span>Duration: 3 weeks</span>
+        <span>Tools: Figma &middot; Paper &middot; Notion</span>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d1 max-w-[740px] mx-auto mb-14">
+      <p class="section-label">Problem</p>
+      <p class="body-text">
+        Students at large Nigerian universities rely on informal WhatsApp groups and verbal communication to order food and goods from campus vendors. There is no structured ordering, inventory tracking, or vendor management layer — creating friction for students and lost revenue for vendors.
+      </p>
+    </div>
+
+    <div class="reveal reveal-d2 max-w-[740px] mx-auto mb-14">
+      <p class="section-label mb-8">Process</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Discovery</p>
+          <p class="body-text" style="font-size:0.875rem;">Observed campus vendor-student transactions at LASU; documented 4 core friction points in the order-to-delivery flow</p>
+        </div>
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Define</p>
+          <p class="body-text" style="font-size:0.875rem;">Scoped MVP to 3 actor types: <em style="color:#f0ede6;">Student</em>, <em style="color:#f0ede6;">Vendor</em>, <em style="color:#f0ede6;">Admin</em>; mapped each actor's primary jobs-to-be-done</p>
+        </div>
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Design</p>
+          <p class="body-text" style="font-size:0.875rem;">Designed student ordering flow (browse &rarr; cart &rarr; confirm &rarr; track), vendor dashboard (orders + inventory), and admin panel (vendor approval + analytics)</p>
+        </div>
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Prototype</p>
+          <p class="body-text" style="font-size:0.875rem;">Paper-to-Figma flow; tested ordering flow with 4 LASU students; iterated on cart confirmation step</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d3 max-w-[740px] mx-auto mb-14">
+      <p class="section-label mb-6">Key Screens</p>
+      <div class="screen-stack">
+        <div class="img-placeholder">
+          <img src="assets/campus-browse.png" alt="Campus Vendor Browse Grid">
+        </div>
+        <div class="img-placeholder">
+          <img src="assets/campus-vendor.png" alt="Vendor Dashboard">
+        </div>
+        <div class="img-placeholder">
+          <img src="assets/campus-admin.png" alt="Admin Panel">
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d4 max-w-[740px] mx-auto mb-14">
+      <p class="section-label mb-6">Outcomes</p>
+      <ul class="outcomes-list">
+        <li>Full student order flow condensed to 3 steps from product discovery to confirmation</li>
+        <li>Vendor onboarding form completed in under 4 minutes by all test participants</li>
+        <li>Admin permission hierarchy validated as clear and unambiguous in peer design review</li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-d5 max-w-[740px] mx-auto">
+      <p class="section-label mb-4">What I'd Do Next</p>
+      <p class="body-text">
+        Campus GPS delivery zone logic &middot; Lightweight PWA shell &middot; Vendor notification system
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-content mx-auto px-6"><div class="section-divider"></div></div>
+
+<!-- ====== CASE STUDY: AI WORKFLOW BUILDER ====== -->
+<section id="case-workflow" class="py-32 md:py-44">
+  <div class="max-w-content mx-auto px-6">
+    <div class="reveal max-w-[740px] mx-auto mb-16">
+      <p class="section-label">Case Study 03</p>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-5">
+        <h2 class="cs-heading">AI Workflow Builder</h2>
+        <span class="type-badge">Automation UX Prototype</span>
+      </div>
+      <div class="flex flex-wrap gap-x-8 gap-y-1" style="color:rgba(240,237,230,0.3);font-size:0.8125rem;">
+        <span>Role: Product Designer</span>
+        <span>Duration: 3 weeks</span>
+        <span>Tools: Figma &middot; Lovable</span>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d1 max-w-[740px] mx-auto mb-14">
+      <p class="section-label">Problem</p>
+      <p class="body-text">
+        Non-technical operators want to automate repetitive tasks (e.g. &ldquo;when a form is submitted, summarise with AI and notify the team&rdquo;) but tools like Zapier overwhelm them with complexity and don't natively support AI-step logic. The cognitive load of learning trigger/action/filter paradigms creates drop-off before the first automation is built.
+      </p>
+    </div>
+
+    <div class="reveal reveal-d2 max-w-[740px] mx-auto mb-14">
+      <p class="section-label mb-8">Process</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Discovery</p>
+          <p class="body-text" style="font-size:0.875rem;">Audited UX patterns in Zapier, Make, and n8n; identified 3 primary cognitive load bottlenecks for non-technical users</p>
+        </div>
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Define</p>
+          <p class="body-text" style="font-size:0.875rem;">Simplified automation model to 3 node types only: <em style="color:#f0ede6;">Trigger</em>, <em style="color:#f0ede6;">Action</em>, <em style="color:#f0ede6;">AI Step</em> &mdash; progressive disclosure hides advanced config</p>
+        </div>
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Design</p>
+          <p class="body-text" style="font-size:0.875rem;">Visual canvas with drag-and-connect node editor; designed AI Step config panel (input &rarr; prompt template &rarr; output mapping)</p>
+        </div>
+        <div class="timeline-step">
+          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Prototype</p>
+          <p class="body-text" style="font-size:0.875rem;">Built 2 sample automation flows as interactive prototype; tested with 2 non-technical participants</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d3 max-w-[740px] mx-auto mb-14">
+      <p class="section-label mb-6">Key Screens</p>
+      <div class="screen-grid">
+        <div class="img-placeholder">
+          <img src="assets/workflow-canvas.png" alt="AI Workflow Builder Canvas">
+        </div>
+        <div class="img-placeholder">
+          <img src="assets/workflow-ai-config.png" alt="AI Step Configuration Panel">
+        </div>
+        <div class="img-placeholder">
+          <img src="assets/workflow-runlog.png" alt="Automation Run Log">
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d4 max-w-[740px] mx-auto mb-14">
+      <p class="section-label mb-6">Outcomes</p>
+      <ul class="outcomes-list">
+        <li>3-node model reduced conceptual complexity vs. 7+ node types in comparable tools</li>
+        <li>&ldquo;Build your first automation&rdquo; onboarding flow completed at 100% by both non-technical test participants with no prompting</li>
+        <li>AI step configuration pattern (input &rarr; prompt &rarr; output) rated as intuitive by all testers</li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-d5 max-w-[740px] mx-auto">
+      <p class="section-label mb-4">What I'd Do Next</p>
+      <p class="body-text">
+        LLM prompt templates per industry use-case &middot; JSON export for developer handoff &middot; Conditional branching (if/else) node type
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTACT ====== -->
+<section id="contact" class="relative overflow-hidden py-32 md:py-44">
+  <div class="ruled-grid-subtle absolute inset-0"></div>
+  <div class="max-w-content mx-auto px-6 relative z-10">
+    <div class="max-w-[600px] mx-auto text-center">
+      <div class="reveal contact-glass">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="reveal reveal-d1" style="font-weight:600;font-size:2.5rem;color:#f0ede6;letter-spacing:-0.02em;line-height:1.1;margin-bottom:1.25rem;">
+          Let's build something <span style="color:#f5a623;">obvious</span> together.
+        </h2>
+        <p class="reveal reveal-d2 body-text mb-10" style="max-width:420px;margin-left:auto;margin-right:auto;">
+          I'm actively seeking internship and junior product design roles for 2026–2027. If you're building AI or SaaS products and value systems thinking, let's talk.
+        </p>
+        <div class="reveal reveal-d3 flex flex-col items-center gap-4">
+          <a href="mailto:lolayinka2005@gmail.com" class="pill-button primary btn-scale gap-2">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 4 6-4M2 4v8a1 1 0 001 1h10a1 1 0 001-1V4M2 4l6 4 6-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            lolayinka2005@gmail.com
+          </a>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="available-dot"></span>
+            <span style="font-size:0.875rem;color:rgba(240,237,230,0.45);">Available for opportunities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="py-8 border-t" style="border-color:#3a3a4a;">
+  <div class="max-w-content mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <a href="#hero" class="flex items-center gap-2.5 no-underline group">
+      <span class="w-6 h-6 rounded-[5px] border border-muted flex items-center justify-center text-[0.5625rem] font-medium text-accent transition-all duration-300 group-hover:border-muted-light">OA</span>
+      <span style="font-size:0.75rem;color:rgba(240,237,230,0.25);">&copy; 2026 Olayinka Abdullah</span>
+    </a>
+    <div class="flex items-center gap-6">
+      <a href="mailto:lolayinka2005@gmail.com" class="footer-link">Email</a>
+      <a href="https://linkedin.com/in/olayinka-abdullah-bbab6126a" class="footer-link" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    var nav = document.getElementById('nav');
+    var ticking = false;
+    function updateNav() {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateNav);
+        ticking = true;
+      }
+    });
+    updateNav();
+  })();
+
+  (function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+  })();
+
+  (function() {
+    var links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        var target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          var targetPos = target.getBoundingClientRect().top + window.pageYOffset - 56;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
