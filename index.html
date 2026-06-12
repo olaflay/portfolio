@@ -904,16 +904,6 @@
       background: #30d158;
     }
 
-    .cursor-blink {
-      display: inline-block;
-      width: 6px;
-      height: 15px;
-      background: var(--an-primary-color);
-      margin-left: 2px;
-      animation: blink 0.8s steps(2, start) infinite;
-      vertical-align: middle;
-    }
-
     /* ==== Collapsible Suggestions ==== */
     .suggestions-wrap {
       display: flex;
@@ -1071,7 +1061,7 @@
           Right now, I'm exploring how AI-native UX patterns can transform productivity tools — and looking for a team where I can contribute, learn, and ship.
         </p>
       </div>
-      <div class="reveal reveal-d3 flex flex-col sm:flex-row gap-8 mt-14 pt-10 border-t" style="border-color:#3a3a4a;">
+      <div class="reveal reveal-d3 flex flex-col sm:flex-row gap-8 mt-14 pt-10 border-t text-center sm:text-left" style="border-color:#3a3a4a;">
         <div class="flex-1">
           <p class="stat-label">Education</p>
           <p style="font-size:1.0625rem;font-weight:500;color:#f0ede6;">LASU</p>
@@ -1093,7 +1083,7 @@
 <section id="skills" class="py-32 md:py-44 relative overflow-hidden">
   <div class="section-glow-bottom"></div>
   <div class="max-w-content mx-auto px-6">
-    <div class="max-w-[740px] mx-auto">
+    <div class="max-w-[740px] mx-auto text-center">
       <p class="reveal section-label">Skills</p>
       <h2 class="reveal reveal-d1 section-heading mb-14">Clusters of competence.</h2>
     </div>
@@ -1143,7 +1133,7 @@
 <section id="work" class="section-alt py-32 md:py-44 relative overflow-hidden">
   <div class="section-glow-bottom accent-strong"></div>
   <div class="max-w-content mx-auto px-6">
-    <div class="max-w-[740px] mx-auto mb-3">
+    <div class="max-w-[740px] mx-auto text-center mb-3">
       <p class="reveal section-label">Selected Work</p>
       <h2 class="reveal reveal-d1 section-heading mb-3">Case studies in craft.</h2>
       <p class="reveal reveal-d2 body-text">Concept projects exploring AI-native SaaS, marketplace UX, and automation design.</p>
@@ -1619,63 +1609,63 @@
         { name: 'search_workspace', query: 'OpsFlow', result: 'Found matches in PRD.md & index.html' },
         { name: 'read_file', query: 'PRD.md', result: 'Read OpsFlow AI specifications' }
       ];
-      responseText = "OpsFlow AI is Olayinka's flagship project—a unified workspace for team tasks, AI insights, and visual node-based workflow automation. It addresses tool-switching friction (Slack, Notion, Jira) by combining task lists with persistent AI-generated summary panels. In the design process, Olayinka mapped 5 user personas, designed a 12-screen Figma library, and built an interactive workflow editor using Lovable.";
+      responseText = "## Project Overview\n\nOpsFlow AI is Olayinka's flagship concept — a unified workspace that brings team tasks, AI insights, and visual node-based workflow automation into one place.\n\n## The Problem\n\nTeams constantly switch between Slack, Notion, and Jira. OpsFlow eliminates that friction with a single AI-augmented interface.\n\n## Process\n\n- **Research** — 5 user personas mapped, pain points documented\n- **Design** — 12-screen Figma component library\n- **Build** — Interactive workflow editor prototyped in Lovable\n\n## Outcome\n\nA concept that proves AI workspaces can reduce tool-switching friction while keeping teams in flow.";
       sectionLink = '#case-opsflow';
     } else if (lowerText.indexOf('campus') > -1 || lowerText.indexOf('commerce') > -1 || lowerText.indexOf('marketplace') > -1) {
       toolActions = [
         { name: 'search_workspace', query: 'Campus Commerce', result: 'Found case study in index.html' },
         { name: 'read_file', query: 'index.html', result: 'Read Campus Commerce section' }
       ];
-      responseText = "Campus Commerce System is a student-first marketplace and delivery system concept built for LASU campus life. It solves the problem of unstructured ordering via WhatsApp by giving students a structured browse → cart → confirm → track flow, vendors a dashboard for orders and inventory, and admins a panel for vendor approval and analytics. The full order flow was condensed to 3 steps, and vendor onboarding took under 4 minutes in testing.";
+      responseText = "## Project Overview\n\nCampus Commerce System — a student-first marketplace and delivery platform built for LASU.\n\n## The Problem\n\nWhatsApp-based ordering is chaotic. No browsing, no tracking, no accountability.\n\n## Solution Flow\n\n- **Students** — browse, cart, confirm, track in 3 steps\n- **Vendors** — dashboard for orders, menu, inventory\n- **Admins** — approve vendors, view analytics\n\n## Key Result\n\nVendor onboarding completed in under 4 minutes during testing.";
       sectionLink = '#case-campus';
     } else if (lowerText.indexOf('workflow') > -1 || lowerText.indexOf('builder') > -1 || lowerText.indexOf('automation') > -1 || lowerText.indexOf('no-code') > -1 || lowerText.indexOf('low-code') > -1) {
       toolActions = [
         { name: 'search_workspace', query: 'AI Workflow Builder', result: 'Found case study in index.html' },
         { name: 'read_file', query: 'index.html', result: 'Read AI Workflow Builder section' }
       ];
-      responseText = "AI Workflow Builder is a no-code canvas concept for building AI-assisted process automations. It simplifies the traditional Zapier/Make/n8n model down to just 3 node types: Trigger, Action, and AI Step. The design focuses on non-technical operators who want to automate tasks like 'when a form is submitted, summarise with AI and notify the team' without learning complex trigger/action/filter paradigms. Both non-technical test participants completed onboarding with no prompting.";
+      responseText = "## Project Overview\n\nAI Workflow Builder — a no-code canvas for AI-powered automations.\n\n## The Insight\n\nZapier, Make, and n8n are powerful but overwhelming for non-technical users.\n\n## Solution\n\nJust 3 node types:\n- **Trigger** — what starts the flow\n- **Action** — what happens next\n- **AI Step** — AI-powered decision or transformation\n\n## Validation\n\nNon-technical test participants completed onboarding with zero prompting.";
       sectionLink = '#case-workflow';
     } else if (lowerText.indexOf('about') > -1 || lowerText.indexOf('background') > -1 || lowerText.indexOf('bio') > -1 || lowerText.indexOf('experience') > -1) {
       toolActions = [
         { name: 'search_workspace', query: 'About section', result: 'Found in index.html' }
       ];
-      responseText = "Olayinka Abdullah is a Product Design student at LASU (B.Eng Electronics & Computer Engineering, expected 2027). He specializes in AI-native SaaS and workflow UX, designing systems that make AI feel obvious rather than magical. His approach combines systems-level thinking with hands-on prototyping—mapping the full ecosystem before opening Figma and validating interaction patterns through low-fidelity tests before committing to pixels. He's based in Lagos and actively seeking internship and junior product design roles.";
+      responseText = "## About Olayinka\n\nProduct Design student at LASU. B.Eng Electronics & Computer Engineering, expected 2027.\n\n## Focus Area\n\nAI-native SaaS and workflow UX — making AI feel obvious, not magical.\n\n## Process\n\n- **System-first** — Map the full ecosystem before opening Figma\n- **Test early** — Validate interaction patterns with low-fi prototypes\n- **Polish later** — Commit to pixels after the flow is right\n\n## Status\n\nBased in Lagos. Open to internship and junior product design roles.";
       sectionLink = '#about';
     } else if (lowerText.indexOf('education') > -1 || lowerText.indexOf('lasu') > -1 || lowerText.indexOf('student') > -1) {
       toolActions = [
         { name: 'search_workspace', query: 'Education', result: 'Found in about section' }
       ];
-      responseText = "Olayinka is currently studying Electronics & Computer Engineering at Lagos State University (LASU), expected to graduate in 2027. His engineering background gives him a technical edge in product design—he's comfortable discussing API architecture while refining micro-interaction easing curves.";
+      responseText = "## Education\n\n**Lagos State University (LASU)**\nB.Eng Electronics & Computer Engineering\nExpected graduation: 2027\n\n## Edge\n\nEngineering background means Olayinka is comfortable discussing API architecture while refining micro-interaction easing curves. He speaks both design and engineering fluently.";
       sectionLink = '#about';
     } else if (lowerText.indexOf('design') > -1 || lowerText.indexOf('philosophy') > -1 || lowerText.indexOf('approach') > -1) {
       toolActions = [
         { name: 'search_workspace', query: 'Design approach', result: 'Found across portfolio sections' }
       ];
-      responseText = "Olayinka's design philosophy centres on making AI feel obvious. He believes the best AI products are invisible—not hidden, but intuitive enough that they don't demand attention. His process: map the full system before opening Figma, validate with low-fidelity tests before high-fidelity polish, and design workflows that reduce cognitive load. He focuses on SaaS interfaces, dashboard UX, and AI-native interaction patterns.";
+      responseText = "## Design Philosophy\n\nOlayinka believes the best AI products are invisible — not hidden, but intuitive enough that they don't demand attention.\n\n## Principles\n\n- **System before screen** — Map the full ecosystem before designing a single pixel\n- **Validate early** — Low-fidelity tests before high-fidelity polish\n- **Reduce load** — Every interaction should feel lighter than expected\n\n## Focus\n\nSaaS interfaces, dashboard UX, and AI-native interaction patterns.";
       sectionLink = '#about';
     } else if (lowerText.indexOf('tools') > -1 || lowerText.indexOf('skills') > -1 || lowerText.indexOf('stack') > -1) {
       toolActions = [
         { name: 'search_workspace', query: 'Skills & Tools', result: 'Found matching skills section in index.html' }
       ];
-      responseText = "Olayinka Abdullah uses a modern product design and development stack: \n- **Design & Prototyping:** Figma, Paper/Wireframing\n- **No-Code & Builders:** Lovable, Notion, Retool\n- **Backend & Databases:** Supabase, basic SQL, REST APIs\n- **Technical Context:** HTML, Tailwind CSS, Vanilla JS, and API-aware systems design.";
+      responseText = "## Tools & Stack\n\n- **Design** — Figma, Paper/Wireframing\n- **Build** — Lovable, Notion, Retool\n- **Backend** — Supabase, basic SQL, REST APIs\n- **Code** — HTML, Tailwind CSS, Vanilla JS\n\nOlayinka is API-aware and comfortable in full-stack prototyping environments.";
       sectionLink = '#skills';
     } else if (lowerText.indexOf('work') > -1 || lowerText.indexOf('project') > -1 || lowerText.toLowerCase().indexOf('case study') > -1) {
       toolActions = [
         { name: 'search_workspace', query: 'Selected work', result: 'Found 3 case studies in index.html' }
       ];
-      responseText = "Olayinka's portfolio features 3 concept projects: \n1. **OpsFlow AI** — a unified workspace with AI insights and visual workflow automation (SaaS concept) \n2. **Campus Commerce System** — a student-first marketplace and delivery system (marketplace concept) \n3. **AI Workflow Builder** — a no-code canvas for AI-assisted automations (automation UX prototype) \n\nEach case study includes problem definition, 4-phase process, key screens, outcomes, and next steps.";
+      responseText = "## Selected Work\n\nOlayinka's portfolio features 3 concept projects:\n\n**OpsFlow AI** — Unified workspace with AI insights and visual workflow automation (SaaS)\n\n**Campus Commerce System** — Student marketplace and delivery system (marketplace)\n\n**AI Workflow Builder** — No-code canvas for AI-assisted automations (automation UX)\n\nEach case study follows a 4-phase process with key screens, outcomes, and next steps.";
       sectionLink = '#work';
     } else if (lowerText.indexOf('contact') > -1 || lowerText.indexOf('email') > -1 || lowerText.indexOf('reach') > -1 || lowerText.indexOf('hire') > -1) {
       toolActions = [
         { name: 'search_workspace', query: 'Contact', result: 'Found lolayinka2005@gmail.com and LinkedIn profile' }
       ];
-      responseText = "You can reach Olayinka directly at lolayinka2005@gmail.com or connect with him on LinkedIn. He is currently open to junior product designer roles and internship opportunities for 2026–2027!";
+      responseText = "## Contact\n\n- **Email** — lolayinka2005@gmail.com\n- **LinkedIn** — linkedin.com/in/olayinka-abdullah\n\nOlayinka is open to junior product designer roles and internship opportunities for 2026–2027.\n\nFeel free to reach out!";
       sectionLink = '#contact';
     } else {
       toolActions = [
         { name: 'search_workspace', query: text, result: 'Scanning workspace files...' }
       ];
-      responseText = "Based on Olayinka's portfolio, he is a Product Design student at LASU specializing in AI-native SaaS and workflow UX. He focuses on designing systems that make AI feel intuitive and obvious. Feel free to contact him at lolayinka2005@gmail.com for internships or junior product design roles!";
+      responseText = "## Olayinka Abdullah\n\nProduct Design student at LASU specializing in AI-native SaaS and workflow UX.\n\n- **Focus** — Designing systems that make AI feel intuitive and obvious\n- **Contact** — lolayinka2005@gmail.com\n\nOpen to internships and junior product design roles.";
     }
 
     simulateAgentSteps(toolActions, responseText, sectionLink);
@@ -1751,58 +1741,94 @@
     runNextTool();
   }
 
+  function parseInline(text) {
+    return text.replace(/\*\*(.+?)\*\*/g, '<strong class="text-fg font-semibold">$1</strong>');
+  }
+
   function streamResponse(text, sectionLink) {
     var chatMessages = id('agent-chat-messages');
     var msgDiv = document.createElement('div');
     msgDiv.className = 'flex flex-col gap-1.5 items-start';
     
-    var bubble = document.createElement('div');
-    bubble.className = 'glass rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed max-w-[85%] text-fg';
-    
     msgDiv.innerHTML = '<span class="text-[9px] font-mono tracking-wider uppercase opacity-40">Olaflay</span>';
-    msgDiv.appendChild(bubble);
     chatMessages.appendChild(msgDiv);
 
-    var cursor = document.createElement('span');
-    cursor.className = 'cursor-blink';
-    bubble.appendChild(cursor);
+    var bubble = document.createElement('div');
+    bubble.className = 'glass rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed max-w-[85%] text-fg';
+    msgDiv.appendChild(bubble);
+
+    var lines = text.split('\n');
+    var elements = [];
+    var lastEmpty = false;
+
+    for (var li = 0; li < lines.length; li++) {
+      var line = lines[li];
+      if (line.startsWith('## ')) {
+        var h = document.createElement('div');
+        h.className = 'text-[11px] font-semibold tracking-wider uppercase text-accent/90 mt-2.5 first:mt-0';
+        h.textContent = line.slice(3);
+        elements.push(h);
+        lastEmpty = false;
+      } else if (line.startsWith('- ')) {
+        var item = document.createElement('div');
+        item.className = 'flex items-start gap-2 text-fg/85';
+        item.innerHTML = '<span class="text-accent shrink-0 mt-0.5">—</span><span>' + parseInline(line.slice(2)) + '</span>';
+        elements.push(item);
+        lastEmpty = false;
+      } else if (line === '') {
+        if (!lastEmpty) {
+          var spacer = document.createElement('div');
+          spacer.className = 'h-2';
+          elements.push(spacer);
+          lastEmpty = true;
+        }
+      } else {
+        var p = document.createElement('div');
+        var parsed = parseInline(line);
+        if (parsed) {
+          p.innerHTML = parsed;
+        } else {
+          p.textContent = '\u00A0';
+        }
+        elements.push(p);
+        lastEmpty = false;
+      }
+    }
 
     var buttonLabels = {
-      '#case-opsflow': 'View Case Study →',
-      '#case-campus': 'View Case Study →',
-      '#case-workflow': 'View Case Study →',
-      '#about': 'About Me →',
-      '#skills': 'View Skills →',
-      '#work': 'View Work →',
-      '#contact': 'Get in Touch →'
+      '#case-opsflow': 'View Case Study \u2192',
+      '#case-campus': 'View Case Study \u2192',
+      '#case-workflow': 'View Case Study \u2192',
+      '#about': 'About Me \u2192',
+      '#skills': 'View Skills \u2192',
+      '#work': 'View Work \u2192',
+      '#contact': 'Get in Touch \u2192'
     };
 
-    var i = 0;
-    function typeChar() {
-      if (i < text.length) {
-        var char = text.charAt(i);
-        if (char === '\n') {
-          bubble.insertBefore(document.createElement('br'), cursor);
-        } else {
-          bubble.insertBefore(document.createTextNode(char), cursor);
-        }
-        i++;
+    var elIdx = 0;
+    function appendNext() {
+      if (elIdx < elements.length) {
+        bubble.appendChild(elements[elIdx]);
+        elIdx++;
         chatMessages.scrollTop = chatMessages.scrollHeight;
-        setTimeout(typeChar, 10 + Math.random() * 10);
+        setTimeout(appendNext, 20);
       } else {
-        cursor.remove();
         if (sectionLink && buttonLabels[sectionLink]) {
           var btn = document.createElement('a');
           btn.href = sectionLink;
-          btn.className = 'inline-block mt-2 text-[11px] font-medium tracking-wider uppercase border border-accent/40 text-accent px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-all duration-200 no-underline';
+          btn.className = 'inline-block mt-2.5 text-[11px] font-medium tracking-wider uppercase border border-accent/40 text-accent px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-all duration-200 no-underline cursor-pointer';
           btn.textContent = buttonLabels[sectionLink];
+          btn.onclick = function() {
+            var win = id('agent-chat-win');
+            if (win) win.classList.remove('active');
+          };
           bubble.appendChild(btn);
           chatMessages.scrollTop = chatMessages.scrollHeight;
         }
       }
     }
 
-    setTimeout(typeChar, 300);
+    setTimeout(appendNext, 300);
   }
 </script>
 
