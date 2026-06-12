@@ -483,6 +483,22 @@
       background: radial-gradient(ellipse 70% 40% at 50% 20%, rgba(245, 166, 35, 0.04) 0%, transparent 70%);
     }
 
+    .section-glow-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(245, 166, 35, 0.03) 0%, transparent 60%);
+    }
+    .section-glow-bottom.accent-strong {
+      background: linear-gradient(to top, rgba(245, 166, 35, 0.05) 0%, transparent 60%);
+    }
+    .section-glow-bottom.subtle {
+      background: linear-gradient(to top, rgba(240, 237, 230, 0.015) 0%, transparent 60%);
+    }
+
     .contact-glass {
       background: rgba(10, 10, 18, 0.35);
       backdrop-filter: blur(24px) saturate(1.5);
@@ -1008,6 +1024,7 @@
   <div class="ruled-grid"></div>
   <div class="hero-dot-scatter"></div>
   <div class="hero-glow"></div>
+  <div class="section-glow-bottom"></div>
   <div class="max-w-content mx-auto px-6 w-full py-32 md:py-40 relative z-10">
     <div class="max-w-[820px] mx-auto text-center">
       <p class="reveal section-label mb-6">Product Designer &mdash; AI &amp; SaaS</p>
@@ -1035,7 +1052,8 @@
 </section>
 
 <!-- ====== ABOUT ====== -->
-<section id="about" class="section-alt py-32 md:py-44">
+<section id="about" class="section-alt py-32 md:py-44 relative overflow-hidden">
+  <div class="section-glow-bottom accent-strong"></div>
   <div class="max-w-content mx-auto px-6">
     <div class="max-w-[740px] mx-auto">
       <p class="reveal section-label">About</p>
@@ -1072,7 +1090,8 @@
 </section>
 
 <!-- ====== SKILLS ====== -->
-<section id="skills" class="py-32 md:py-44">
+<section id="skills" class="py-32 md:py-44 relative overflow-hidden">
+  <div class="section-glow-bottom"></div>
   <div class="max-w-content mx-auto px-6">
     <div class="max-w-[740px] mx-auto">
       <p class="reveal section-label">Skills</p>
@@ -1121,7 +1140,8 @@
 </section>
 
 <!-- ====== WORK ====== -->
-<section id="work" class="section-alt py-32 md:py-44">
+<section id="work" class="section-alt py-32 md:py-44 relative overflow-hidden">
+  <div class="section-glow-bottom accent-strong"></div>
   <div class="max-w-content mx-auto px-6">
     <div class="max-w-[740px] mx-auto mb-3">
       <p class="reveal section-label">Selected Work</p>
@@ -1200,7 +1220,8 @@
 </section>
 
 <!-- ====== CASE STUDY: OPSFLOW AI ====== -->
-<section id="case-opsflow" class="py-32 md:py-44">
+<section id="case-opsflow" class="py-32 md:py-44 relative overflow-hidden">
+  <div class="section-glow-bottom"></div>
   <div class="max-w-content mx-auto px-6">
     <div class="reveal max-w-[740px] mx-auto mb-16">
       <p class="section-label">Case Study 01</p>
@@ -1280,7 +1301,8 @@
 <div class="max-w-content mx-auto px-6"><div class="section-divider"></div></div>
 
 <!-- ====== CASE STUDY: CAMPUS COMMERCE ====== -->
-<section id="case-campus" class="section-alt py-32 md:py-44">
+<section id="case-campus" class="section-alt py-32 md:py-44 relative overflow-hidden">
+  <div class="section-glow-bottom accent-strong"></div>
   <div class="max-w-content mx-auto px-6">
     <div class="reveal max-w-[740px] mx-auto mb-16">
       <p class="section-label">Case Study 02</p>
@@ -1360,7 +1382,8 @@
 <div class="max-w-content mx-auto px-6"><div class="section-divider"></div></div>
 
 <!-- ====== CASE STUDY: AI WORKFLOW BUILDER ====== -->
-<section id="case-workflow" class="py-32 md:py-44">
+<section id="case-workflow" class="py-32 md:py-44 relative overflow-hidden">
+  <div class="section-glow-bottom"></div>
   <div class="max-w-content mx-auto px-6">
     <div class="reveal max-w-[740px] mx-auto mb-16">
       <p class="section-label">Case Study 03</p>
@@ -1452,7 +1475,7 @@
         </p>
         <div class="reveal reveal-d3 flex flex-col items-center gap-4">
           <a href="mailto:lolayinka2005@gmail.com" class="pill-button primary btn-scale gap-2">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 4 6-4M2 4v8a1 1 0 001 1h10a1 1 0 001-1V4M2 4l6 4 6-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M24 5.457v13.256c0 .71-.571 1.282-1.282 1.282H1.282C.571 19.995 0 19.424 0 18.713V5.457l12 8.208 12-8.208z" fill="#EA4335"/><path d="M24 5.457L12 13.665 0 5.457V3.282C0 2.571.571 2 1.282 2h21.436C23.429 2 24 2.571 24 3.282v2.175z" fill="#34A853"/><path d="M0 5.457v2.175l12 8.208 12-8.208V5.457l-12 8.208L0 5.457z" fill="#FBBC05"/><path d="M0 3.282v2.175l12 8.208 12-8.208V3.282C24 2.571 23.429 2 22.718 2H1.282C.571 2 0 2.571 0 3.282z" fill="#4285F4"/></svg>
             lolayinka2005@gmail.com
           </a>
           <div class="flex items-center gap-2 mt-1">
