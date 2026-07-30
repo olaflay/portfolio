@@ -1,1896 +1,2081 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Olayinka Abdullah — Product Designer</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2308080e'/><text x='16' y='22' text-anchor='middle' font-family='Inter,sans-serif' font-size='16' fill='%23b8ff57' font-weight='500'>OA</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            bg: '#08080e',
-            fg: '#f0ede6',
-            accent: '#f5a623',
-            muted: '#3a3a4a',
-            'muted-light': '#4a4a5a',
-            'bg-alt': '#0c0c14',
-            'bg-card': '#0a0a12',
-          },
-          fontFamily: {
-            sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Inter', 'sans-serif'],
-          },
-          maxWidth: {
-            'content': '1100px',
-          }
-        }
-      }
-    }
-  </script>
+
+  <title>Olayinka Abdullah | Product Designer, AI &amp; SaaS UX</title>
+  <meta name="description"
+    content="Product designer building AI-native SaaS, workflow automation, and systems-level UX. Open to internships and junior product design roles.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://olayinkaabdullah.design">
+
+  <meta property="og:title" content="Olayinka Abdullah | Product Designer">
+  <meta property="og:description"
+    content="Designing systems that make AI feel obvious. AI-native SaaS, workflow automation, scalable UX architecture.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://olayinkaabdullah.design">
+  <meta property="og:image" content="https://olayinkaabdullah.design/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Olayinka Abdullah | Product Designer">
+  <meta name="twitter:description"
+    content="Designing systems that make AI feel obvious. AI-native SaaS, workflow automation, scalable UX architecture.">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Olayinka Abdullah",
+  "jobTitle": "Product Designer",
+  "url": "https://olayinkaabdullah.design",
+  "email": "lolayinka2005@gmail.com",
+  "knowsAbout": ["Product Design", "UX Architecture", "AI-native SaaS", "Workflow Automation", "Interaction Design"],
+  "seeks": {
+    "@type": "JobPosting",
+    "title": "Product Designer Internship",
+    "description": "Seeking internship or junior product design role in AI or SaaS"
+  }
+}
+</script>
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23163A5F'/><text x='16' y='22' text-anchor='middle' font-family='Inter,sans-serif' font-size='16' fill='%23FFFFFF' font-weight='600'>OA</text></svg>">
+  <link rel="preload" as="image" href="assets/profile.png" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    /* ====== DESIGN TOKENS ====== */
+    :root {
+      --navy: #163A5F;
+      --navy-dark: #102D4B;
+      --navy-light: #1E4D7A;
+      --sky: #76D4FF;
+      --ocean: #39BDF7;
+      --cyan: #8FE8FF;
+      --soft-aqua: #BDEEFF;
+      --soft-blue: #EDF9FF;
+      --gray-50: #F7F9FC;
+      --gray-100: #EDF0F5;
+      --gray-200: #E2E6ED;
+      --gray-400: #94A3B8;
+      --gray-600: #666666;
+      --gray-800: #1E293B;
+      --white: #FFFFFF;
+      --green: #30D158;
+
+      --bg: var(--white);
+      --bg-alt: var(--gray-50);
+      --bg-soft: var(--soft-blue);
+      --text: var(--gray-600);
+      --text-heading: var(--navy);
+      --text-muted: #94A3B8;
+      --text-label: #64748B;
+      --border: rgba(22, 58, 95, 0.06);
+      --border-light: rgba(22, 58, 95, 0.04);
+      --accent: var(--ocean);
+      --accent-text: var(--navy);
+      --primary: var(--navy);
+      --primary-hover: var(--navy-dark);
+      --shadow-sm: 0 2px 8px rgba(22, 58, 95, 0.04);
+      --shadow-md: 0 10px 30px rgba(35, 70, 120, 0.05);
+      --shadow-lg: 0 20px 60px rgba(35, 70, 120, 0.08);
+      --shadow-xl: 0 30px 80px rgba(35, 70, 120, 0.12);
+      --radius-sm: 12px;
+      --radius-md: 24px;
+      --radius-lg: 32px;
+      --radius-xl: 40px;
+      --radius-full: 999px;
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-14: 3.5rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+      --ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --ease-in-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Force light theme colors since Cakap design style is bright and soft */
+    [data-theme="dark"],
+    :root {
+      --bg: var(--white);
+      --bg-alt: var(--gray-50);
+      --bg-soft: var(--soft-blue);
+      --text: var(--gray-600);
+      --text-heading: var(--navy);
+      --border: rgba(22, 58, 95, 0.06);
+      --accent: var(--ocean);
+      --primary: var(--navy);
+      --primary-hover: var(--navy-dark);
+    }
+
+    /* ====== RESET ====== */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: #08080e;
-      color: #f0ede6;
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
       font-weight: 400;
-      font-size: 1.0625rem;
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 1rem;
+      }
+    }
+
+    ::selection {
+      background: rgba(57, 189, 247, 0.15);
+      color: var(--text-heading);
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--text-muted);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ====== ACCESSIBILITY: SKIP LINK ====== */
+    .skip-link {
+      position: fixed;
+      top: -100%;
+      left: 1rem;
+      z-index: 1000;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* ====== ACCESSIBILITY: FOCUS ====== */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline-offset: 3px;
+    }
+
+    /* ====== LAYOUT ====== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .section-content {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .section-wide {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .section-pad {
+      padding: 8rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .section-pad {
+        padding: 6rem 0;
+      }
+    }
+
+    .bg-alt {
+      background: var(--bg-alt);
+    }
+
+    .bg-soft {
+      background: var(--bg-soft);
+    }
+
+    /* ====== TYPOGRAPHY ====== */
+    .label-sm {
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ocean);
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+
+    .label-xs {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-label);
+      display: block;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-heading);
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 4.5rem;
+      }
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-heading);
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.625rem;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--text-heading);
+    }
+
+    .text-body {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .text-body {
+        font-size: 1rem;
+      }
+    }
+
+    .text-sm {
+      font-size: 0.9375rem;
       line-height: 1.6;
     }
 
-    ::selection { background: rgba(245, 166, 35, 0.15); color: #f0ede6; }
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #08080e; }
-    ::-webkit-scrollbar-thumb { background: #3a3a4a; border-radius: 2px; }
-    ::-webkit-scrollbar-thumb:hover { background: #4a4a5a; }
-
-    .nav-glass {
-      transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
-    }
-    .nav-glass.scrolled {
-      background: rgba(8, 8, 14, 0.72);
-      backdrop-filter: blur(28px) saturate(1.5);
-      -webkit-backdrop-filter: blur(28px) saturate(1.5);
-      border-bottom: 1px solid rgba(58, 58, 74, 0.35);
+    .text-xs {
+      font-size: 0.8125rem;
+      line-height: 1.5;
     }
 
+    .accent-text {
+      color: var(--accent);
+    }
+
+    /* ====== REVEAL ====== */
     .reveal {
       opacity: 0;
       transform: translateY(1.5rem);
-      transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-d1 { transition-delay: 0.12s; }
-    .reveal-d2 { transition-delay: 0.24s; }
-    .reveal-d3 { transition-delay: 0.36s; }
-    .reveal-d4 { transition-delay: 0.48s; }
-    .reveal-d5 { transition-delay: 0.6s; }
-    .reveal-d6 { transition-delay: 0.72s; }
-
-    .ruled-grid {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(58, 58, 74, 0.12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(58, 58, 74, 0.12) 1px, transparent 1px);
-      background-size: 64px 64px;
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
     }
 
-    .ruled-grid-subtle {
-      background-image:
-        linear-gradient(rgba(58, 58, 74, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(58, 58, 74, 0.06) 1px, transparent 1px);
-      background-size: 64px 64px;
-    }
-
-    .glass {
-      background: rgba(10, 10, 18, 0.45);
-      backdrop-filter: blur(20px) saturate(1.4);
-      -webkit-backdrop-filter: blur(20px) saturate(1.4);
-      border: 1px solid rgba(58, 58, 74, 0.25);
-    }
-
-    .glass-card {
-      background: rgba(10, 10, 18, 0.45);
-      backdrop-filter: blur(20px) saturate(1.4);
-      -webkit-backdrop-filter: blur(20px) saturate(1.4);
-      border: 1px solid rgba(58, 58, 74, 0.25);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), background 0.5s ease;
-    }
-    .glass-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(58, 58, 74, 0.5);
-      background: rgba(10, 10, 18, 0.6);
-    }
-
-    .hero-headline {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Inter, sans-serif;
-      font-size: 3.5rem;
-      line-height: 1.02;
-      font-weight: 200;
-      letter-spacing: -0.035em;
-      color: #f0ede6;
-    }
-    @media (min-width: 768px) {
-      .hero-headline { font-size: 4.5rem; }
-    }
-    @media (min-width: 1024px) {
-      .hero-headline { font-size: 5.75rem; }
-    }
-
-    .section-heading {
-      font-weight: 600;
-      font-size: 2.25rem;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: #f0ede6;
-    }
-    @media (max-width: 768px) {
-      .section-heading { font-size: 1.75rem; }
-    }
-
-    .body-text {
-      font-size: 1.0625rem;
-      line-height: 1.6;
-      color: rgba(240, 237, 230, 0.55);
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #f5a623;
-      margin-bottom: 0.75rem;
-    }
-
-    .nav-link {
-      position: relative;
-      transition: color 0.25s ease;
-      font-size: 0.8125rem;
-      font-weight: 400;
-      color: rgba(240, 237, 230, 0.45);
-      text-decoration: none;
-      letter-spacing: 0.01em;
-    }
-    .nav-link:hover { color: #f5a623; }
-
-    .nav-cv {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.6875rem;
-      font-weight: 500;
-      color: #f5a623;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.6rem;
-      border: 1px solid rgba(245, 166, 35, 0.2);
-      border-radius: 6px;
-      background: rgba(245, 166, 35, 0.06);
-      backdrop-filter: blur(8px) saturate(1.2);
-      -webkit-backdrop-filter: blur(8px) saturate(1.2);
-      transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-    .nav-cv:hover {
-      background: rgba(245, 166, 35, 0.12);
-      border-color: rgba(245, 166, 35, 0.4);
-    }
-
-    .pill-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.72rem 1.6rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      text-decoration: none;
-      letter-spacing: 0.005em;
-      border-radius: 980px;
-      transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-      -webkit-font-smoothing: antialiased;
-    }
-    .pill-button.primary {
-      background: #f5a623;
-      color: #08080e;
-      border: 1px solid #f5a623;
-    }
-    .pill-button.primary:hover {
-      background: transparent;
-      color: #f5a623;
-    }
-    .pill-button.secondary {
-      border: 1px solid #3a3a4a;
-      color: rgba(240, 237, 230, 0.6);
-      background: transparent;
-    }
-    .pill-button.secondary:hover {
-      border-color: #4a4a5a;
-      color: #f0ede6;
-    }
-    .pill-button.ghost {
-      border: 1px solid rgba(245, 166, 35, 0.2);
-      color: #f5a623;
-      background: rgba(245, 166, 35, 0.06);
-    }
-    .pill-button.ghost:hover {
-      background: rgba(245, 166, 35, 0.12);
-      border-color: rgba(245, 166, 35, 0.35);
-    }
-
-    .btn-scale {
-      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-    .btn-scale:hover { transform: scale(1.02); }
-
-    .chevron-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.375rem;
-      color: #f5a623;
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.25s ease;
-    }
-    .chevron-link:hover { color: #f0ede6; }
-    .chevron-link svg { transition: transform 0.25s ease; }
-    .chevron-link:hover svg { transform: translateX(4px); }
-
-    .available-dot {
-      display: inline-block;
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: #30d158;
-      vertical-align: middle;
-    }
-
-    .scroll-indicator {
-      position: absolute; bottom: 2rem; left: 50%;
-      transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-      opacity: 0.3;
-    }
-    .scroll-label {
-      font-size: 0.5625rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(240, 237, 230, 0.2);
-      font-weight: 500;
-    }
-    .scroll-indicator-line {
-      width: 1px; height: 32px;
-      background: linear-gradient(to bottom, #3a3a4a, transparent);
-      animation: scrollPulse 2.4s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.2; transform: scaleY(0.5); }
-      50% { opacity: 0.6; transform: scaleY(1); }
-    }
-
-    .img-placeholder {
-      background: rgba(10, 10, 18, 0.45);
-      backdrop-filter: blur(8px) saturate(1.3);
-      -webkit-backdrop-filter: blur(8px) saturate(1.3);
-      border: 1px solid rgba(58, 58, 74, 0.3);
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 2rem;
-      min-height: 220px;
-      width: 100%;
-      transition: border-color 0.3s ease, background 0.3s ease;
-    }
-    .img-placeholder:has(img) {
-      padding: 0;
-      background: transparent;
-      backdrop-filter: none;
-      border: none;
-      min-height: auto;
-    }
-    .img-placeholder:hover {
-      border-color: rgba(58, 58, 74, 0.6);
-      background: rgba(12, 12, 20, 0.6);
-    }
-    .img-placeholder:has(img):hover {
-      border-color: transparent;
-      background: transparent;
-    }
-    .img-placeholder .placeholder-label {
-      color: #f5a623;
-      font-size: 0.8125rem;
-      text-align: center;
-      line-height: 1.5;
-      font-weight: 400;
-    }
-    .img-placeholder .placeholder-hint {
-      color: rgba(240, 237, 230, 0.3);
-      font-size: 0.6875rem;
-      margin-top: 0.5rem;
-      font-weight: 300;
-    }
-    .placeholder-img, .img-placeholder img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      border: 1px solid rgba(58, 58, 74, 0.3);
-      display: block;
-    }
-
-    .skill-tag {
-      border: 1px solid rgba(58, 58, 74, 0.3);
-      color: rgba(240, 237, 230, 0.6);
-      padding: 0.3rem 0.9rem;
-      font-size: 0.8125rem;
-      font-weight: 400;
-      border-radius: 100px;
-      background: rgba(10, 10, 18, 0.3);
-      backdrop-filter: blur(8px) saturate(1.2);
-      -webkit-backdrop-filter: blur(8px) saturate(1.2);
-      transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
-      cursor: default;
-    }
-    .skill-tag:hover {
-      border-color: rgba(58, 58, 74, 0.6);
-      color: #f0ede6;
-      background: rgba(12, 12, 20, 0.5);
-    }
-
-    .case-number {
-      font-weight: 700;
-      font-size: 3rem;
-      color: rgba(245, 166, 35, 0.08);
-      line-height: 1;
-      letter-spacing: -0.03em;
-      user-select: none;
-    }
-
-    .type-badge {
-      display: inline-block;
-      padding: 0.2rem 0.75rem;
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      color: #f5a623;
-      background: rgba(245, 166, 35, 0.08);
-      backdrop-filter: blur(8px) saturate(1.2);
-      -webkit-backdrop-filter: blur(8px) saturate(1.2);
-      border: 1px solid rgba(245, 166, 35, 0.15);
-      border-radius: 100px;
-    }
-
-    .timeline-step {
-      position: relative;
-      padding-left: 2rem;
-      padding-bottom: 2rem;
-    }
-    .timeline-step:last-child { padding-bottom: 0; }
-    .timeline-step::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.5rem;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #f5a623;
-    }
-    .timeline-step::after {
-      content: '';
-      position: absolute;
-      left: 2.5px;
-      top: 1.3rem;
-      width: 1px;
-      height: calc(100% - 1.3rem);
-      background: #3a3a4a;
-    }
-    .timeline-step:last-child::after { display: none; }
-
-    .outcomes-list {
-      list-style: none;
-      padding: 0;
-    }
-    .outcomes-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.875rem;
-      font-size: 1rem;
-      line-height: 1.65;
-      color: rgba(240, 237, 230, 0.6);
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(58, 58, 74, 0.4);
-    }
-    .outcomes-list li:last-child { border-bottom: none; }
-    .outcomes-list li::before {
-      content: '';
-      display: block;
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: #f5a623;
-      margin-top: 0.65rem;
-      flex-shrink: 0;
-      opacity: 0.5;
-    }
-
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #3a3a4a 20%, #3a3a4a 80%, transparent);
-    }
-
-    .section-alt { background: #0c0c14; }
-
-    .footer-link {
-      font-size: 0.8125rem;
-      font-weight: 400;
-      color: rgba(240, 237, 230, 0.3);
-      text-decoration: none;
-      transition: color 0.25s ease;
-    }
-    .footer-link:hover { color: #f5a623; }
-
-    .stat-label {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(240, 237, 230, 0.35);
-      margin-bottom: 0.5rem;
-    }
-
-    .cs-heading {
-      font-weight: 600;
-      font-size: 2.5rem;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: #f0ede6;
-    }
-    @media (max-width: 768px) {
-      .cs-heading { font-size: 1.75rem; }
-    }
-
-    .h-sub {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(240, 237, 230, 0.25);
-    }
-
-    .hero-dot-scatter {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image: radial-gradient(rgba(245, 166, 35, 0.06) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-    .hero-glow {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: radial-gradient(ellipse 70% 40% at 50% 20%, rgba(245, 166, 35, 0.04) 0%, transparent 70%);
-    }
-
-    .section-glow-bottom {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 200px;
-      pointer-events: none;
-      background: linear-gradient(to top, rgba(245, 166, 35, 0.03) 0%, transparent 60%);
-    }
-    .section-glow-bottom.accent-strong {
-      background: linear-gradient(to top, rgba(245, 166, 35, 0.05) 0%, transparent 60%);
-    }
-    .section-glow-bottom.subtle {
-      background: linear-gradient(to top, rgba(240, 237, 230, 0.015) 0%, transparent 60%);
-    }
-
-    .contact-glass {
-      background: rgba(10, 10, 18, 0.35);
-      backdrop-filter: blur(24px) saturate(1.5);
-      -webkit-backdrop-filter: blur(24px) saturate(1.5);
-      border: 1px solid rgba(58, 58, 74, 0.2);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
-    }
-
-    /* ==== Mobile Nav ==== */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      border: 1px solid rgba(58, 58, 74, 0.3);
-      cursor: pointer;
-      background: transparent;
-      transition: border-color 0.25s ease, background 0.25s ease;
-      z-index: 60;
-    }
-    .nav-hamburger:hover { border-color: rgba(58, 58, 74, 0.6); }
-    .nav-hamburger span {
-      display: block;
-      width: 18px;
-      height: 1.5px;
-      background: rgba(240, 237, 230, 0.5);
-      border-radius: 1px;
-      transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-    .nav-hamburger span + span { margin-top: 5px; }
-    .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
-    .nav-hamburger.active span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
-
-    .mobile-nav-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      z-index: 40;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .mobile-nav-backdrop.active {
+    .reveal.visible {
       opacity: 1;
-      pointer-events: auto;
+      transform: translateY(0);
     }
 
-    .mobile-nav {
+    .r-d1 {
+      transition-delay: 0.12s;
+    }
+
+    .r-d2 {
+      transition-delay: 0.24s;
+    }
+
+    .r-d3 {
+      transition-delay: 0.36s;
+    }
+
+    .r-d4 {
+      transition-delay: 0.48s;
+    }
+
+    .r-d5 {
+      transition-delay: 0.6s;
+    }
+
+    /* ====== NAVIGATION ====== */
+    .nav-root {
       position: fixed;
       top: 0;
+      left: 0;
       right: 0;
-      width: 280px;
-      height: 100vh;
-      background: rgba(8, 8, 14, 0.92);
-      backdrop-filter: blur(28px) saturate(1.5);
-      -webkit-backdrop-filter: blur(28px) saturate(1.5);
-      border-left: 1px solid rgba(58, 58, 74, 0.3);
-      z-index: 50;
-      transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .mobile-nav.active { transform: translateX(0); }
-    .mobile-nav .mobile-nav-close {
-      align-self: flex-end;
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      border: 1px solid rgba(58, 58, 74, 0.3);
-      background: transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(240, 237, 230, 0.4);
-      transition: border-color 0.25s ease, color 0.25s ease;
-      margin-bottom: 1rem;
-    }
-    .mobile-nav .mobile-nav-close:hover {
-      border-color: rgba(58, 58, 74, 0.6);
-      color: #f0ede6;
-    }
-    .mobile-nav a {
-      width: 100%;
-      text-align: center;
-      font-size: 1.0625rem;
-      font-weight: 400;
-      color: rgba(240, 237, 230, 0.5);
-      text-decoration: none;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(58, 58, 74, 0.15);
-      transition: color 0.25s ease;
-    }
-    .mobile-nav a:hover { color: #f5a623; }
-    .mobile-nav .nav-cv-mobile {
-      margin-top: auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.75rem;
-      border: 1px solid rgba(245, 166, 35, 0.2);
-      border-radius: 8px;
-      color: #f5a623;
-      text-decoration: none;
-      font-size: 0.8125rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      background: rgba(245, 166, 35, 0.06);
-      transition: background 0.25s ease, border-color 0.25s ease;
-    }
-    .mobile-nav .nav-cv-mobile:hover {
-      background: rgba(245, 166, 35, 0.12);
-      border-color: rgba(245, 166, 35, 0.4);
-    }
-    @media (max-width: 767px) {
-      .nav-hamburger { display: flex; }
-    }
-    @media (min-width: 768px) {
-      .mobile-nav, .mobile-nav-backdrop { display: none !important; }
-    }
-
-    /* ==== Chat responsiveness & click-outside ==== */
-    .agent-chat-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 99;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .agent-chat-backdrop.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    @media (max-width: 480px) {
-      .agent-chat-window {
-        width: calc(100vw - 1.5rem) !important;
-        right: 0.75rem !important;
-        bottom: 5rem !important;
-        height: 60vh !important;
-        max-height: calc(100vh - 7rem) !important;
-        border-radius: 16px !important;
-      }
-      .agent-chat-btn-floating {
-        bottom: 1rem !important;
-        right: 1rem !important;
-        width: 3rem !important;
-        height: 3rem !important;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .img-placeholder { min-height: 100px; padding: 1rem; border-radius: 8px; }
-      .img-placeholder:has(img) { min-height: auto; padding: 0; }
-      .placeholder-img, .img-placeholder img { border-radius: 8px; }
-      .hero-headline { font-size: 2.25rem; }
-      .body-text { font-size: 0.9375rem; }
-      .contact-glass { padding: 1.5rem 1.25rem; border-radius: 14px; }
-      .case-card, .glass-card { border-radius: 10px; }
-      .glass-card a { padding: 1.5rem !important; }
-    }
-    @media (max-width: 480px) {
-      .img-placeholder img { border-radius: 6px; }
-    }
-
-    .screen-grid, .screen-stack {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-    @media (min-width: 641px) {
-      .screen-grid, .screen-stack {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-      }
-      .screen-grid .img-placeholder:last-child:nth-child(3),
-      .screen-stack .img-placeholder:last-child:nth-child(3) {
-        grid-column: 1 / -1;
-        max-width: 60%;
-        justify-self: center;
-      }
-    }
-    @media (max-width: 640px) {
-      .screen-grid {
-        display: flex;
-        flex-direction: row;
-        gap: 0.6rem;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 0.5rem;
-        margin: 0 -0.75rem;
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-      }
-      .screen-grid::-webkit-scrollbar { height: 2px; }
-      .screen-grid::-webkit-scrollbar-track { background: transparent; }
-      .screen-grid::-webkit-scrollbar-thumb { background: #3a3a4a; border-radius: 1px; }
-      .screen-grid .img-placeholder {
-        flex: 0 0 72%;
-        scroll-snap-align: center;
-        min-height: auto;
-        padding: 0;
-      }
-      .screen-grid .img-placeholder img {
-        border-radius: 8px;
-        max-height: 65vh;
-        width: 100%;
-        object-fit: contain;
-      }
-      .screen-stack {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-      .screen-stack .img-placeholder {
-        padding: 0;
-        min-height: auto;
-      }
-      .screen-stack .img-placeholder img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-      }
-    }
-
-    .campus-preview {
-      padding: 0 !important;
-      min-height: auto !important;
-      background: transparent !important;
-      backdrop-filter: none !important;
-      border: none !important;
-    }
-    .campus-preview img {
-      max-height: 360px;
-      width: 100%;
-      object-fit: contain;
-      border-radius: 12px;
-      border: 1px solid rgba(58, 58, 74, 0.3);
-    }
-    @media (max-width: 640px) {
-      .campus-preview img { max-height: 240px; border-radius: 8px; }
-    }
-
-    .preview-image {
-      max-height: 260px;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    .preview-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    @media (max-width: 640px) {
-      .preview-image { max-height: 180px; border-radius: 8px; }
-    }
-
-    /* 21st SDK Custom Agent Chat Styles */
-    :root {
-      --an-background: #08080e;
-      --an-background-secondary: #0c0c14;
-      --an-background-tertiary: #12121c;
-      --an-foreground: #f0ede6;
-      --an-foreground-muted: rgba(240, 237, 230, 0.65);
-      --an-foreground-subtle: rgba(240, 237, 230, 0.4);
-      --an-border-color: rgba(58, 58, 74, 0.4);
-      --an-border-color-light: rgba(58, 58, 74, 0.2);
-      --an-primary-color: #f5a623;
-    }
-
-    .agent-chat-window {
-      position: fixed;
-      bottom: 5rem;
-      right: 1.5rem;
-      width: 460px;
-      height: 640px;
-      max-height: calc(100vh - 7rem);
-      max-width: calc(100vw - 3rem);
       z-index: 100;
-      opacity: 0;
-      transform: translateY(20px) scale(0.95);
-      pointer-events: none;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-    }
-    .agent-chat-window.active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: auto;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .agent-chat-header {
-      background: rgba(12, 12, 20, 0.6);
-      backdrop-filter: blur(20px) saturate(1.4);
-      -webkit-backdrop-filter: blur(20px) saturate(1.4);
-      border-bottom: 1px solid var(--an-border-color);
-      padding: 0.75rem 1rem;
+    .nav-root.scrolled {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(24px) saturate(1.6);
+      -webkit-backdrop-filter: blur(24px) saturate(1.6);
+      box-shadow: 0 4px 30px rgba(35, 70, 120, 0.04);
+      border-bottom: 1px solid rgba(22, 58, 95, 0.05);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      height: 4rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .agent-chat-body {
-      flex: 1;
-      overflow-y: auto;
-      padding: 1.25rem;
+    @media (min-width: 768px) {
+      .nav-inner {
+        height: 4.5rem;
+      }
+    }
+
+    .nav-logo {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      scroll-behavior: smooth;
-      background: rgba(8, 8, 14, 0.6);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      align-items: center;
+      gap: var(--space-3);
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--text-heading);
     }
 
-    .agent-chat-input-zone {
-      background: rgba(12, 12, 20, 0.6);
-      backdrop-filter: blur(20px) saturate(1.4);
-      -webkit-backdrop-filter: blur(20px) saturate(1.4);
-      border-top: 1px solid var(--an-border-color);
-      padding: 1rem;
-    }
-
-    .agent-chat-btn-floating {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: 9999px;
-      background: rgba(245, 166, 35, 0.15);
-      backdrop-filter: blur(16px) saturate(1.4);
-      -webkit-backdrop-filter: blur(16px) saturate(1.4);
-      color: #f5a623;
-      box-shadow: 0 8px 30px rgba(245, 166, 35, 0.15);
-      border: 1px solid rgba(245, 166, 35, 0.3);
+    .nav-mono {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--sky) 0%, var(--ocean) 100%);
+      color: var(--navy);
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      z-index: 100;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .agent-chat-btn-floating:hover {
-      transform: scale(1.08) translateY(-2px);
-      background: rgba(245, 166, 35, 0.25);
-      border-color: rgba(245, 166, 35, 0.5);
-      box-shadow: 0 12px 35px rgba(245, 166, 35, 0.25);
+      font-size: 0.8125rem;
+      font-weight: 800;
+      transition: transform 0.3s;
     }
 
-    .chrome-btn {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
+    .nav-logo:hover .nav-mono {
+      transform: scale(1.05);
     }
 
-    .tool-call-card {
-      background: rgba(18, 18, 28, 0.5);
-      backdrop-filter: blur(8px) saturate(1.2);
-      -webkit-backdrop-filter: blur(8px) saturate(1.2);
-      border: 1px solid var(--an-border-color);
-      border-radius: 8px;
-      padding: 0.6rem 0.8rem;
-      margin: 0.25rem 0;
-      font-size: 0.75rem;
-      font-family: 'DM Mono', monospace;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--an-foreground-muted);
-    }
-    .tool-call-card.pending {
-      border-color: rgba(245, 166, 35, 0.3);
-    }
-    .tool-call-card.pending .tool-indicator {
-      border: 1.5px solid transparent;
-      border-top-color: #f5a623;
-      border-right-color: #f5a623;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      animation: spin 0.8s linear infinite;
-    }
-    .tool-call-card.success .tool-indicator {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #30d158;
-    }
-
-    /* ==== Collapsible Suggestions ==== */
-    .suggestions-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .suggestions-toggle {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      cursor: pointer;
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: rgba(240, 237, 230, 0.3);
-      user-select: none;
-      transition: color 0.2s ease;
-    }
-    .suggestions-toggle:hover { color: rgba(240, 237, 230, 0.6); }
-    .suggestions-arrow {
-      transition: transform 0.25s ease;
-    }
-    .suggestions-wrap.collapsed .suggestions-arrow {
-      transform: rotate(-90deg);
-    }
-    .suggestions-wrap.collapsed #agent-suggestions {
+    .nav-links {
       display: none;
     }
 
-    .suggestion-pill {
-      font-size: 0.75rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 9999px;
-      border: 1px solid var(--an-border-color);
-      color: var(--an-foreground-muted);
-      cursor: pointer;
-      background: rgba(10, 10, 18, 0.3);
-      backdrop-filter: blur(12px) saturate(1.3);
-      -webkit-backdrop-filter: blur(12px) saturate(1.3);
-      transition: all 0.2s ease;
-    }
-    .suggestion-pill:hover {
-      border-color: var(--an-primary-color);
-      color: var(--an-foreground);
-      background: rgba(245, 166, 35, 0.1);
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+      }
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      position: relative;
+      padding: 0.5rem 0.25rem;
+      transition: color 0.25s ease;
     }
-    @keyframes blink {
-      to { visibility: hidden; }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: var(--ocean);
+      border-radius: var(--radius-full);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--ocean);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+    }
+
+    .available-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .available-dot::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: rgba(48, 209, 88, 0.25);
+      animation: pulse-ring 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-ring {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+
+      50% {
+        transform: scale(1.4);
+        opacity: 0.1;
+      }
+    }
+
+    .btn-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--white);
+      padding: 0.625rem 1.375rem;
+      background: var(--navy);
+      border-radius: var(--radius-full);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(22, 58, 95, 0.1);
+    }
+
+    .btn-cv:hover {
+      background: var(--navy-dark);
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(22, 58, 95, 0.18);
+    }
+
+    /* ====== BUTTONS ====== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 2.25rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      transition: all 0.3s var(--ease-out);
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+      box-shadow: 0 10px 25px rgba(22, 58, 95, 0.15);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-dark);
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(22, 58, 95, 0.22);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--navy);
+      transform: scale(1.03);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ocean);
+      border-color: rgba(57, 189, 247, 0.25);
+    }
+
+    .btn-ghost:hover {
+      background: var(--soft-blue);
+      transform: scale(1.03);
+    }
+
+    .chevron-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      color: var(--ocean);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: color 0.25s ease;
+    }
+
+    .chevron-link:hover {
+      color: var(--navy);
+    }
+
+    .chevron-link svg {
+      transition: transform 0.25s ease;
+    }
+
+    .chevron-link:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ====== HERO ====== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--soft-blue) 0%, var(--white) 100%);
+      padding-top: 5rem;
+    }
+
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      width: 100%;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        flex-direction: row;
+        align-items: center;
+        gap: 5rem;
+      }
+    }
+
+    .hero-text {
+      flex: 1.2;
+      max-width: 650px;
+      text-align: left;
+    }
+
+    .hero-visual {
+      flex: 0.8;
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: linear-gradient(135deg, var(--soft-aqua) 0%, var(--soft-blue) 100%);
+      border: 1px solid rgba(57, 189, 247, 0.25);
+      border-radius: var(--radius-full);
+    }
+
+    .profile-ring {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sky) 0%, var(--soft-aqua) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    @media (max-width: 480px) {
+      .profile-ring {
+        width: 260px;
+        height: 260px;
+      }
+    }
+
+    .profile-ring::before {
+      content: '';
+      position: absolute;
+      inset: -15px;
+      border-radius: 50%;
+      border: 2px dashed rgba(57, 189, 247, 0.3);
+      animation: rotate-concentric 40s linear infinite;
+    }
+
+    @keyframes rotate-concentric {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .profile-ring img {
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-float {
+      position: absolute;
+      background: var(--white);
+      border: 1px solid rgba(57, 189, 247, 0.15);
+      border-radius: var(--radius-md);
+      padding: 0.875rem 1.25rem;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      pointer-events: none;
+      z-index: 15;
+      transition: transform 0.3s;
+    }
+
+    .stat-val {
+      font-size: 1.625rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .scroll-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .scroll-line {
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--ocean), transparent);
+      border-radius: 1px;
+      animation: scrollPulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scaleY(0.4);
+        transform-origin: top;
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scaleY(1);
+        transform-origin: top;
+      }
+    }
+
+    /* ====== FLOAT ====== */
+    .float {
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .f-d1 {
+      animation-delay: -2.5s;
+    }
+
+    .f-d2 {
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(1deg);
+      }
+    }
+
+    /* ====== CARDS ====== */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(22, 58, 95, 0.03);
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(57, 189, 247, 0.15);
+    }
+
+    .card-flush {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(22, 58, 95, 0.03);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ====== SKILL TAGS ====== */
+    .skill-pill {
+      display: inline-block;
+      padding: 0.5rem 1.125rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy);
+      background: var(--soft-blue);
+      border: 1px solid rgba(57, 189, 247, 0.15);
+      border-radius: var(--radius-full);
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+
+    .skill-pill:hover {
+      background: linear-gradient(135deg, var(--soft-aqua) 0%, var(--soft-blue) 100%);
+      border-color: var(--ocean);
+      transform: translateY(-2px);
+    }
+
+    .skill-pill-sm {
+      padding: 0.375rem 1rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--navy);
+      background: var(--gray-50);
+      border: 1px solid rgba(22, 58, 95, 0.06);
+      border-radius: var(--radius-full);
+      cursor: default;
+      transition: all 0.25s ease;
+    }
+
+    .skill-pill-sm:hover {
+      background: var(--soft-blue);
+      border-color: var(--ocean);
+    }
+
+    .type-badge {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ocean);
+      background: var(--soft-blue);
+      border: 1px solid rgba(57, 189, 247, 0.15);
+      border-radius: var(--radius-full);
+    }
+
+    /* ====== IMAGE FRAME ====== */
+    .img-frame {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .img-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .img-frame img {
+      transform: scale(1.02);
+    }
+
+    .preview-frame {
+      max-height: 280px;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+    }
+
+    .preview-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 640px) {
+      .preview-frame {
+        max-height: 190px;
+      }
+    }
+
+    .campus-frame {
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+    }
+
+    .campus-frame img {
+      max-height: 380px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    /* ====== TIMELINE ====== */
+    .timeline-step {
+      position: relative;
+      padding-left: 2.25rem;
+      padding-bottom: 2rem;
+    }
+
+    .timeline-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-step::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--ocean);
+      border: 2.5px solid var(--white);
+      box-shadow: 0 0 0 3px var(--soft-blue);
+    }
+
+    .timeline-step::after {
+      content: '';
+      position: absolute;
+      left: 5.5px;
+      top: 1.25rem;
+      width: 2px;
+      height: calc(100% - 1.25rem);
+      background: rgba(57, 189, 247, 0.2);
+    }
+
+    .timeline-step:last-child::after {
+      display: none;
+    }
+
+    .outcomes {
+      list-style: none;
+      padding: 0;
+    }
+
+    .outcomes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--text);
+      padding: 0.875rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .outcomes li:last-child {
+      border-bottom: none;
+    }
+
+    .outcomes li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: var(--ocean);
+      margin-top: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    /* ====== DECORATIVE ====== */
+    .deco-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(57, 189, 247, 0.1);
+      pointer-events: none;
+    }
+
+    .section-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse 60% 50% at 30% 50%, rgba(57, 189, 247, 0.04) 0%, transparent 70%);
+    }
+
+    .section-glow-r {
+      background: radial-gradient(ellipse 50% 60% at 70% 50%, rgba(118, 212, 255, 0.05) 0%, transparent 70%);
+    }
+
+    /* ====== FOOTER ====== */
+    .footer {
+      background: var(--navy-dark);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 4rem 0;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner {
+        flex-direction: row;
+      }
+    }
+
+    .footer-link {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.25s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--sky);
+    }
+
+    /* ====== SCREEN GRID ====== */
+    .screen-grid,
+    .screen-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 641px) {
+
+      .screen-grid,
+      .screen-stack {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .screen-grid .img-frame:last-child:nth-child(3),
+      .screen-stack .img-frame:last-child:nth-child(3) {
+        grid-column: 1 / -1;
+        max-width: 70%;
+        justify-self: center;
+      }
+    }
+
+    /* ====== MOBILE NAV ====== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.25s ease;
+      z-index: 60;
+    }
+
+    .hamburger:hover {
+      border-color: var(--ocean);
+      background: var(--soft-blue);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger span+span {
+      margin-top: 5px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .mob-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 58, 95, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 40;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mob-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mob-nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100vh;
+      background: var(--white);
+      backdrop-filter: blur(28px) saturate(1.5);
+      -webkit-backdrop-filter: blur(28px) saturate(1.5);
+      border-left: 1px solid var(--border);
+      z-index: 50;
+      transform: translateX(100%);
+      transition: transform 0.4s var(--ease-in-out);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mob-nav.active {
+      transform: translateX(0);
+    }
+
+    .mob-close {
+      align-self: flex-end;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      transition: all 0.25s ease;
+      margin-bottom: 2rem;
+    }
+
+    .mob-close:hover {
+      border-color: var(--ocean);
+      background: var(--soft-blue);
+    }
+
+    .mob-nav a {
+      width: 100%;
+      text-align: center;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.25s ease;
+    }
+
+    .mob-nav a:hover {
+      color: var(--ocean);
+    }
+
+    .mob-cv {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      background: var(--navy);
+      border-radius: var(--radius-full);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+
+    .mob-cv:hover {
+      background: var(--navy-dark);
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 767px) {
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 768px) {
+
+      .mob-nav,
+      .mob-backdrop {
+        display: none !important;
+      }
+    }
+
+    /* ====== RESPONSIVE HELPERS ====== */
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.875rem;
+      }
+
+      h3 {
+        font-size: 1.375rem;
+      }
+
+      .img-frame {
+        border-radius: var(--radius-sm);
+      }
+
+      .card {
+        border-radius: var(--radius-md);
+      }
+
+      .section-pad {
+        padding: 4.5rem 0;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ====== NAV ====== -->
-<nav id="nav" class="nav-glass fixed top-0 left-0 right-0 z-50 border-b border-transparent">
-  <div class="max-w-content mx-auto px-6 h-12 md:h-14 flex items-center justify-between">
-    <a href="#hero" class="flex items-center gap-2.5 no-underline group">
-      <span class="w-7 h-7 rounded-[7px] border border-muted flex items-center justify-center text-[0.6875rem] font-medium text-accent transition-all duration-300 group-hover:border-muted-light">OA</span>
-      <span class="text-sm font-medium tracking-tight hidden sm:block" style="color:rgba(240,237,230,0.5);">Olayinka Abdullah</span>
-    </a>
-    <div class="flex items-center gap-6">
-      <div class="hidden md:flex items-center gap-6">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ====== NAV ====== -->
+  <nav class="nav-root" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="nav-mono">OA</span>
+        <span class="hidden sm:inline">Olayinka Abdullah</span>
+      </a>
+      <div class="nav-links">
         <a href="#work" class="nav-link">Work</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
-      <span class="flex items-center gap-1.5 text-sm font-normal" style="color:rgba(240,237,230,0.4);">
-        <span class="available-dot"></span>
-        Available
-      </span>
-      <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="nav-cv hidden sm:inline-flex">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        CV
-      </a>
-      <button class="nav-hamburger md:hidden" onclick="toggleMobileNav()" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<div class="mobile-nav-backdrop" onclick="closeMobileNav()"></div>
-<div class="mobile-nav">
-  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
-  <a href="#work" onclick="closeMobileNav()">Work</a>
-  <a href="#about" onclick="closeMobileNav()">About</a>
-  <a href="#skills" onclick="closeMobileNav()">Skills</a>
-  <a href="#contact" onclick="closeMobileNav()">Contact</a>
-  <div style="flex:1;"></div>
-  <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="nav-cv-mobile">
-    <svg width="14" height="14" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    Download CV
-  </a>
-</div>
-
-<!-- ====== HERO ====== -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <div class="ruled-grid"></div>
-  <div class="hero-dot-scatter"></div>
-  <div class="hero-glow"></div>
-  <div class="section-glow-bottom"></div>
-  <div class="max-w-content mx-auto px-6 w-full py-32 md:py-40 relative z-10">
-    <div class="max-w-[820px] mx-auto text-center">
-      <p class="reveal section-label mb-6">Product Designer &mdash; AI &amp; SaaS</p>
-      <h1 class="reveal reveal-d1 hero-headline mb-6">
-        I design systems that make AI feel&nbsp;<span style="color:#f5a623;">obvious</span>.
-      </h1>
-      <p class="reveal reveal-d2 body-text mx-auto mb-14" style="max-width:580px;">
-        Product designer focused on AI-native SaaS, workflow automation, and scalable UX architecture. Based in Lagos.
-      </p>
-      <div class="reveal reveal-d3 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="#work" class="pill-button primary btn-scale gap-2">
-          View Work
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="nav-actions">
+        <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="btn-cv hidden sm:inline-flex"
+          aria-label="Download CV (PDF)">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          CV
         </a>
-        <a href="#contact" class="pill-button ghost btn-scale">
-          Contact
-        </a>
+        <button class="hamburger" onclick="toggleNav()" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-  </div>
-  <div class="scroll-indicator">
-    <span class="scroll-label">Scroll</span>
-    <div class="scroll-indicator-line"></div>
-  </div>
-</section>
+  </nav>
 
-<!-- ====== ABOUT ====== -->
-<section id="about" class="section-alt py-32 md:py-44 relative overflow-hidden">
-  <div class="section-glow-bottom accent-strong"></div>
-  <div class="max-w-content mx-auto px-6">
-    <div class="max-w-[740px] mx-auto">
-      <p class="reveal section-label">About</p>
-      <h2 class="reveal reveal-d1 section-heading mb-8">
-        Systems thinker building at the intersection of AI and human-centred design.
-      </h2>
-      <div class="reveal reveal-d2 space-y-5 body-text">
-        <p>
-          I'm a product design student at LASU, driven by a conviction that the best AI products are invisible — not because they're hidden, but because they feel <em style="color:#f0ede6;">obvious</em>. I design workflows that reduce cognitive load, dashboards that surface insight without noise, and systems that respect the user's attention as the scarcest resource.
-        </p>
-        <p>
-          My approach combines systems-level thinking with hands-on prototyping: I map the full ecosystem before opening Figma, and I validate interaction patterns through low-fidelity tests before committing to pixels. I'm equally comfortable discussing API architecture as I am refining a micro-interaction easing curve.
-        </p>
-        <p>
-          Right now, I'm exploring how AI-native UX patterns can transform productivity tools — and looking for a team where I can contribute, learn, and ship.
-        </p>
-      </div>
-      <div class="reveal reveal-d3 flex flex-col sm:flex-row gap-8 mt-14 pt-10 border-t text-center sm:text-left" style="border-color:#3a3a4a;">
-        <div class="flex-1">
-          <p class="stat-label">Education</p>
-          <p style="font-size:1.0625rem;font-weight:500;color:#f0ede6;">LASU</p>
-          <p class="body-text" style="font-size:0.875rem;">B.Eng Electronics &amp; Computer Engineering &mdash; Expected 2027</p>
+  <div class="mob-backdrop" onclick="closeNav()" aria-hidden="true"></div>
+  <div class="mob-nav" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mob-close" onclick="closeNav()" aria-label="Close menu">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+    <a href="#work" onclick="closeNav()">Work</a>
+    <a href="#about" onclick="closeNav()">About</a>
+    <a href="#skills" onclick="closeNav()">Skills</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
+    <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="mob-cv" onclick="closeNav()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      Download CV
+    </a>
+  </div>
+
+  <!-- ====== HERO ====== -->
+  <section id="hero" aria-label="Introduction">
+    <!-- Wavy backdrop shapes -->
+    <div class="hero-blob" style="width:600px;height:600px;top:-150px;right:-100px;background:rgba(118,212,255,0.25);"
+      aria-hidden="true"></div>
+    <div class="hero-blob" style="width:500px;height:500px;bottom:-150px;left:-150px;background:rgba(237,249,255,0.9);"
+      aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-grid">
+        <div class="hero-text">
+
+          <h1 class="reveal r-d1" style="margin-bottom:1.5rem;color:var(--navy);font-weight:800;">
+            Designing systems that make AI feel <span class="accent-text" style="color:var(--ocean);">obvious</span>.
+          </h1>
+          <p class="reveal r-d2 text-body" style="margin-bottom:2.5rem;max-width:550px;color:var(--gray-600);">
+            Product designer focused on AI-native SaaS, workflow automation, and scalable UX architecture.
+          </p>
+          <div class="reveal r-d3" style="display:flex;flex-wrap:wrap;gap:1rem;">
+            <a href="#work" class="btn btn-primary">
+              View Work
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="btn btn-secondary"
+              aria-label="Download CV (PDF)">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Download CV
+            </a>
+          </div>
         </div>
-        <div class="flex-1">
-          <p class="stat-label">Status</p>
-          <p style="font-size:0.875rem;color:#f5a623;">
-            <span class="available-dot" style="margin-right:6px;"></span>
-            Open to internships &amp; junior product design roles
+
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Floating decoration rings -->
+          <div class="deco-ring" style="width:380px;height:380px;border-color:rgba(57,189,247,0.12);"></div>
+          <div class="deco-ring" style="width:420px;height:420px;border-color:rgba(57,189,247,0.06);"></div>
+
+          <!-- Large profile ring -->
+          <div class="profile-ring float">
+            <img src="assets/profile.png" alt="Olayinka Abdullah profile" width="300" height="300" loading="eager" fetchpriority="high">
+          </div>
+
+          <!-- Floating Statistics/Info cards -->
+          <div class="stat-float float f-d1" style="top:5%;right:-40px;">
+            <span class="stat-val" style="color:var(--ocean);">3</span>
+            <span class="stat-lbl">Concept<br>Projects</span>
+          </div>
+          <div class="stat-float float f-d2" style="bottom:10%;left:-60px;">
+            <span class="stat-val" style="color:var(--navy);font-size:1.25rem;">AI</span>
+            <span class="stat-lbl">Native UX<br>Specialist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})"
+      aria-hidden="true">
+      <span class="scroll-label">Scroll Down</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ====== WORK ====== -->
+  <section id="work" class="section-pad bg-alt" style="position:relative;overflow:hidden;">
+    <div class="section-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-content" style="text-align:center;margin-bottom:var(--space-4);">
+        <span class="reveal label-sm">Selected Work</span>
+        <h2 class="reveal r-d1" style="margin-bottom:0.75rem;">Featured projects</h2>
+        <p class="reveal r-d2 text-body">Concept projects exploring AI-native SaaS, marketplace UX, and automation
+          design.</p>
+      </div>
+      <div class="section-wide" style="margin-top:4rem;display:flex;flex-direction:column;gap:2rem;">
+        <article class="reveal card" style="overflow:hidden;">
+          <a href="#case-opsflow" class="card-link" style="display:block;padding:2rem 2.5rem;text-decoration:none;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
+              <span style="font-weight:700;font-size:2.5rem;color:rgba(57,189,247,0.07);line-height:1;user-select:none;"
+                aria-hidden="true">01</span>
+              <span class="type-badge">SaaS Concept</span>
+            </div>
+            <h3 style="margin-bottom:0.75rem;">OpsFlow AI</h3>
+            <p class="text-body" style="margin-bottom:1.5rem;">One workspace for team tasks, AI insights, and automated
+              workflows.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+              <span class="skill-pill-sm">AI-native UX</span>
+              <span class="skill-pill-sm">Workflow Design</span>
+              <span class="skill-pill-sm">Interaction Design</span>
+            </div>
+            <div class="img-frame preview-frame" style="margin-bottom:1.5rem;">
+              <img src="assets/opsflow-dashboard.png"
+                alt="OpsFlow AI Dashboard showing task overview and AI insight panel" width="1200" height="675"
+                loading="lazy">
+            </div>
+            <span class="chevron-link">
+              Read Case Study
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </article>
+
+        <article class="reveal r-d1 card" style="overflow:hidden;">
+          <a href="#case-campus" class="card-link" style="display:block;padding:2rem 2.5rem;text-decoration:none;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
+              <span style="font-weight:700;font-size:2.5rem;color:rgba(57,189,247,0.07);line-height:1;user-select:none;"
+                aria-hidden="true">02</span>
+              <span class="type-badge">Marketplace Concept</span>
+            </div>
+            <h3 style="margin-bottom:0.75rem;">Campus Commerce System</h3>
+            <p class="text-body" style="margin-bottom:1.5rem;">A student-first marketplace and delivery system built for
+              campus life.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+              <span class="skill-pill-sm">Operational UX</span>
+              <span class="skill-pill-sm">Information Architecture</span>
+              <span class="skill-pill-sm">Rapid Prototyping</span>
+            </div>
+            <div class="img-frame" style="margin-bottom:1.5rem;max-height:320px;overflow:hidden;">
+              <img src="assets/campus-browse.png" alt="Campus Commerce System vendor browse grid for students"
+                width="1200" height="600" loading="lazy">
+            </div>
+            <span class="chevron-link">
+              Read Case Study
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </article>
+
+        <article class="reveal r-d2 card" style="overflow:hidden;">
+          <a href="#case-workflow" class="card-link" style="display:block;padding:2rem 2.5rem;text-decoration:none;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
+              <span style="font-weight:700;font-size:2.5rem;color:rgba(57,189,247,0.07);line-height:1;user-select:none;"
+                aria-hidden="true">03</span>
+              <span class="type-badge">Automation UX Prototype</span>
+            </div>
+            <h3 style="margin-bottom:0.75rem;">AI Workflow Builder</h3>
+            <p class="text-body" style="margin-bottom:1.5rem;">A no-code canvas for building AI-assisted process
+              automations.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+              <span class="skill-pill-sm">Automation Logic</span>
+              <span class="skill-pill-sm">No-code / Low-code</span>
+              <span class="skill-pill-sm">SaaS Architecture</span>
+            </div>
+            <div class="img-frame preview-frame" style="margin-bottom:1.5rem;">
+              <img src="assets/workflow-canvas.png" alt="AI Workflow Builder canvas with node-based automation editor"
+                width="1200" height="675" loading="lazy">
+            </div>
+            <span class="chevron-link">
+              Read Case Study
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== DESIGN APPROACH ====== -->
+  <section class="section-pad" style="position:relative;overflow:hidden;">
+    <div class="section-glow section-glow-r" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-content" style="text-align:center;margin-bottom:3.5rem;">
+        <span class="reveal label-sm">Approach</span>
+        <h2 class="reveal r-d1" style="margin-bottom:1rem;">How I design</h2>
+        <p class="reveal r-d2 text-body">A structured process that balances systems thinking with hands-on craft.</p>
+      </div>
+      <div class="section-wide" style="display:grid;grid-template-columns:1fr;gap:1rem;">
+        <div style="display:grid;grid-template-columns:1fr;gap:2rem;">
+          <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+            <div class="card-flush" style="padding:1.5rem;">
+              <span
+                style="display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:0.5rem;">01&nbsp;&nbsp;Research</span>
+              <p class="text-sm" style="color:var(--text);">Map the full ecosystem. Understand users, constraints, and
+                context before opening any tool.</p>
+            </div>
+            <div class="card-flush" style="padding:1.5rem;">
+              <span
+                style="display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:0.5rem;">02&nbsp;&nbsp;Define</span>
+              <p class="text-sm" style="color:var(--text);">Narrow to core jobs-to-be-done. Scope ruthlessly. Every
+                feature must earn its place.</p>
+            </div>
+            <div class="card-flush" style="padding:1.5rem;">
+              <span
+                style="display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:0.5rem;">03&nbsp;&nbsp;Design</span>
+              <p class="text-sm" style="color:var(--text);">Low-fidelity tests before pixels. Validate interaction
+                patterns before committing to high fidelity.</p>
+            </div>
+            <div class="card-flush" style="padding:1.5rem;">
+              <span
+                style="display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:0.5rem;">04&nbsp;&nbsp;Prototype</span>
+              <p class="text-sm" style="color:var(--text);">Build interactive prototypes. Test with real users. Iterate
+                on feedback before shipping.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT ====== -->
+  <section id="about" class="section-pad bg-alt" style="position:relative;overflow:hidden;">
+    <div class="section-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-content">
+        <span class="reveal label-sm">About</span>
+        <h2 class="reveal r-d1" style="margin-bottom:2rem;">
+          Systems thinker building at the intersection of AI and human-centred design.
+        </h2>
+        <div class="reveal r-d2" style="display:flex;flex-direction:column;gap:1.5rem;">
+          <p class="text-body">
+            I'm a product design student at LASU, driven by a conviction that the best AI products are invisible: not
+            because they're hidden, but because they feel <strong
+              style="color:var(--text-heading);font-weight:600;">obvious</strong>. I design workflows that reduce
+            cognitive load, dashboards that surface insight without noise, and systems that respect the user's attention
+            as the scarcest resource.
+          </p>
+          <p class="text-body">
+            My approach combines systems-level thinking with hands-on prototyping: I map the full ecosystem before
+            opening Figma, and I validate interaction patterns through low-fidelity tests before committing to pixels.
+            I'm equally comfortable discussing API architecture as I am refining a micro-interaction easing curve.
+          </p>
+          <p class="text-body">
+            Right now, I'm exploring how AI-native UX patterns can transform productivity tools, and looking for a team
+            where I can contribute, learn, and ship.
           </p>
         </div>
+        <div class="reveal r-d3"
+          style="display:flex;flex-direction:column;gap:2rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--border);">
+          <div style="display:flex;flex-wrap:wrap;gap:2rem;">
+            <div>
+              <span class="label-xs" style="margin-bottom:0.5rem;">Education</span>
+              <p style="font-size:1.0625rem;font-weight:600;color:var(--text-heading);">LASU</p>
+              <p class="text-sm" style="color:var(--text);">B.Eng Electronics &amp; Computer Engineering (Expected 2027)
+              </p>
+            </div>
+            <div>
+              <span class="label-xs" style="margin-bottom:0.5rem;">Status</span>
+              <p
+                style="font-size:0.9375rem;color:var(--text-heading);font-weight:500;display:flex;align-items:center;gap:0.5rem;">
+                <span class="available-dot" style="flex-shrink:0;" aria-hidden="true"></span>
+                Open to internships &amp; junior product design roles
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== SKILLS ====== -->
-<section id="skills" class="py-32 md:py-44 relative overflow-hidden">
-  <div class="section-glow-bottom"></div>
-  <div class="max-w-content mx-auto px-6">
-    <div class="max-w-[740px] mx-auto text-center">
-      <p class="reveal section-label">Skills</p>
-      <h2 class="reveal reveal-d1 section-heading mb-14">Clusters of competence.</h2>
+  <!-- ====== SKILLS ====== -->
+  <section id="skills" class="section-pad" style="position:relative;overflow:hidden;">
+    <div class="section-glow section-glow-r" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-content" style="text-align:center;margin-bottom:3.5rem;">
+        <span class="reveal label-sm">Skills</span>
+        <h2 class="reveal r-d1">Tools &amp; capabilities</h2>
+      </div>
+      <div class="section-wide">
+        <div style="display:grid;grid-template-columns:1fr;gap:1rem;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+            <div class="reveal card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:1rem;">Design Practice</span>
+              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+                <span class="skill-pill">SaaS Interface Design</span>
+                <span class="skill-pill">Dashboard UX</span>
+                <span class="skill-pill">Interaction Design</span>
+                <span class="skill-pill">Information Architecture</span>
+              </div>
+            </div>
+            <div class="reveal r-d1 card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:1rem;">Systems Thinking</span>
+              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+                <span class="skill-pill">Workflow Design Systems</span>
+                <span class="skill-pill">AI-native UX</span>
+                <span class="skill-pill">Product Thinking</span>
+                <span class="skill-pill">API-aware Design</span>
+              </div>
+            </div>
+            <div class="reveal r-d2 card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:1rem;">Tools</span>
+              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+                <span class="skill-pill">Figma</span>
+                <span class="skill-pill">Lovable</span>
+                <span class="skill-pill">Notion</span>
+                <span class="skill-pill">Supabase</span>
+                <span class="skill-pill">No-code / Low-code</span>
+              </div>
+            </div>
+            <div class="reveal r-d3 card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:1rem;">Concepts</span>
+              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+                <span class="skill-pill">Automation Logic</span>
+                <span class="skill-pill">Rapid Prototyping</span>
+                <span class="skill-pill">SaaS Architecture</span>
+                <span class="skill-pill">Human-centred AI UX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="max-w-[740px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-14 gap-y-12">
-      <div class="reveal">
-        <p class="stat-label">Design Practice</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag">SaaS Interface Design</span>
-          <span class="skill-tag">Dashboard UX</span>
-          <span class="skill-tag">Interaction Design</span>
-          <span class="skill-tag">Information Architecture</span>
-        </div>
-      </div>
-      <div class="reveal reveal-d1">
-        <p class="stat-label">Systems Thinking</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag">Workflow Design Systems</span>
-          <span class="skill-tag">AI-native UX</span>
-          <span class="skill-tag">Product Thinking</span>
-          <span class="skill-tag">API-aware Design</span>
-        </div>
-      </div>
-      <div class="reveal reveal-d2">
-        <p class="stat-label">Tools</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Lovable</span>
-          <span class="skill-tag">Notion</span>
-          <span class="skill-tag">Supabase</span>
-          <span class="skill-tag">No-code / Low-code</span>
-        </div>
-      </div>
-      <div class="reveal reveal-d3">
-        <p class="stat-label">Concepts</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag">Automation Logic</span>
-          <span class="skill-tag">Rapid Prototyping</span>
-          <span class="skill-tag">SaaS Architecture</span>
-          <span class="skill-tag">Human-centred AI UX</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== WORK ====== -->
-<section id="work" class="section-alt py-32 md:py-44 relative overflow-hidden">
-  <div class="section-glow-bottom accent-strong"></div>
-  <div class="max-w-content mx-auto px-6">
-    <div class="max-w-[740px] mx-auto text-center mb-3">
-      <p class="reveal section-label">Selected Work</p>
-      <h2 class="reveal reveal-d1 section-heading mb-3">Case studies in craft.</h2>
-      <p class="reveal reveal-d2 body-text">Concept projects exploring AI-native SaaS, marketplace UX, and automation design.</p>
-    </div>
-    <div class="max-w-[740px] mx-auto mt-16 space-y-8">
-      <div class="reveal glass-card">
-        <a href="#case-opsflow" class="block p-8 md:p-10 no-underline">
-          <div class="flex items-start justify-between mb-5">
-            <span class="case-number">01</span>
+  <!-- ====== CASE STUDY: OPSFLOW AI ====== -->
+  <section id="case-opsflow" class="section-pad bg-alt" style="position:relative;overflow:hidden;">
+    <div class="section-glow section-glow-r" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-content">
+        <div class="reveal" style="margin-bottom:3rem;">
+          <span class="label-sm">Case Study 01</span>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.5rem;margin-top:1.5rem;">
+            <h2 style="margin:0;">OpsFlow AI</h2>
             <span class="type-badge">SaaS Concept</span>
           </div>
-          <h3 style="font-size:1.5rem;font-weight:600;color:#f0ede6;letter-spacing:-0.015em;margin-bottom:0.5rem;">OpsFlow AI</h3>
-          <p class="body-text mb-6">One workspace for team tasks, AI insights, and automated workflows.</p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">AI-native UX</span>
-            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Workflow Design</span>
-            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Interaction Design</span>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem 2rem;margin-top:0.75rem;">
+            <span class="text-sm" style="color:var(--text-muted);">Role: Product Designer</span>
+            <span class="text-sm" style="color:var(--text-muted);">Duration: 4 weeks</span>
+            <span class="text-sm" style="color:var(--text-muted);">Tools: Figma &middot; Lovable &middot; Notion</span>
           </div>
-          <div class="img-placeholder preview-image mb-6">
-            <img src="assets/opsflow-dashboard.png" alt="OpsFlow AI Dashboard">
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:3rem;">
+          <div class="reveal r-d1">
+            <span class="label-xs" style="margin-bottom:0.75rem;">Problem</span>
+            <p class="text-body">
+              Remote teams juggling Slack, Notion, and Jira lose context switching between them. No single surface
+              combines task management with AI-generated status insights and visual workflow automation, leaving PMs and
+              ops leads manually stitching information together.
+            </p>
           </div>
-          <span class="chevron-link">
-            Read Case Study
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
+
+          <div class="reveal r-d2">
+            <span class="label-xs" style="margin-bottom:1rem;">Process</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4) var(--space-6);">
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
+                  Discovery</p>
+                <p class="text-sm" style="color:var(--text);">Mapped pain points of 5 remote team personas (PM, Dev,
+                  Designer, Ops Lead, Founder); identified top 3 context-switching triggers</p>
+              </div>
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Define
+                </p>
+                <p class="text-sm" style="color:var(--text);">Narrowed to 3 core jobs-to-be-done: <strong
+                    style="color:var(--text-heading);font-weight:500;">track work</strong>, <strong
+                    style="color:var(--text-heading);font-weight:500;">understand status</strong>, <strong
+                    style="color:var(--text-heading);font-weight:500;">automate repetition</strong></p>
+              </div>
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Design
+                </p>
+                <p class="text-sm" style="color:var(--text);">Built full IA, component library, and 12-screen
+                  high-fidelity Figma prototype; designed AI summary card system</p>
+              </div>
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
+                  Prototype</p>
+                <p class="text-sm" style="color:var(--text);">Built interactive workflow builder in Lovable; ran 3 peer
+                  usability sessions and iterated on node editor layout</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal r-d3">
+            <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
+            <div class="screen-grid">
+              <div class="img-frame"><img src="assets/opsflow-dashboard.png"
+                  alt="OpsFlow AI dashboard showing task list and AI insight panel" width="800" height="500"
+                  loading="lazy"></div>
+              <div class="img-frame"><img src="assets/opsflow-workflow.png"
+                  alt="OpsFlow workflow builder visual node editor" width="800" height="500" loading="lazy"></div>
+              <div class="img-frame"><img src="assets/opsflow-analytics.png" alt="OpsFlow analytics dashboard"
+                  width="800" height="500" loading="lazy"></div>
+            </div>
+          </div>
+
+          <div class="reveal r-d4">
+            <span class="label-xs" style="margin-bottom:1rem;">Outcomes</span>
+            <ul class="outcomes">
+              <li>Task status lookup reduced from 4 clicks to 1 via persistent AI summary card</li>
+              <li>Workflow builder "create a trigger" task completed at 100% by 3 peer testers with no guidance</li>
+              <li>Dashboard layout scored 4.6/5 on perceived clarity (informal 5-person usability session)</li>
+            </ul>
+          </div>
+
+          <div class="reveal r-d5">
+            <span class="label-xs" style="margin-bottom:0.75rem;">What I'd Do Next</span>
+            <p class="text-body">Real Supabase backend for live task sync &middot; Multi-workspace support &middot; AI
+              prompt customisation per team</p>
+          </div>
+        </div>
       </div>
-      <div class="reveal reveal-d1 glass-card">
-        <a href="#case-campus" class="block p-8 md:p-10 no-underline">
-          <div class="flex items-start justify-between mb-5">
-            <span class="case-number">02</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ====== CASE STUDY: CAMPUS COMMERCE ====== -->
+  <section id="case-campus" class="section-pad" style="position:relative;overflow:hidden;">
+    <div class="section-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-content">
+        <div class="reveal" style="margin-bottom:3rem;">
+          <span class="label-sm">Case Study 02</span>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.5rem;margin-top:1.5rem;">
+            <h2 style="margin:0;">Campus Commerce System</h2>
             <span class="type-badge">Marketplace Concept</span>
           </div>
-          <h3 style="font-size:1.5rem;font-weight:600;color:#f0ede6;letter-spacing:-0.015em;margin-bottom:0.5rem;">Campus Commerce System</h3>
-          <p class="body-text mb-6">A student-first marketplace and delivery system built for campus life.</p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Operational UX</span>
-            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Information Architecture</span>
-            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Rapid Prototyping</span>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem 2rem;margin-top:0.75rem;">
+            <span class="text-sm" style="color:var(--text-muted);">Role: Product Designer</span>
+            <span class="text-sm" style="color:var(--text-muted);">Duration: 3 weeks</span>
+            <span class="text-sm" style="color:var(--text-muted);">Tools: Figma &middot; Paper &middot; Notion</span>
           </div>
-          <div class="img-placeholder mb-6 campus-preview">
-            <img src="assets/campus-browse.png" alt="Campus Vendor Browse Grid">
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:3rem;">
+          <div class="reveal r-d1" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+            <div>
+              <span class="label-xs" style="margin-bottom:0.75rem;">Problem</span>
+              <p class="text-body" style="font-size:0.9375rem;">Students at large Nigerian universities rely on informal
+                WhatsApp groups and verbal communication to order from campus vendors. No structured ordering, inventory
+                tracking, or vendor management exists.</p>
+            </div>
+            <div>
+              <span class="label-xs" style="margin-bottom:0.75rem;">My Role</span>
+              <p class="text-body" style="font-size:0.9375rem;">End-to-end product design: research, IA, wireframes,
+                high-fidelity UI, and prototype testing with 4 LASU students.</p>
+            </div>
           </div>
-          <span class="chevron-link">
-            Read Case Study
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
+
+          <div class="reveal r-d2">
+            <span class="label-xs" style="margin-bottom:1rem;">Process</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4) var(--space-6);">
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
+                  Discovery</p>
+                <p class="text-sm" style="color:var(--text);">Observed campus vendor-student transactions at LASU;
+                  documented 4 core friction points in the order-to-delivery flow</p>
+              </div>
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Define
+                </p>
+                <p class="text-sm" style="color:var(--text);">Scoped MVP to 3 actor types: <strong
+                    style="color:var(--text-heading);font-weight:500;">Student</strong>, <strong
+                    style="color:var(--text-heading);font-weight:500;">Vendor</strong>, <strong
+                    style="color:var(--text-heading);font-weight:500;">Admin</strong></p>
+              </div>
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Design
+                </p>
+                <p class="text-sm" style="color:var(--text);">Student: browse → cart → confirm → track. Vendor: live
+                  orders + inventory. Admin: approvals + analytics.</p>
+              </div>
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
+                  Prototype</p>
+                <p class="text-sm" style="color:var(--text);">Paper-to-Figma flow; tested with 4 LASU students; iterated
+                  on cart confirmation step based on feedback</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal r-d3">
+            <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
+            <div class="screen-stack">
+              <div class="img-frame"><img src="assets/campus-browse.png" alt="Campus Commerce vendor browse screen"
+                  width="800" height="500" loading="lazy"></div>
+              <div class="img-frame"><img src="assets/campus-vendor.png" alt="Vendor dashboard with order queue"
+                  width="800" height="500" loading="lazy"></div>
+              <div class="img-frame"><img src="assets/campus-admin.png" alt="Admin panel with vendor approval"
+                  width="800" height="500" loading="lazy"></div>
+            </div>
+          </div>
+
+          <div class="reveal r-d4">
+            <span class="label-xs" style="margin-bottom:1rem;">Outcomes</span>
+            <ul class="outcomes">
+              <li>Full student order flow condensed to 3 steps from product discovery to confirmation</li>
+              <li>Vendor onboarding form completed in under 4 minutes by all test participants</li>
+              <li>Admin permission hierarchy validated as clear and unambiguous in peer design review</li>
+            </ul>
+          </div>
+
+          <div class="reveal r-d5">
+            <span class="label-xs" style="margin-bottom:0.75rem;">What I'd Do Next</span>
+            <p class="text-body">Campus GPS delivery zone logic &middot; Lightweight PWA shell &middot; Vendor
+              notification system</p>
+          </div>
+        </div>
       </div>
-      <div class="reveal reveal-d2 glass-card">
-        <a href="#case-workflow" class="block p-8 md:p-10 no-underline">
-          <div class="flex items-start justify-between mb-5">
-            <span class="case-number">03</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ====== CASE STUDY: AI WORKFLOW BUILDER ====== -->
+  <section id="case-workflow" class="section-pad bg-alt" style="position:relative;overflow:hidden;">
+    <div class="section-glow section-glow-r" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-content">
+        <div class="reveal" style="margin-bottom:3rem;">
+          <span class="label-sm">Case Study 03</span>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.5rem;margin-top:1.5rem;">
+            <h2 style="margin:0;">AI Workflow Builder</h2>
             <span class="type-badge">Automation UX Prototype</span>
           </div>
-          <h3 style="font-size:1.5rem;font-weight:600;color:#f0ede6;letter-spacing:-0.015em;margin-bottom:0.5rem;">AI Workflow Builder</h3>
-          <p class="body-text mb-6">A no-code canvas for building AI-assisted process automations.</p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">Automation Logic</span>
-            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">No-code / Low-code</span>
-            <span class="skill-tag" style="font-size:0.75rem;padding:0.2rem 0.7rem;">SaaS Architecture</span>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem 2rem;margin-top:0.75rem;">
+            <span class="text-sm" style="color:var(--text-muted);">Role: Product Designer</span>
+            <span class="text-sm" style="color:var(--text-muted);">Duration: 3 weeks</span>
+            <span class="text-sm" style="color:var(--text-muted);">Tools: Figma &middot; Lovable</span>
           </div>
-          <div class="img-placeholder preview-image mb-6">
-            <img src="assets/workflow-canvas.png" alt="AI Workflow Builder Canvas">
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:3rem;">
+          <div class="reveal r-d1">
+            <span class="label-xs" style="margin-bottom:0.75rem;">Problem</span>
+            <p class="text-body">
+              Non-technical operators want to automate repetitive tasks but tools like Zapier overwhelm them with
+              complexity and don't natively support AI-step logic. The cognitive load of learning trigger/action/filter
+              paradigms creates drop-off before the first automation is built.
+            </p>
           </div>
-          <span class="chevron-link">
-            Read Case Study
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ====== CASE STUDY: OPSFLOW AI ====== -->
-<section id="case-opsflow" class="py-32 md:py-44 relative overflow-hidden">
-  <div class="section-glow-bottom"></div>
-  <div class="max-w-content mx-auto px-6">
-    <div class="reveal max-w-[740px] mx-auto mb-16">
-      <p class="section-label">Case Study 01</p>
-      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-5">
-        <h2 class="cs-heading">OpsFlow AI</h2>
-        <span class="type-badge">SaaS Concept</span>
-      </div>
-      <div class="flex flex-wrap gap-x-8 gap-y-1" style="color:rgba(240,237,230,0.3);font-size:0.8125rem;">
-        <span>Role: Product Designer</span>
-        <span>Duration: 4 weeks</span>
-        <span>Tools: Figma &middot; Lovable &middot; Notion</span>
-      </div>
-    </div>
+          <div class="reveal r-d2">
+            <span class="label-xs" style="margin-bottom:1rem;">Process</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4) var(--space-6);">
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
+                  Discovery</p>
+                <p class="text-sm" style="color:var(--text);">Audited UX patterns in Zapier, Make, and n8n; identified 3
+                  primary cognitive load bottlenecks for non-technical users</p>
+              </div>
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Define
+                </p>
+                <p class="text-sm" style="color:var(--text);">Simplified to 3 node types: <strong
+                    style="color:var(--text-heading);font-weight:500;">Trigger</strong>, <strong
+                    style="color:var(--text-heading);font-weight:500;">Action</strong>, <strong
+                    style="color:var(--text-heading);font-weight:500;">AI Step</strong> | progressive disclosure hides
+                  advanced config</p>
+              </div>
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Design
+                </p>
+                <p class="text-sm" style="color:var(--text);">Drag-and-connect node editor; AI Step config panel with
+                  input → prompt template → output mapping</p>
+              </div>
+              <div class="timeline-step">
+                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
+                  Prototype</p>
+                <p class="text-sm" style="color:var(--text);">Built 2 sample automation flows as interactive prototype;
+                  tested with 2 non-technical participants</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="reveal reveal-d1 max-w-[740px] mx-auto mb-14">
-      <p class="section-label">Problem</p>
-      <p class="body-text">
-        Remote teams juggling Slack, Notion, and Jira lose context switching between them. No single surface combines task management with AI-generated status insights and visual workflow automation — leaving PMs and ops leads manually stitching information together.
-      </p>
-    </div>
+          <div class="reveal r-d3">
+            <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
+            <div class="screen-grid">
+              <div class="img-frame"><img src="assets/workflow-canvas.png" alt="AI Workflow Builder canvas" width="800"
+                  height="500" loading="lazy"></div>
+              <div class="img-frame"><img src="assets/workflow-ai-config.png" alt="AI step configuration panel"
+                  width="800" height="500" loading="lazy"></div>
+              <div class="img-frame"><img src="assets/workflow-runlog.png"
+                  alt="Automation run log with status indicators" width="800" height="500" loading="lazy"></div>
+            </div>
+          </div>
 
-    <div class="reveal reveal-d2 max-w-[740px] mx-auto mb-14">
-      <p class="section-label mb-8">Process</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Discovery</p>
-          <p class="body-text" style="font-size:0.875rem;">Mapped pain points of 5 remote team personas (PM, Dev, Designer, Ops Lead, Founder); identified top 3 context-switching triggers</p>
-        </div>
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Define</p>
-          <p class="body-text" style="font-size:0.875rem;">Narrowed to 3 core jobs-to-be-done: <em style="color:#f0ede6;">track work</em>, <em style="color:#f0ede6;">understand status</em>, <em style="color:#f0ede6;">automate repetition</em></p>
-        </div>
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Design</p>
-          <p class="body-text" style="font-size:0.875rem;">Built full IA, component library, and 12-screen high-fidelity Figma prototype; designed AI summary card system</p>
-        </div>
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Prototype</p>
-          <p class="body-text" style="font-size:0.875rem;">Built interactive workflow builder in Lovable; ran 3 peer usability sessions and iterated on node editor layout</p>
-        </div>
-      </div>
-    </div>
+          <div class="reveal r-d4">
+            <span class="label-xs" style="margin-bottom:1rem;">Outcomes</span>
+            <ul class="outcomes">
+              <li>3-node model reduced conceptual complexity vs. 7+ node types in comparable tools</li>
+              <li>"Build your first automation" onboarding completed at 100% by both non-technical test participants
+                with no prompting</li>
+              <li>AI step configuration pattern (input → prompt → output) rated as intuitive by all testers</li>
+            </ul>
+          </div>
 
-    <div class="reveal reveal-d3 max-w-[740px] mx-auto mb-14">
-      <p class="section-label mb-6">Key Screens</p>
-      <div class="screen-grid">
-        <div class="img-placeholder">
-          <img src="assets/opsflow-dashboard.png" alt="OpsFlow AI Dashboard">
-        </div>
-        <div class="img-placeholder">
-          <img src="assets/opsflow-workflow.png" alt="OpsFlow Workflow Builder">
-        </div>
-        <div class="img-placeholder">
-          <img src="assets/opsflow-analytics.png" alt="OpsFlow Analytics">
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal reveal-d4 max-w-[740px] mx-auto mb-14">
-      <p class="section-label mb-6">Outcomes</p>
-      <ul class="outcomes-list">
-        <li>Task status lookup reduced from 4 clicks to 1 via persistent AI summary card</li>
-        <li>Workflow builder &ldquo;create a trigger&rdquo; task completed at 100% by 3 peer testers with no guidance</li>
-        <li>Dashboard layout scored 4.6/5 on perceived clarity (informal 5-person usability session)</li>
-      </ul>
-    </div>
-
-    <div class="reveal reveal-d5 max-w-[740px] mx-auto">
-      <p class="section-label mb-4">What I'd Do Next</p>
-      <p class="body-text">
-        Real Supabase backend for live task sync &middot; Multi-workspace support &middot; AI prompt customisation per team
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="max-w-content mx-auto px-6"><div class="section-divider"></div></div>
-
-<!-- ====== CASE STUDY: CAMPUS COMMERCE ====== -->
-<section id="case-campus" class="section-alt py-32 md:py-44 relative overflow-hidden">
-  <div class="section-glow-bottom accent-strong"></div>
-  <div class="max-w-content mx-auto px-6">
-    <div class="reveal max-w-[740px] mx-auto mb-16">
-      <p class="section-label">Case Study 02</p>
-      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-5">
-        <h2 class="cs-heading">Campus Commerce System</h2>
-        <span class="type-badge">Marketplace Concept</span>
-      </div>
-      <div class="flex flex-wrap gap-x-8 gap-y-1" style="color:rgba(240,237,230,0.3);font-size:0.8125rem;">
-        <span>Role: Product Designer</span>
-        <span>Duration: 3 weeks</span>
-        <span>Tools: Figma &middot; Paper &middot; Notion</span>
-      </div>
-    </div>
-
-    <div class="reveal reveal-d1 max-w-[740px] mx-auto mb-14">
-      <p class="section-label">Problem</p>
-      <p class="body-text">
-        Students at large Nigerian universities rely on informal WhatsApp groups and verbal communication to order food and goods from campus vendors. There is no structured ordering, inventory tracking, or vendor management layer — creating friction for students and lost revenue for vendors.
-      </p>
-    </div>
-
-    <div class="reveal reveal-d2 max-w-[740px] mx-auto mb-14">
-      <p class="section-label mb-8">Process</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Discovery</p>
-          <p class="body-text" style="font-size:0.875rem;">Observed campus vendor-student transactions at LASU; documented 4 core friction points in the order-to-delivery flow</p>
-        </div>
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Define</p>
-          <p class="body-text" style="font-size:0.875rem;">Scoped MVP to 3 actor types: <em style="color:#f0ede6;">Student</em>, <em style="color:#f0ede6;">Vendor</em>, <em style="color:#f0ede6;">Admin</em>; mapped each actor's primary jobs-to-be-done</p>
-        </div>
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Design</p>
-          <p class="body-text" style="font-size:0.875rem;">Designed student ordering flow (browse &rarr; cart &rarr; confirm &rarr; track), vendor dashboard (orders + inventory), and admin panel (vendor approval + analytics)</p>
-        </div>
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Prototype</p>
-          <p class="body-text" style="font-size:0.875rem;">Paper-to-Figma flow; tested ordering flow with 4 LASU students; iterated on cart confirmation step</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal reveal-d3 max-w-[740px] mx-auto mb-14">
-      <p class="section-label mb-6">Key Screens</p>
-      <div class="screen-stack">
-        <div class="img-placeholder">
-          <img src="assets/campus-browse.png" alt="Campus Vendor Browse Grid">
-        </div>
-        <div class="img-placeholder">
-          <img src="assets/campus-vendor.png" alt="Vendor Dashboard">
-        </div>
-        <div class="img-placeholder">
-          <img src="assets/campus-admin.png" alt="Admin Panel">
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal reveal-d4 max-w-[740px] mx-auto mb-14">
-      <p class="section-label mb-6">Outcomes</p>
-      <ul class="outcomes-list">
-        <li>Full student order flow condensed to 3 steps from product discovery to confirmation</li>
-        <li>Vendor onboarding form completed in under 4 minutes by all test participants</li>
-        <li>Admin permission hierarchy validated as clear and unambiguous in peer design review</li>
-      </ul>
-    </div>
-
-    <div class="reveal reveal-d5 max-w-[740px] mx-auto">
-      <p class="section-label mb-4">What I'd Do Next</p>
-      <p class="body-text">
-        Campus GPS delivery zone logic &middot; Lightweight PWA shell &middot; Vendor notification system
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="max-w-content mx-auto px-6"><div class="section-divider"></div></div>
-
-<!-- ====== CASE STUDY: AI WORKFLOW BUILDER ====== -->
-<section id="case-workflow" class="py-32 md:py-44 relative overflow-hidden">
-  <div class="section-glow-bottom"></div>
-  <div class="max-w-content mx-auto px-6">
-    <div class="reveal max-w-[740px] mx-auto mb-16">
-      <p class="section-label">Case Study 03</p>
-      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-5">
-        <h2 class="cs-heading">AI Workflow Builder</h2>
-        <span class="type-badge">Automation UX Prototype</span>
-      </div>
-      <div class="flex flex-wrap gap-x-8 gap-y-1" style="color:rgba(240,237,230,0.3);font-size:0.8125rem;">
-        <span>Role: Product Designer</span>
-        <span>Duration: 3 weeks</span>
-        <span>Tools: Figma &middot; Lovable</span>
-      </div>
-    </div>
-
-    <div class="reveal reveal-d1 max-w-[740px] mx-auto mb-14">
-      <p class="section-label">Problem</p>
-      <p class="body-text">
-        Non-technical operators want to automate repetitive tasks (e.g. &ldquo;when a form is submitted, summarise with AI and notify the team&rdquo;) but tools like Zapier overwhelm them with complexity and don't natively support AI-step logic. The cognitive load of learning trigger/action/filter paradigms creates drop-off before the first automation is built.
-      </p>
-    </div>
-
-    <div class="reveal reveal-d2 max-w-[740px] mx-auto mb-14">
-      <p class="section-label mb-8">Process</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Discovery</p>
-          <p class="body-text" style="font-size:0.875rem;">Audited UX patterns in Zapier, Make, and n8n; identified 3 primary cognitive load bottlenecks for non-technical users</p>
-        </div>
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Define</p>
-          <p class="body-text" style="font-size:0.875rem;">Simplified automation model to 3 node types only: <em style="color:#f0ede6;">Trigger</em>, <em style="color:#f0ede6;">Action</em>, <em style="color:#f0ede6;">AI Step</em> &mdash; progressive disclosure hides advanced config</p>
-        </div>
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Design</p>
-          <p class="body-text" style="font-size:0.875rem;">Visual canvas with drag-and-connect node editor; designed AI Step config panel (input &rarr; prompt template &rarr; output mapping)</p>
-        </div>
-        <div class="timeline-step">
-          <p style="font-size:0.875rem;font-weight:500;color:#f0ede6;margin-bottom:0.25rem;">Prototype</p>
-          <p class="body-text" style="font-size:0.875rem;">Built 2 sample automation flows as interactive prototype; tested with 2 non-technical participants</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal reveal-d3 max-w-[740px] mx-auto mb-14">
-      <p class="section-label mb-6">Key Screens</p>
-      <div class="screen-grid">
-        <div class="img-placeholder">
-          <img src="assets/workflow-canvas.png" alt="AI Workflow Builder Canvas">
-        </div>
-        <div class="img-placeholder">
-          <img src="assets/workflow-ai-config.png" alt="AI Step Configuration Panel">
-        </div>
-        <div class="img-placeholder">
-          <img src="assets/workflow-runlog.png" alt="Automation Run Log">
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal reveal-d4 max-w-[740px] mx-auto mb-14">
-      <p class="section-label mb-6">Outcomes</p>
-      <ul class="outcomes-list">
-        <li>3-node model reduced conceptual complexity vs. 7+ node types in comparable tools</li>
-        <li>&ldquo;Build your first automation&rdquo; onboarding flow completed at 100% by both non-technical test participants with no prompting</li>
-        <li>AI step configuration pattern (input &rarr; prompt &rarr; output) rated as intuitive by all testers</li>
-      </ul>
-    </div>
-
-    <div class="reveal reveal-d5 max-w-[740px] mx-auto">
-      <p class="section-label mb-4">What I'd Do Next</p>
-      <p class="body-text">
-        LLM prompt templates per industry use-case &middot; JSON export for developer handoff &middot; Conditional branching (if/else) node type
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ====== CONTACT ====== -->
-<section id="contact" class="relative overflow-hidden py-32 md:py-44">
-  <div class="ruled-grid-subtle absolute inset-0"></div>
-  <div class="max-w-content mx-auto px-6 relative z-10">
-    <div class="max-w-[600px] mx-auto text-center">
-      <div class="reveal contact-glass">
-        <p class="section-label">Get in Touch</p>
-        <h2 class="reveal reveal-d1" style="font-weight:600;font-size:2.5rem;color:#f0ede6;letter-spacing:-0.02em;line-height:1.1;margin-bottom:1.25rem;">
-          Let's build something <span style="color:#f5a623;">obvious</span> together.
-        </h2>
-        <p class="reveal reveal-d2 body-text mb-10" style="max-width:420px;margin-left:auto;margin-right:auto;">
-          I'm actively seeking internship and junior product design roles for 2026–2027. If you're building AI or SaaS products and value systems thinking, let's talk.
-        </p>
-        <div class="reveal reveal-d3 flex flex-col items-center gap-4">
-          <a href="mailto:lolayinka2005@gmail.com" class="pill-button primary btn-scale gap-2">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M24 5.457v13.256c0 .71-.571 1.282-1.282 1.282H1.282C.571 19.995 0 19.424 0 18.713V5.457l12 8.208 12-8.208z" fill="#EA4335"/><path d="M24 5.457L12 13.665 0 5.457V3.282C0 2.571.571 2 1.282 2h21.436C23.429 2 24 2.571 24 3.282v2.175z" fill="#34A853"/><path d="M0 5.457v2.175l12 8.208 12-8.208V5.457l-12 8.208L0 5.457z" fill="#FBBC05"/><path d="M0 3.282v2.175l12 8.208 12-8.208V3.282C24 2.571 23.429 2 22.718 2H1.282C.571 2 0 2.571 0 3.282z" fill="#4285F4"/></svg>
-            lolayinka2005@gmail.com
-          </a>
-          <div class="flex items-center gap-2 mt-1">
-            <span class="available-dot"></span>
-            <span style="font-size:0.875rem;color:rgba(240,237,230,0.45);">Available for opportunities</span>
+          <div class="reveal r-d5">
+            <span class="label-xs" style="margin-bottom:0.75rem;">What I'd Do Next</span>
+            <p class="text-body">LLM prompt templates per industry use-case &middot; JSON export for developer handoff
+              &middot; Conditional branching (if/else) node type</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== FOOTER ====== -->
-<footer class="py-8 border-t" style="border-color:#3a3a4a;">
-  <div class="max-w-content mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <a href="#hero" class="flex items-center gap-2.5 no-underline group">
-      <span class="w-6 h-6 rounded-[5px] border border-muted flex items-center justify-center text-[0.5625rem] font-medium text-accent transition-all duration-300 group-hover:border-muted-light">OA</span>
-      <span style="font-size:0.75rem;color:rgba(240,237,230,0.25);">&copy; 2026 Olayinka Abdullah</span>
-    </a>
-    <div class="flex items-center gap-6">
-      <a href="mailto:lolayinka2005@gmail.com" class="footer-link">Email</a>
-      <a href="https://linkedin.com/in/olayinka-abdullah-bbab6126a" class="footer-link" target="_blank">LinkedIn</a>
+  <!-- ====== TESTIMONIALS ====== -->
+  <!-- Removed per portfolio review: single peer testimonial weakens credibility;
+       better to grow this section with professional references later -->
+
+
+  <!-- ====== CONTACT ====== -->
+  <section id="contact" class="section-pad bg-soft" style="position:relative;overflow:hidden;">
+    <div class="section-glow" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:10;">
+      <div style="max-width:620px;margin:0 auto;text-align:center;">
+        <div class="reveal card-flush" style="padding:3rem 2.5rem;border-radius:var(--radius-xl);">
+          <span class="label-sm">Get in Touch</span>
+          <h2 class="reveal r-d1" style="margin-top:0.5rem;margin-bottom:1.25rem;">
+            Let's build something <span class="accent-text">obvious</span> together.
+          </h2>
+          <p class="reveal r-d2 text-body" style="max-width:480px;margin:0 auto 2.5rem;">
+            I'm actively seeking internship and junior product design roles for 2026–2027. If you're building AI or SaaS
+            products and value systems thinking, let's talk.
+          </p>
+          <div class="reveal r-d3" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
+            <a href="mailto:lolayinka2005@gmail.com" class="btn btn-primary" style="font-size:1rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              lolayinka2005@gmail.com
+            </a>
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-top:0.5rem;">
+              <span class="available-dot" aria-hidden="true"></span>
+              <span style="font-size:0.875rem;color:var(--text);">Available for opportunities</span>
+            </div>
+            <div style="margin-top:0.5rem;">
+              <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="btn btn-ghost" style="font-size:0.875rem;"
+                aria-label="Download CV (PDF)">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script>
-  (function() {
-    var nav = document.getElementById('nav');
-    var ticking = false;
-    function updateNav() {
-      if (window.scrollY > 60) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <a href="#hero" style="display:flex;align-items:center;gap:0.75rem;">
+        <span
+          style="width:1.75rem;height:1.75rem;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:0.5625rem;font-weight:700;color:rgba(255,255,255,0.4);">OA</span>
+        <span style="font-size:0.75rem;color:rgba(255,255,255,0.25);">&copy; 2026 Olayinka Abdullah</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:2rem;">
+        <a href="mailto:lolayinka2005@gmail.com" class="footer-link">Email</a>
+        <a href="https://linkedin.com/in/olayinka-abdullah-bbab6126a" class="footer-link" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav-root');
+      var ticking = false;
+      function updateNav() {
+        if (window.scrollY > 60) { nav.classList.add('scrolled'); }
+        else { nav.classList.remove('scrolled'); }
+        ticking = false;
       }
-      ticking = false;
-    }
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(updateNav);
-        ticking = true;
-      }
-    });
-    updateNav();
-  })();
-
-  (function() {
-    var reveals = document.querySelectorAll('.reveal');
-    if (!reveals.length) return;
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+      window.addEventListener('scroll', function () {
+        if (!ticking) { window.requestAnimationFrame(updateNav); ticking = true; }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { observer.observe(el); });
-  })();
+      updateNav();
+    })();
 
-  (function() {
-    var links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        var targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        var target = document.querySelector(targetId);
-        if (target) {
-          e.preventDefault();
-          var targetPos = target.getBoundingClientRect().top + window.pageYOffset - 56;
-          window.scrollTo({ top: targetPos, behavior: 'smooth' });
-        }
+    (function () {
+      var reveals = document.querySelectorAll('.reveal');
+      if (!reveals.length) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function (el) { observer.observe(el); });
+    })();
+
+    (function () {
+      var links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            var targetPos = target.getBoundingClientRect().top + window.pageYOffset - 64;
+            window.scrollTo({ top: targetPos, behavior: 'smooth' });
+          }
+        });
       });
-    });
-  })();
+    })();
 
-  // ====== Mobile Nav ======
-  window.toggleMobileNav = function() {
-    var nav = document.querySelector('.mobile-nav');
-    var backdrop = document.querySelector('.mobile-nav-backdrop');
-    var btn = document.querySelector('.nav-hamburger');
-    nav.classList.toggle('active');
-    backdrop.classList.toggle('active');
-    btn.classList.toggle('active');
-  };
-  window.closeMobileNav = function() {
-    document.querySelector('.mobile-nav').classList.remove('active');
-    document.querySelector('.mobile-nav-backdrop').classList.remove('active');
-    document.querySelector('.nav-hamburger').classList.remove('active');
-  };
+    (function () {
+      var navBtn = document.querySelector('.hamburger');
+      var nav = document.querySelector('.mob-nav');
+      var backdrop = document.querySelector('.mob-backdrop');
+      window.toggleNav = function () {
+        nav.classList.toggle('active');
+        backdrop.classList.toggle('active');
+        navBtn.classList.toggle('active');
+        var expanded = navBtn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+        navBtn.setAttribute('aria-expanded', expanded);
+      };
+      window.closeNav = function () {
+        nav.classList.remove('active');
+        backdrop.classList.remove('active');
+        navBtn.classList.remove('active');
+        navBtn.setAttribute('aria-expanded', 'false');
+      };
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+    })();
 
-  // ====== Chat Click-outside & Escape ======
-  document.addEventListener('click', function(e) {
-    var win = document.getElementById('agent-chat-win');
-    var btn = document.getElementById('agent-chat-btn');
-    if (win.classList.contains('active') &&
-        !win.contains(e.target) &&
-        !btn.contains(e.target)) {
-      win.classList.remove('active');
-    }
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      var win = document.getElementById('agent-chat-win');
-      if (win.classList.contains('active')) win.classList.remove('active');
-      closeMobileNav();
-    }
-  });
-
-  // ====== Olaflay Chat Logic ======
-
-  function id(id) { return document.getElementById(id); }
-
-  window.toggleSuggestions = function() {
-    document.querySelector('.suggestions-wrap').classList.toggle('collapsed');
-  };
-
-  window.toggleAgentChat = function() {
-    var win = id('agent-chat-win');
-    win.classList.toggle('active');
-    if (win.classList.contains('active')) {
-      setTimeout(function() { id('agent-chat-input').focus(); }, 300);
-    }
-  };
-
-  function onUserMessage(text) {
-    text = text.trim();
-    if (!text) return;
-
-    id('agent-chat-input').value = '';
-    appendMessage('user', text);
-
-    var responseText = "";
-    var toolActions = [];
-    var sectionLink = "";
-    var lowerText = text.toLowerCase();
-
-    if (lowerText.indexOf('opsflow') > -1) {
-      toolActions = [
-        { name: 'search_workspace', query: 'OpsFlow', result: 'Found matches in PRD.md & index.html' },
-        { name: 'read_file', query: 'PRD.md', result: 'Read OpsFlow AI specifications' }
-      ];
-      responseText = "## Project Overview\n\nOpsFlow AI is Olayinka's flagship concept — a unified workspace that brings team tasks, AI insights, and visual node-based workflow automation into one place.\n\n## The Problem\n\nTeams constantly switch between Slack, Notion, and Jira. OpsFlow eliminates that friction with a single AI-augmented interface.\n\n## Process\n\n- **Research** — 5 user personas mapped, pain points documented\n- **Design** — 12-screen Figma component library\n- **Build** — Interactive workflow editor prototyped in Lovable\n\n## Outcome\n\nA concept that proves AI workspaces can reduce tool-switching friction while keeping teams in flow.";
-      sectionLink = '#case-opsflow';
-    } else if (lowerText.indexOf('campus') > -1 || lowerText.indexOf('commerce') > -1 || lowerText.indexOf('marketplace') > -1) {
-      toolActions = [
-        { name: 'search_workspace', query: 'Campus Commerce', result: 'Found case study in index.html' },
-        { name: 'read_file', query: 'index.html', result: 'Read Campus Commerce section' }
-      ];
-      responseText = "## Project Overview\n\nCampus Commerce System — a student-first marketplace and delivery platform built for LASU.\n\n## The Problem\n\nWhatsApp-based ordering is chaotic. No browsing, no tracking, no accountability.\n\n## Solution Flow\n\n- **Students** — browse, cart, confirm, track in 3 steps\n- **Vendors** — dashboard for orders, menu, inventory\n- **Admins** — approve vendors, view analytics\n\n## Key Result\n\nVendor onboarding completed in under 4 minutes during testing.";
-      sectionLink = '#case-campus';
-    } else if (lowerText.indexOf('workflow') > -1 || lowerText.indexOf('builder') > -1 || lowerText.indexOf('automation') > -1 || lowerText.indexOf('no-code') > -1 || lowerText.indexOf('low-code') > -1) {
-      toolActions = [
-        { name: 'search_workspace', query: 'AI Workflow Builder', result: 'Found case study in index.html' },
-        { name: 'read_file', query: 'index.html', result: 'Read AI Workflow Builder section' }
-      ];
-      responseText = "## Project Overview\n\nAI Workflow Builder — a no-code canvas for AI-powered automations.\n\n## The Insight\n\nZapier, Make, and n8n are powerful but overwhelming for non-technical users.\n\n## Solution\n\nJust 3 node types:\n- **Trigger** — what starts the flow\n- **Action** — what happens next\n- **AI Step** — AI-powered decision or transformation\n\n## Validation\n\nNon-technical test participants completed onboarding with zero prompting.";
-      sectionLink = '#case-workflow';
-    } else if (lowerText.indexOf('about') > -1 || lowerText.indexOf('background') > -1 || lowerText.indexOf('bio') > -1 || lowerText.indexOf('experience') > -1) {
-      toolActions = [
-        { name: 'search_workspace', query: 'About section', result: 'Found in index.html' }
-      ];
-      responseText = "## About Olayinka\n\nProduct Design student at LASU. B.Eng Electronics & Computer Engineering, expected 2027.\n\n## Focus Area\n\nAI-native SaaS and workflow UX — making AI feel obvious, not magical.\n\n## Process\n\n- **System-first** — Map the full ecosystem before opening Figma\n- **Test early** — Validate interaction patterns with low-fi prototypes\n- **Polish later** — Commit to pixels after the flow is right\n\n## Status\n\nBased in Lagos. Open to internship and junior product design roles.";
-      sectionLink = '#about';
-    } else if (lowerText.indexOf('education') > -1 || lowerText.indexOf('lasu') > -1 || lowerText.indexOf('student') > -1) {
-      toolActions = [
-        { name: 'search_workspace', query: 'Education', result: 'Found in about section' }
-      ];
-      responseText = "## Education\n\n**Lagos State University (LASU)**\nB.Eng Electronics & Computer Engineering\nExpected graduation: 2027\n\n## Edge\n\nEngineering background means Olayinka is comfortable discussing API architecture while refining micro-interaction easing curves. He speaks both design and engineering fluently.";
-      sectionLink = '#about';
-    } else if (lowerText.indexOf('design') > -1 || lowerText.indexOf('philosophy') > -1 || lowerText.indexOf('approach') > -1) {
-      toolActions = [
-        { name: 'search_workspace', query: 'Design approach', result: 'Found across portfolio sections' }
-      ];
-      responseText = "## Design Philosophy\n\nOlayinka believes the best AI products are invisible — not hidden, but intuitive enough that they don't demand attention.\n\n## Principles\n\n- **System before screen** — Map the full ecosystem before designing a single pixel\n- **Validate early** — Low-fidelity tests before high-fidelity polish\n- **Reduce load** — Every interaction should feel lighter than expected\n\n## Focus\n\nSaaS interfaces, dashboard UX, and AI-native interaction patterns.";
-      sectionLink = '#about';
-    } else if (lowerText.indexOf('tools') > -1 || lowerText.indexOf('skills') > -1 || lowerText.indexOf('stack') > -1) {
-      toolActions = [
-        { name: 'search_workspace', query: 'Skills & Tools', result: 'Found matching skills section in index.html' }
-      ];
-      responseText = "## Tools & Stack\n\n- **Design** — Figma, Paper/Wireframing\n- **Build** — Lovable, Notion, Retool\n- **Backend** — Supabase, basic SQL, REST APIs\n- **Code** — HTML, Tailwind CSS, Vanilla JS\n\nOlayinka is API-aware and comfortable in full-stack prototyping environments.";
-      sectionLink = '#skills';
-    } else if (lowerText.indexOf('work') > -1 || lowerText.indexOf('project') > -1 || lowerText.toLowerCase().indexOf('case study') > -1) {
-      toolActions = [
-        { name: 'search_workspace', query: 'Selected work', result: 'Found 3 case studies in index.html' }
-      ];
-      responseText = "## Selected Work\n\nOlayinka's portfolio features 3 concept projects:\n\n**OpsFlow AI** — Unified workspace with AI insights and visual workflow automation (SaaS)\n\n**Campus Commerce System** — Student marketplace and delivery system (marketplace)\n\n**AI Workflow Builder** — No-code canvas for AI-assisted automations (automation UX)\n\nEach case study follows a 4-phase process with key screens, outcomes, and next steps.";
-      sectionLink = '#work';
-    } else if (lowerText.indexOf('contact') > -1 || lowerText.indexOf('email') > -1 || lowerText.indexOf('reach') > -1 || lowerText.indexOf('hire') > -1) {
-      toolActions = [
-        { name: 'search_workspace', query: 'Contact', result: 'Found lolayinka2005@gmail.com and LinkedIn profile' }
-      ];
-      responseText = "## Contact\n\n- **Email** — lolayinka2005@gmail.com\n- **LinkedIn** — linkedin.com/in/olayinka-abdullah\n\nOlayinka is open to junior product designer roles and internship opportunities for 2026–2027.\n\nFeel free to reach out!";
-      sectionLink = '#contact';
-    } else {
-      toolActions = [
-        { name: 'search_workspace', query: text, result: 'Scanning workspace files...' }
-      ];
-      responseText = "## Olayinka Abdullah\n\nProduct Design student at LASU specializing in AI-native SaaS and workflow UX.\n\n- **Focus** — Designing systems that make AI feel intuitive and obvious\n- **Contact** — lolayinka2005@gmail.com\n\nOpen to internships and junior product design roles.";
-    }
-
-    simulateAgentSteps(toolActions, responseText, sectionLink);
-  }
-
-  window.sendSuggestion = function(text) {
-    var win = id('agent-chat-win');
-    if (!win.classList.contains('active')) {
-      win.classList.add('active');
-      setTimeout(function() { onUserMessage(text); }, 350);
-    } else {
-      onUserMessage(text);
-    }
-  };
-
-  window.handleChatSubmit = function(e) {
-    e.preventDefault();
-    onUserMessage(id('agent-chat-input').value);
-  };
-
-  function appendMessage(role, content) {
-    var chatMessages = id('agent-chat-messages');
-    var msgDiv = document.createElement('div');
-    msgDiv.className = 'flex flex-col gap-1.5 ' + (role === 'user' ? 'items-end' : 'items-start');
-    
-    var roleLabel = role === 'user' ? 'You' : 'Olaflay';
-    var labelClass = 'text-[9px] font-mono tracking-wider uppercase opacity-40';
-    var bubbleClass = role === 'user' 
-      ? 'bg-accent text-bg rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm leading-relaxed max-w-[85%]' 
-      : 'glass rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed max-w-[85%] text-fg';
-
-    msgDiv.innerHTML = '<span class="' + labelClass + '">' + roleLabel + '</span>' +
-                       '<div class="' + bubbleClass + '">' + escapeHTML(content) + '</div>';
-    
-    chatMessages.appendChild(msgDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  function escapeHTML(str) {
-    return str.replace(/[&<>'"]/g, function(tag) {
-      var chars = { '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' };
-      return chars[tag] || tag;
-    });
-  }
-
-  function simulateAgentSteps(tools, finalResponse, sectionLink) {
-    var stepIndex = 0;
-    var chatMessages = id('agent-chat-messages');
-
-    function runNextTool() {
-      if (stepIndex < tools.length) {
-        var tool = tools[stepIndex];
-        
-        var toolCard = document.createElement('div');
-        toolCard.className = 'tool-call-card pending';
-        toolCard.innerHTML = '<span class="tool-indicator"></span>' +
-                             '<span>Running ' + tool.name + '(' + tool.query + ')...</span>';
-        chatMessages.appendChild(toolCard);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        setTimeout(function() {
-          toolCard.className = 'tool-call-card success';
-          toolCard.innerHTML = '<span class="tool-indicator"></span>' +
-                               '<span>success: ' + tool.name + ' - ' + tool.result + '</span>';
-          stepIndex++;
-          runNextTool();
-        }, 800);
-      } else {
-        streamResponse(finalResponse, sectionLink);
+    (function () {
+      var theme = window.localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
       }
-    }
-
-    runNextTool();
-  }
-
-  function parseInline(text) {
-    return text.replace(/\*\*(.+?)\*\*/g, '<strong class="text-fg font-semibold">$1</strong>');
-  }
-
-  function streamResponse(text, sectionLink) {
-    var chatMessages = id('agent-chat-messages');
-    var msgDiv = document.createElement('div');
-    msgDiv.className = 'flex flex-col gap-1.5 items-start';
-    
-    msgDiv.innerHTML = '<span class="text-[9px] font-mono tracking-wider uppercase opacity-40">Olaflay</span>';
-    chatMessages.appendChild(msgDiv);
-
-    var bubble = document.createElement('div');
-    bubble.className = 'glass rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed max-w-[85%] text-fg';
-    msgDiv.appendChild(bubble);
-
-    var lines = text.split('\n');
-    var elements = [];
-    var lastEmpty = false;
-
-    for (var li = 0; li < lines.length; li++) {
-      var line = lines[li];
-      if (line.startsWith('## ')) {
-        var h = document.createElement('div');
-        h.className = 'text-[11px] font-semibold tracking-wider uppercase text-accent/90 mt-2.5 first:mt-0';
-        h.textContent = line.slice(3);
-        elements.push(h);
-        lastEmpty = false;
-      } else if (line.startsWith('- ')) {
-        var item = document.createElement('div');
-        item.className = 'flex items-start gap-2 text-fg/85';
-        item.innerHTML = '<span class="text-accent shrink-0 mt-0.5">—</span><span>' + parseInline(line.slice(2)) + '</span>';
-        elements.push(item);
-        lastEmpty = false;
-      } else if (line === '') {
-        if (!lastEmpty) {
-          var spacer = document.createElement('div');
-          spacer.className = 'h-2';
-          elements.push(spacer);
-          lastEmpty = true;
-        }
-      } else {
-        var p = document.createElement('div');
-        var parsed = parseInline(line);
-        if (parsed) {
-          p.innerHTML = parsed;
-        } else {
-          p.textContent = '\u00A0';
-        }
-        elements.push(p);
-        lastEmpty = false;
-      }
-    }
-
-    var buttonLabels = {
-      '#case-opsflow': 'View Case Study \u2192',
-      '#case-campus': 'View Case Study \u2192',
-      '#case-workflow': 'View Case Study \u2192',
-      '#about': 'About Me \u2192',
-      '#skills': 'View Skills \u2192',
-      '#work': 'View Work \u2192',
-      '#contact': 'Get in Touch \u2192'
-    };
-
-    var elIdx = 0;
-    function appendNext() {
-      if (elIdx < elements.length) {
-        bubble.appendChild(elements[elIdx]);
-        elIdx++;
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-        setTimeout(appendNext, 20);
-      } else {
-        if (sectionLink && buttonLabels[sectionLink]) {
-          var btn = document.createElement('a');
-          btn.href = sectionLink;
-          btn.className = 'inline-block mt-2.5 text-[11px] font-medium tracking-wider uppercase border border-accent/40 text-accent px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-all duration-200 no-underline cursor-pointer';
-          btn.textContent = buttonLabels[sectionLink];
-          btn.onclick = function() {
-            var win = id('agent-chat-win');
-            if (win) win.classList.remove('active');
-          };
-          bubble.appendChild(btn);
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-      }
-    }
-
-    setTimeout(appendNext, 300);
-  }
-</script>
-
-<!-- ====== 21st AGENT CHAT BUTTON & WINDOW ====== -->
-<div id="agent-chat-btn" class="agent-chat-btn-floating" onclick="toggleAgentChat()">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-  </svg>
-</div>
-
-<div id="agent-chat-win" class="agent-chat-window glass flex flex-col rounded-2xl overflow-hidden shadow-2xl">
-  <!-- Header Chrome -->
-  <div class="agent-chat-header">
-    <div class="flex items-center gap-2">
-      <span class="chrome-btn bg-[#ff5f56]"></span>
-      <span class="chrome-btn bg-[#ffbd2e]"></span>
-      <span class="chrome-btn bg-[#27c93f]"></span>
-      <span class="text-xs font-mono text-accent ml-2">olaflay-chat.sh</span>
-    </div>
-    <button onclick="toggleAgentChat()" class="text-muted-light hover:text-fg transition-colors">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-    </button>
-  </div>
-  
-  <!-- Message Container -->
-  <div id="agent-chat-messages" class="agent-chat-body">
-    <!-- Welcome message -->
-    <div class="flex flex-col gap-1.5 items-start">
-      <span class="text-[9px] font-mono tracking-wider uppercase opacity-40">Olaflay</span>
-      <div class="glass rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed max-w-[85%] text-fg">
-        Hi! I'm Olayinka's AI portfolio agent. Ask me about his projects, skills, or experience, or select one of the prompts below!
-      </div>
-    </div>
-  </div>
-
-  <!-- Input & Suggestions zone -->
-  <div class="agent-chat-input-zone flex flex-col gap-3">
-    <!-- Suggestions (collapsible) -->
-    <div class="suggestions-wrap">
-      <div class="suggestions-toggle" onclick="toggleSuggestions()">
-        <span>Suggestions</span>
-        <svg class="suggestions-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="flex flex-wrap gap-1.5" id="agent-suggestions">
-        <span class="suggestion-pill" onclick="sendSuggestion('Tell me about OpsFlow AI')">OpsFlow AI</span>
-        <span class="suggestion-pill" onclick="sendSuggestion('Tell me about Campus Commerce')">Campus Commerce</span>
-        <span class="suggestion-pill" onclick="sendSuggestion('Tell me about AI Workflow Builder')">AI Workflow Builder</span>
-        <span class="suggestion-pill" onclick="sendSuggestion('What tools does he use?')">Tools & Skills</span>
-        <span class="suggestion-pill" onclick="sendSuggestion('Tell me about his background')">About him</span>
-        <span class="suggestion-pill" onclick="sendSuggestion('How can I contact him?')">Contact</span>
-      </div>
-    </div>
-
-    <!-- Input Bar -->
-    <form id="agent-chat-form" onsubmit="handleChatSubmit(event)" class="flex items-center gap-2 glass rounded-xl p-1 px-2">
-      <input id="agent-chat-input" type="text" autocomplete="off" placeholder="Ask the agent..." class="flex-1 bg-transparent text-sm focus:outline-none py-1.5 px-1 text-fg placeholder-muted-light" />
-      <button type="submit" class="p-1.5 rounded-lg bg-accent text-bg hover:opacity-90 transition-opacity">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-      </button>
-    </form>
-  </div>
-</div>
+    })();
+  </script>
 
 </body>
+
 </html>
