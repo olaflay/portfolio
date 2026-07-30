@@ -44,7 +44,7 @@
 
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23163A5F'/><text x='16' y='22' text-anchor='middle' font-family='Inter,sans-serif' font-size='16' fill='%23FFFFFF' font-weight='600'>OA</text></svg>">
-  <link rel="preload" as="image" href="assets/profile.png" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/profile.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
@@ -670,17 +670,11 @@
       justify-content: center;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1.25rem;
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--navy);
-      background: linear-gradient(135deg, var(--soft-aqua) 0%, var(--soft-blue) 100%);
-      border: 1px solid rgba(57, 189, 247, 0.25);
-      border-radius: var(--radius-full);
+    /* ====== RESPONSIVE UTILITY ====== */
+    .hidden { display: none; }
+    @media (min-width: 640px) {
+      .sm\:inline { display: inline !important; }
+      .sm\:inline-flex { display: inline-flex !important; }
     }
 
     .profile-ring {
@@ -935,21 +929,6 @@
       .preview-frame {
         max-height: 190px;
       }
-    }
-
-    .campus-frame {
-      background: transparent !important;
-      border: none !important;
-      border-radius: 0 !important;
-      padding: 0 !important;
-    }
-
-    .campus-frame img {
-      max-height: 380px;
-      width: 100%;
-      object-fit: contain;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
     }
 
     /* ====== TIMELINE ====== */
@@ -1342,6 +1321,7 @@
     </a>
   </div>
 
+  <main id="main">
   <!-- ====== HERO ====== -->
   <section id="hero" aria-label="Introduction">
     <!-- Wavy backdrop shapes -->
@@ -1386,7 +1366,7 @@
 
           <!-- Large profile ring -->
           <div class="profile-ring float">
-            <img src="assets/profile.png" alt="Olayinka Abdullah profile" width="300" height="300" loading="eager" fetchpriority="high">
+            <img src="assets/profile.webp" alt="Olayinka Abdullah profile" width="300" height="300" loading="eager" fetchpriority="high">
           </div>
 
           <!-- Floating Statistics/Info cards -->
@@ -1410,7 +1390,7 @@
   </section>
 
   <!-- ====== WORK ====== -->
-  <section id="work" class="section-pad bg-alt" style="position:relative;overflow:hidden;">
+  <section id="work" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1200px;">
     <div class="section-glow" aria-hidden="true"></div>
     <div class="container">
       <div class="section-content" style="text-align:center;margin-bottom:var(--space-4);">
@@ -1436,7 +1416,7 @@
               <span class="skill-pill-sm">Interaction Design</span>
             </div>
             <div class="img-frame preview-frame" style="margin-bottom:1.5rem;">
-              <img src="assets/opsflow-dashboard.png"
+              <img src="assets/opsflow-dashboard.webp"
                 alt="OpsFlow AI Dashboard showing task overview and AI insight panel" width="1200" height="675"
                 loading="lazy">
             </div>
@@ -1466,7 +1446,7 @@
               <span class="skill-pill-sm">Rapid Prototyping</span>
             </div>
             <div class="img-frame" style="margin-bottom:1.5rem;max-height:320px;overflow:hidden;">
-              <img src="assets/campus-browse.png" alt="Campus Commerce System vendor browse grid for students"
+              <img src="assets/campus-browse.webp" alt="Campus Commerce System vendor browse grid for students"
                 width="1200" height="600" loading="lazy">
             </div>
             <span class="chevron-link">
@@ -1495,7 +1475,7 @@
               <span class="skill-pill-sm">SaaS Architecture</span>
             </div>
             <div class="img-frame preview-frame" style="margin-bottom:1.5rem;">
-              <img src="assets/workflow-canvas.png" alt="AI Workflow Builder canvas with node-based automation editor"
+              <img src="assets/workflow-canvas.webp" alt="AI Workflow Builder canvas with node-based automation editor"
                 width="1200" height="675" loading="lazy">
             </div>
             <span class="chevron-link">
@@ -1512,7 +1492,7 @@
   </section>
 
   <!-- ====== DESIGN APPROACH ====== -->
-  <section class="section-pad" style="position:relative;overflow:hidden;">
+  <section class="section-pad" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:500px;">
     <div class="section-glow section-glow-r" aria-hidden="true"></div>
     <div class="container">
       <div class="section-content" style="text-align:center;margin-bottom:3.5rem;">
@@ -1554,7 +1534,7 @@
   </section>
 
   <!-- ====== ABOUT ====== -->
-  <section id="about" class="section-pad bg-alt" style="position:relative;overflow:hidden;">
+  <section id="about" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:700px;">
     <div class="section-glow" aria-hidden="true"></div>
     <div class="container">
       <div class="section-content">
@@ -1604,7 +1584,7 @@
   </section>
 
   <!-- ====== SKILLS ====== -->
-  <section id="skills" class="section-pad" style="position:relative;overflow:hidden;">
+  <section id="skills" class="section-pad" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:600px;">
     <div class="section-glow section-glow-r" aria-hidden="true"></div>
     <div class="container">
       <div class="section-content" style="text-align:center;margin-bottom:3.5rem;">
@@ -1658,7 +1638,7 @@
   </section>
 
   <!-- ====== CASE STUDY: OPSFLOW AI ====== -->
-  <section id="case-opsflow" class="section-pad bg-alt" style="position:relative;overflow:hidden;">
+  <section id="case-opsflow" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1800px;">
     <div class="section-glow section-glow-r" aria-hidden="true"></div>
     <div class="container">
       <div class="section-content">
@@ -1720,12 +1700,12 @@
           <div class="reveal r-d3">
             <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
             <div class="screen-grid">
-              <div class="img-frame"><img src="assets/opsflow-dashboard.png"
+              <div class="img-frame"><img src="assets/opsflow-dashboard.webp"
                   alt="OpsFlow AI dashboard showing task list and AI insight panel" width="800" height="500"
                   loading="lazy"></div>
-              <div class="img-frame"><img src="assets/opsflow-workflow.png"
+              <div class="img-frame"><img src="assets/opsflow-workflow.webp"
                   alt="OpsFlow workflow builder visual node editor" width="800" height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/opsflow-analytics.png" alt="OpsFlow analytics dashboard"
+              <div class="img-frame"><img src="assets/opsflow-analytics.webp" alt="OpsFlow analytics dashboard"
                   width="800" height="500" loading="lazy"></div>
             </div>
           </div>
@@ -1749,10 +1729,8 @@
     </div>
   </section>
 
-  <div class="divider"></div>
-
   <!-- ====== CASE STUDY: CAMPUS COMMERCE ====== -->
-  <section id="case-campus" class="section-pad" style="position:relative;overflow:hidden;">
+  <section id="case-campus" class="section-pad" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1800px;">
     <div class="section-glow" aria-hidden="true"></div>
     <div class="container">
       <div class="section-content">
@@ -1819,11 +1797,11 @@
           <div class="reveal r-d3">
             <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
             <div class="screen-stack">
-              <div class="img-frame"><img src="assets/campus-browse.png" alt="Campus Commerce vendor browse screen"
+              <div class="img-frame"><img src="assets/campus-browse.webp" alt="Campus Commerce vendor browse screen"
                   width="800" height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/campus-vendor.png" alt="Vendor dashboard with order queue"
+              <div class="img-frame"><img src="assets/campus-vendor.webp" alt="Vendor dashboard with order queue"
                   width="800" height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/campus-admin.png" alt="Admin panel with vendor approval"
+              <div class="img-frame"><img src="assets/campus-admin.webp" alt="Admin panel with vendor approval"
                   width="800" height="500" loading="lazy"></div>
             </div>
           </div>
@@ -1847,10 +1825,8 @@
     </div>
   </section>
 
-  <div class="divider"></div>
-
   <!-- ====== CASE STUDY: AI WORKFLOW BUILDER ====== -->
-  <section id="case-workflow" class="section-pad bg-alt" style="position:relative;overflow:hidden;">
+  <section id="case-workflow" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1800px;">
     <div class="section-glow section-glow-r" aria-hidden="true"></div>
     <div class="container">
       <div class="section-content">
@@ -1913,11 +1889,11 @@
           <div class="reveal r-d3">
             <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
             <div class="screen-grid">
-              <div class="img-frame"><img src="assets/workflow-canvas.png" alt="AI Workflow Builder canvas" width="800"
+              <div class="img-frame"><img src="assets/workflow-canvas.webp" alt="AI Workflow Builder canvas" width="800"
                   height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/workflow-ai-config.png" alt="AI step configuration panel"
+              <div class="img-frame"><img src="assets/workflow-ai-config.webp" alt="AI step configuration panel"
                   width="800" height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/workflow-runlog.png"
+              <div class="img-frame"><img src="assets/workflow-runlog.webp"
                   alt="Automation run log with status indicators" width="800" height="500" loading="lazy"></div>
             </div>
           </div>
@@ -1990,6 +1966,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ====== FOOTER ====== -->
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
@@ -2008,6 +1986,7 @@
 
   <script>
     (function () {
+      // Nav scroll effect
       var nav = document.querySelector('.nav-root');
       var ticking = false;
       function updateNav() {
@@ -2019,20 +1998,19 @@
         if (!ticking) { window.requestAnimationFrame(updateNav); ticking = true; }
       });
       updateNav();
-    })();
 
-    (function () {
+      // Scroll reveals
       var reveals = document.querySelectorAll('.reveal');
-      if (!reveals.length) return;
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-      reveals.forEach(function (el) { observer.observe(el); });
-    })();
+      if (reveals.length) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(function (el) { observer.observe(el); });
+      }
 
-    (function () {
+      // Smooth scroll for anchor links
       var links = document.querySelectorAll('a[href^="#"]');
       links.forEach(function (link) {
         link.addEventListener('click', function (e) {
@@ -2046,33 +2024,25 @@
           }
         });
       });
-    })();
 
-    (function () {
+      // Mobile nav toggle
       var navBtn = document.querySelector('.hamburger');
-      var nav = document.querySelector('.mob-nav');
+      var mobNav = document.querySelector('.mob-nav');
       var backdrop = document.querySelector('.mob-backdrop');
       window.toggleNav = function () {
-        nav.classList.toggle('active');
+        mobNav.classList.toggle('active');
         backdrop.classList.toggle('active');
         navBtn.classList.toggle('active');
         var expanded = navBtn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
         navBtn.setAttribute('aria-expanded', expanded);
       };
       window.closeNav = function () {
-        nav.classList.remove('active');
+        mobNav.classList.remove('active');
         backdrop.classList.remove('active');
         navBtn.classList.remove('active');
         navBtn.setAttribute('aria-expanded', 'false');
       };
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
-    })();
-
-    (function () {
-      var theme = window.localStorage.getItem('theme');
-      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
     })();
   </script>
 
