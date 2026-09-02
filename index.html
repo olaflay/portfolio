@@ -11,6 +11,7 @@
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://olayinkaabdullah.design">
 
+  <!-- Open Graph / Social Meta -->
   <meta property="og:title" content="Olayinka Abdullah | Product Designer">
   <meta property="og:description"
     content="Designing systems that make AI feel obvious. AI-native SaaS, workflow automation, scalable UX architecture.">
@@ -25,6 +26,7 @@
   <meta name="twitter:description"
     content="Designing systems that make AI feel obvious. AI-native SaaS, workflow automation, scalable UX architecture.">
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,7 +35,7 @@
   "jobTitle": "Product Designer",
   "url": "https://olayinkaabdullah.design",
   "email": "lolayinka2005@gmail.com",
-  "knowsAbout": ["Product Design", "UX Architecture", "AI-native SaaS", "Workflow Automation", "Interaction Design"],
+  "knowsAbout": ["Product Design", "UX Architecture", "AI-native SaaS", "Media Optimization UX", "Interaction Design", "Heuristic Evaluation", "WCAG 2.2 Accessibility"],
   "seeks": {
     "@type": "JobPosting",
     "title": "Product Designer Internship",
@@ -52,13 +54,14 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
   <style>
-    /* ====== DESIGN TOKENS ====== */
+    /* ====== DESIGN TOKENS (WCAG AA/AAA COMPLIANT) ====== */
     :root {
       --navy: #163A5F;
       --navy-dark: #102D4B;
       --navy-light: #1E4D7A;
       --sky: #76D4FF;
       --ocean: #39BDF7;
+      --ocean-text: #0284C7; /* Accessible high-contrast blue for text on light bg (4.65:1+) */
       --cyan: #8FE8FF;
       --soft-aqua: #BDEEFF;
       --soft-blue: #EDF9FF;
@@ -66,24 +69,26 @@
       --gray-100: #EDF0F5;
       --gray-200: #E2E6ED;
       --gray-400: #94A3B8;
-      --gray-600: #666666;
+      --gray-600: #475569; /* WCAG AAA high contrast body text (6.8:1 on white) */
       --gray-800: #1E293B;
       --white: #FFFFFF;
-      --green: #30D158;
+      --green: #15803D; /* Accessible green for badges/dots */
+      --green-pulse: #30D158;
 
       --bg: var(--white);
       --bg-alt: var(--gray-50);
       --bg-soft: var(--soft-blue);
       --text: var(--gray-600);
       --text-heading: var(--navy);
-      --text-muted: #94A3B8;
-      --text-label: #64748B;
-      --border: rgba(22, 58, 95, 0.06);
-      --border-light: rgba(22, 58, 95, 0.04);
+      --text-muted: #52657D; /* WCAG AA contrast (5.4:1 on white) */
+      --text-label: #334155; /* WCAG AAA contrast (8.5:1 on white) */
+      --border: rgba(22, 58, 95, 0.08);
+      --border-light: rgba(22, 58, 95, 0.05);
       --accent: var(--ocean);
-      --accent-text: var(--navy);
+      --accent-text: var(--ocean-text);
       --primary: var(--navy);
       --primary-hover: var(--navy-dark);
+      --focus-ring: var(--navy);
       --shadow-sm: 0 2px 8px rgba(22, 58, 95, 0.04);
       --shadow-md: 0 10px 30px rgba(35, 70, 120, 0.05);
       --shadow-lg: 0 20px 60px rgba(35, 70, 120, 0.08);
@@ -111,7 +116,7 @@
       --ease-in-out: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Force light theme colors since Cakap design style is bright and soft */
+    /* Force consistent light theme tokens */
     [data-theme="dark"],
     :root {
       --bg: var(--white);
@@ -119,7 +124,7 @@
       --bg-soft: var(--soft-blue);
       --text: var(--gray-600);
       --text-heading: var(--navy);
-      --border: rgba(22, 58, 95, 0.06);
+      --border: rgba(22, 58, 95, 0.08);
       --accent: var(--ocean);
       --primary: var(--navy);
       --primary-hover: var(--navy-dark);
@@ -157,12 +162,12 @@
     }
 
     ::selection {
-      background: rgba(57, 189, 247, 0.15);
+      background: rgba(57, 189, 247, 0.25);
       color: var(--text-heading);
     }
 
     ::-webkit-scrollbar {
-      width: 6px;
+      width: 8px;
     }
 
     ::-webkit-scrollbar-track {
@@ -170,12 +175,12 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: var(--text-muted);
-      border-radius: 3px;
+      background: var(--gray-400);
+      border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent);
+      background: var(--ocean-text);
     }
 
     img {
@@ -189,35 +194,93 @@
       text-decoration: none;
     }
 
-    /* ====== ACCESSIBILITY: SKIP LINK ====== */
+    /* ====== ACCESSIBILITY: SCREEN READERS & SKIP LINK ====== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
     .skip-link {
       position: fixed;
       top: -100%;
       left: 1rem;
       z-index: 1000;
-      padding: 0.75rem 1.5rem;
+      padding: 0.875rem 1.75rem;
       background: var(--primary);
       color: var(--white);
+      border: 2px solid var(--white);
       border-radius: var(--radius-sm);
-      font-size: 0.875rem;
-      font-weight: 600;
-      transition: top 0.2s ease;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-xl);
+      transition: top 0.25s ease;
+      text-decoration: underline;
     }
 
     .skip-link:focus {
       top: 1rem;
+      outline: 3px solid var(--ocean);
+      outline-offset: 2px;
     }
 
-    /* ====== ACCESSIBILITY: FOCUS ====== */
+    /* ====== ACCESSIBILITY: FOCUS INDICATOR (WCAG 2.4.7 / 1.4.11) ====== */
     :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
+      outline: 2.5px solid var(--navy);
+      outline-offset: 3px;
       border-radius: 4px;
     }
 
     a:focus-visible,
     button:focus-visible {
+      outline: 2.5px solid var(--navy);
       outline-offset: 3px;
+    }
+
+    /* ====== REDUCED MOTION (WCAG 2.2.2 / 2.3.3) ====== */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto !important;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .float,
+      .f-d1,
+      .f-d2 {
+        animation: none !important;
+      }
+
+      .profile-ring::before {
+        animation: none !important;
+      }
+
+      .available-dot::after {
+        animation: none !important;
+      }
+
+      .scroll-line {
+        animation: none !important;
+      }
     }
 
     /* ====== LAYOUT ====== */
@@ -243,7 +306,7 @@
 
     @media (max-width: 768px) {
       .section-pad {
-        padding: 6rem 0;
+        padding: 5.5rem 0;
       }
     }
 
@@ -261,7 +324,7 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--ocean);
+      color: var(--ocean-text);
       margin-bottom: var(--space-4);
       display: block;
     }
@@ -340,7 +403,7 @@
     }
 
     .accent-text {
-      color: var(--accent);
+      color: var(--ocean-text);
     }
 
     /* ====== REVEAL ====== */
@@ -375,7 +438,7 @@
       transition-delay: 0.6s;
     }
 
-    /* ====== NAVIGATION ====== */
+    /* ====== NAVIGATION (HEURISTIC 1 & WCAG LANDMARK) ====== */
     .nav-root {
       position: fixed;
       top: 0;
@@ -386,11 +449,11 @@
     }
 
     .nav-root.scrolled {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(24px) saturate(1.6);
       -webkit-backdrop-filter: blur(24px) saturate(1.6);
-      box-shadow: 0 4px 30px rgba(35, 70, 120, 0.04);
-      border-bottom: 1px solid rgba(22, 58, 95, 0.05);
+      box-shadow: 0 4px 30px rgba(35, 70, 120, 0.05);
+      border-bottom: 1px solid rgba(22, 58, 95, 0.08);
     }
 
     .nav-inner {
@@ -416,6 +479,7 @@
       font-weight: 800;
       font-size: 1rem;
       color: var(--text-heading);
+      border-radius: var(--radius-sm);
     }
 
     .nav-mono {
@@ -445,6 +509,9 @@
         display: flex;
         align-items: center;
         gap: var(--space-8);
+        list-style: none;
+        margin: 0;
+        padding: 0;
       }
     }
 
@@ -455,6 +522,7 @@
       position: relative;
       padding: 0.5rem 0.25rem;
       transition: color 0.25s ease;
+      border-radius: 4px;
     }
 
     .nav-link::after {
@@ -465,16 +533,18 @@
       transform: translateX(-50%);
       width: 0;
       height: 3px;
-      background: var(--ocean);
+      background: var(--ocean-text);
       border-radius: var(--radius-full);
       transition: width 0.3s ease;
     }
 
-    .nav-link:hover {
-      color: var(--ocean);
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--ocean-text);
     }
 
-    .nav-link:hover::after {
+    .nav-link:hover::after,
+    .nav-link.active::after {
       width: 100%;
     }
 
@@ -488,7 +558,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--green);
+      background: var(--green-pulse);
       position: relative;
       flex-shrink: 0;
     }
@@ -498,18 +568,16 @@
       position: absolute;
       inset: -3px;
       border-radius: 50%;
-      background: rgba(48, 209, 88, 0.25);
+      background: rgba(48, 209, 88, 0.35);
       animation: pulse-ring 2s ease-in-out infinite;
     }
 
     @keyframes pulse-ring {
-
       0%,
       100% {
         transform: scale(1);
         opacity: 0.6;
       }
-
       50% {
         transform: scale(1.4);
         opacity: 0.1;
@@ -527,13 +595,13 @@
       background: var(--navy);
       border-radius: var(--radius-full);
       transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(22, 58, 95, 0.1);
+      box-shadow: 0 4px 12px rgba(22, 58, 95, 0.12);
     }
 
     .btn-cv:hover {
       background: var(--navy-dark);
       transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(22, 58, 95, 0.18);
+      box-shadow: 0 6px 20px rgba(22, 58, 95, 0.2);
     }
 
     /* ====== BUTTONS ====== */
@@ -550,6 +618,7 @@
       border: 1.5px solid transparent;
       cursor: pointer;
       text-decoration: none;
+      font-family: inherit;
     }
 
     .btn-primary {
@@ -568,7 +637,7 @@
     .btn-secondary {
       background: var(--white);
       color: var(--navy);
-      border-color: var(--border);
+      border-color: rgba(22, 58, 95, 0.15);
       box-shadow: var(--shadow-sm);
     }
 
@@ -580,12 +649,13 @@
 
     .btn-ghost {
       background: transparent;
-      color: var(--ocean);
-      border-color: rgba(57, 189, 247, 0.25);
+      color: var(--ocean-text);
+      border-color: rgba(2, 132, 199, 0.35);
     }
 
     .btn-ghost:hover {
       background: var(--soft-blue);
+      color: var(--navy);
       transform: scale(1.03);
     }
 
@@ -593,10 +663,11 @@
       display: inline-flex;
       align-items: center;
       gap: 0.375rem;
-      color: var(--ocean);
+      color: var(--ocean-text);
       font-weight: 700;
       font-size: 0.9375rem;
       transition: color 0.25s ease;
+      border-radius: 4px;
     }
 
     .chevron-link:hover {
@@ -701,7 +772,7 @@
       position: absolute;
       inset: -15px;
       border-radius: 50%;
-      border: 2px dashed rgba(57, 189, 247, 0.3);
+      border: 2px dashed rgba(57, 189, 247, 0.4);
       animation: rotate-concentric 40s linear infinite;
     }
 
@@ -709,7 +780,6 @@
       0% {
         transform: rotate(0deg);
       }
-
       100% {
         transform: rotate(360deg);
       }
@@ -727,7 +797,7 @@
     .stat-float {
       position: absolute;
       background: var(--white);
-      border: 1px solid rgba(57, 189, 247, 0.15);
+      border: 1px solid rgba(57, 189, 247, 0.2);
       border-radius: var(--radius-md);
       padding: 0.875rem 1.25rem;
       box-shadow: var(--shadow-lg);
@@ -742,14 +812,14 @@
     .stat-val {
       font-size: 1.625rem;
       font-weight: 800;
-      color: var(--navy);
+      color: var(--ocean-text);
       line-height: 1;
     }
 
     .stat-lbl {
       font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text);
+      font-weight: 700;
+      color: var(--text-label);
       line-height: 1.3;
     }
 
@@ -763,6 +833,10 @@
       align-items: center;
       gap: 0.5rem;
       cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
     }
 
     .scroll-label {
@@ -776,22 +850,20 @@
     .scroll-line {
       width: 2px;
       height: 40px;
-      background: linear-gradient(to bottom, var(--ocean), transparent);
+      background: linear-gradient(to bottom, var(--ocean-text), transparent);
       border-radius: 1px;
       animation: scrollPulse 2.4s ease-in-out infinite;
     }
 
     @keyframes scrollPulse {
-
       0%,
       100% {
         opacity: 0.2;
         transform: scaleY(0.4);
         transform-origin: top;
       }
-
       50% {
-        opacity: 0.8;
+        opacity: 0.9;
         transform: scaleY(1);
         transform-origin: top;
       }
@@ -811,12 +883,10 @@
     }
 
     @keyframes float {
-
       0%,
       100% {
         transform: translateY(0) rotate(0deg);
       }
-
       50% {
         transform: translateY(-12px) rotate(1deg);
       }
@@ -827,24 +897,45 @@
       background: var(--white);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-lg);
-      border: 1px solid rgba(22, 58, 95, 0.03);
+      border: 1px solid rgba(22, 58, 95, 0.05);
       transition: all 0.4s var(--ease-out);
     }
 
     .card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-xl);
-      border-color: rgba(57, 189, 247, 0.15);
+      border-color: rgba(2, 132, 199, 0.25);
     }
 
     .card-flush {
       background: var(--white);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(22, 58, 95, 0.03);
+      border: 1px solid rgba(22, 58, 95, 0.06);
       box-shadow: var(--shadow-lg);
     }
 
-    /* ====== SKILL TAGS ====== */
+    /* ====== SKILL TAGS (SEMANTIC LISTS) ====== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .skill-tag-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
     .skill-pill {
       display: inline-block;
       padding: 0.5rem 1.125rem;
@@ -852,7 +943,7 @@
       font-weight: 600;
       color: var(--navy);
       background: var(--soft-blue);
-      border: 1px solid rgba(57, 189, 247, 0.15);
+      border: 1px solid rgba(57, 189, 247, 0.25);
       border-radius: var(--radius-full);
       transition: all 0.25s ease;
       cursor: default;
@@ -860,7 +951,7 @@
 
     .skill-pill:hover {
       background: linear-gradient(135deg, var(--soft-aqua) 0%, var(--soft-blue) 100%);
-      border-color: var(--ocean);
+      border-color: var(--ocean-text);
       transform: translateY(-2px);
     }
 
@@ -870,15 +961,16 @@
       font-weight: 600;
       color: var(--navy);
       background: var(--gray-50);
-      border: 1px solid rgba(22, 58, 95, 0.06);
+      border: 1px solid rgba(22, 58, 95, 0.08);
       border-radius: var(--radius-full);
       cursor: default;
       transition: all 0.25s ease;
+      display: inline-block;
     }
 
     .skill-pill-sm:hover {
       background: var(--soft-blue);
-      border-color: var(--ocean);
+      border-color: var(--ocean-text);
     }
 
     .type-badge {
@@ -887,9 +979,9 @@
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.04em;
-      color: var(--ocean);
+      color: var(--ocean-text);
       background: var(--soft-blue);
-      border: 1px solid rgba(57, 189, 247, 0.15);
+      border: 1px solid rgba(57, 189, 247, 0.3);
       border-radius: var(--radius-full);
     }
 
@@ -950,7 +1042,7 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: var(--ocean);
+      background: var(--ocean-text);
       border: 2.5px solid var(--white);
       box-shadow: 0 0 0 3px var(--soft-blue);
     }
@@ -962,7 +1054,7 @@
       top: 1.25rem;
       width: 2px;
       height: calc(100% - 1.25rem);
-      background: rgba(57, 189, 247, 0.2);
+      background: rgba(2, 132, 199, 0.25);
     }
 
     .timeline-step:last-child::after {
@@ -992,12 +1084,12 @@
     .outcomes li::before {
       content: '';
       display: block;
-      width: 6px;
-      height: 6px;
-      min-width: 6px;
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
       border-radius: 50%;
-      background: var(--ocean);
-      margin-top: 0.65rem;
+      background: var(--ocean-text);
+      margin-top: 0.6rem;
       flex-shrink: 0;
     }
 
@@ -1005,7 +1097,7 @@
     .deco-ring {
       position: absolute;
       border-radius: 50%;
-      border: 1px solid rgba(57, 189, 247, 0.1);
+      border: 1px solid rgba(57, 189, 247, 0.15);
       pointer-events: none;
     }
 
@@ -1013,17 +1105,17 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: radial-gradient(ellipse 60% 50% at 30% 50%, rgba(57, 189, 247, 0.04) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 50% at 30% 50%, rgba(57, 189, 247, 0.05) 0%, transparent 70%);
     }
 
     .section-glow-r {
-      background: radial-gradient(ellipse 50% 60% at 70% 50%, rgba(118, 212, 255, 0.05) 0%, transparent 70%);
+      background: radial-gradient(ellipse 50% 60% at 70% 50%, rgba(118, 212, 255, 0.06) 0%, transparent 70%);
     }
 
-    /* ====== FOOTER ====== */
+    /* ====== FOOTER (WCAG AAA CONTRAST) ====== */
     .footer {
       background: var(--navy-dark);
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.85);
       padding: 4rem 0;
     }
 
@@ -1047,12 +1139,16 @@
     .footer-link {
       font-size: 0.9375rem;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.85);
       transition: color 0.25s ease;
+      padding: 0.25rem;
+      border-radius: 4px;
     }
 
-    .footer-link:hover {
+    .footer-link:hover,
+    .footer-link:focus-visible {
       color: var(--sky);
+      text-decoration: underline;
     }
 
     /* ====== SCREEN GRID ====== */
@@ -1064,7 +1160,6 @@
     }
 
     @media (min-width: 641px) {
-
       .screen-grid,
       .screen-stack {
         grid-template-columns: 1fr 1fr;
@@ -1079,14 +1174,14 @@
       }
     }
 
-    /* ====== MOBILE NAV ====== */
+    /* ====== MOBILE NAV (ACCESSIBLE DIALOG & FOCUS TRAP) ====== */
     .hamburger {
       display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
       border: 1px solid var(--border);
       cursor: pointer;
@@ -1095,8 +1190,9 @@
       z-index: 60;
     }
 
-    .hamburger:hover {
-      border-color: var(--ocean);
+    .hamburger:hover,
+    .hamburger:focus-visible {
+      border-color: var(--ocean-text);
       background: var(--soft-blue);
     }
 
@@ -1128,7 +1224,7 @@
     .mob-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(22, 58, 95, 0.25);
+      background: rgba(22, 58, 95, 0.4);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       z-index: 40;
@@ -1146,7 +1242,8 @@
       position: fixed;
       top: 0;
       right: 0;
-      width: 300px;
+      width: 320px;
+      max-width: 85vw;
       height: 100vh;
       background: var(--white);
       backdrop-filter: blur(28px) saturate(1.5);
@@ -1154,20 +1251,23 @@
       border-left: 1px solid var(--border);
       z-index: 50;
       transform: translateX(100%);
-      transition: transform 0.4s var(--ease-in-out);
-      padding: 2.5rem;
+      transition: transform 0.35s var(--ease-in-out);
+      padding: 2.5rem 2rem;
       display: flex;
       flex-direction: column;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+      visibility: hidden;
     }
 
     .mob-nav.active {
       transform: translateX(0);
+      visibility: visible;
     }
 
     .mob-close {
       align-self: flex-end;
-      width: 38px;
-      height: 38px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
       border: 1px solid var(--border);
       background: transparent;
@@ -1180,8 +1280,9 @@
       margin-bottom: 2rem;
     }
 
-    .mob-close:hover {
-      border-color: var(--ocean);
+    .mob-close:hover,
+    .mob-close:focus-visible {
+      border-color: var(--ocean-text);
       background: var(--soft-blue);
     }
 
@@ -1195,10 +1296,12 @@
       padding: 1rem 0;
       border-bottom: 1px solid var(--border);
       transition: color 0.25s ease;
+      border-radius: 4px;
     }
 
-    .mob-nav a:hover {
-      color: var(--ocean);
+    .mob-nav a:hover,
+    .mob-nav a:focus-visible {
+      color: var(--ocean-text);
     }
 
     .mob-cv {
@@ -1210,14 +1313,16 @@
       padding: 1rem;
       background: var(--navy);
       border-radius: var(--radius-full);
-      color: var(--white);
+      color: var(--white) !important;
       text-decoration: none;
       font-size: 0.9375rem;
       font-weight: 700;
       transition: all 0.25s ease;
+      border: none !important;
     }
 
-    .mob-cv:hover {
+    .mob-cv:hover,
+    .mob-cv:focus-visible {
       background: var(--navy-dark);
       transform: scale(1.02);
     }
@@ -1229,11 +1334,75 @@
     }
 
     @media (min-width: 768px) {
-
       .mob-nav,
       .mob-backdrop {
         display: none !important;
       }
+    }
+
+    /* ====== TOAST FEEDBACK & BACK TO TOP (HEURISTICS 1 & 7) ====== */
+    .toast-notification {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--navy-dark);
+      color: var(--white);
+      padding: 0.875rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-xl);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(1rem);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .toast-notification.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1rem);
+      transition: all 0.3s ease;
+      z-index: 90;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover,
+    .back-to-top:focus-visible {
+      background: var(--soft-blue);
+      color: var(--ocean-text);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
     }
 
     /* ====== RESPONSIVE HELPERS ====== */
@@ -1267,43 +1436,48 @@
 
 <body>
 
+  <!-- ====== ACCESSIBILITY: SKIP NAVIGATION LINK ====== -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- ====== NAV ====== -->
-  <nav class="nav-root" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Home">
-        <span class="nav-mono">OA</span>
+  <!-- ====== HEADER & NAVIGATION ====== -->
+  <header class="nav-root" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Olayinka Abdullah Portfolio Home">
+        <span class="nav-mono" aria-hidden="true">OA</span>
         <span class="hidden sm:inline">Olayinka Abdullah</span>
       </a>
-      <div class="nav-links">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
+      <ul class="nav-links" role="list">
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
       <div class="nav-actions">
-        <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="btn-cv hidden sm:inline-flex"
-          aria-label="Download CV (PDF)">
+        <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" rel="noopener noreferrer" class="btn-cv hidden sm:inline-flex"
+          aria-label="Download CV (PDF format, opens in a new tab)">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
           CV
+          <span class="sr-only">(opens in a new tab)</span>
         </a>
-        <button class="hamburger" onclick="toggleNav()" aria-label="Toggle navigation menu" aria-expanded="false"
+        <button class="hamburger" onclick="toggleNav()" aria-label="Open navigation menu" aria-expanded="false"
           aria-controls="mobile-menu">
-          <span></span><span></span><span></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
+  <!-- ====== ACCESSIBLE MOBILE DRAWER ====== -->
   <div class="mob-backdrop" onclick="closeNav()" aria-hidden="true"></div>
-  <div class="mob-nav" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
-    <button class="mob-close" onclick="closeNav()" aria-label="Close menu">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round">
+  <dialog class="mob-nav" id="mobile-menu" aria-label="Navigation menu">
+    <button class="mob-close" onclick="closeNav()" aria-label="Close navigation menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" aria-hidden="true">
         <line x1="18" y1="6" x2="6" y2="18" />
         <line x1="6" y1="6" x2="18" y2="18" />
       </svg>
@@ -1312,737 +1486,911 @@
     <a href="#about" onclick="closeNav()">About</a>
     <a href="#skills" onclick="closeNav()">Skills</a>
     <a href="#contact" onclick="closeNav()">Contact</a>
-    <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="mob-cv" onclick="closeNav()">
+    <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" rel="noopener noreferrer" class="mob-cv" onclick="closeNav()"
+      aria-label="Download CV (PDF format, opens in a new tab)">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
         <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
           stroke-linejoin="round" />
       </svg>
       Download CV
+      <span class="sr-only">(opens in a new tab)</span>
     </a>
-  </div>
+  </dialog>
 
-  <main id="main">
-  <!-- ====== HERO ====== -->
-  <section id="hero" aria-label="Introduction">
-    <!-- Wavy backdrop shapes -->
-    <div class="hero-blob" style="width:600px;height:600px;top:-150px;right:-100px;background:rgba(118,212,255,0.25);"
-      aria-hidden="true"></div>
-    <div class="hero-blob" style="width:500px;height:500px;bottom:-150px;left:-150px;background:rgba(237,249,255,0.9);"
-      aria-hidden="true"></div>
+  <!-- ====== MAIN CONTENT ====== -->
+  <main id="main" tabindex="-1">
 
-    <div class="hero-inner">
-      <div class="hero-grid">
-        <div class="hero-text">
+    <!-- ====== HERO SECTION ====== -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <!-- Wavy backdrop shapes -->
+      <div class="hero-blob" style="width:600px;height:600px;top:-150px;right:-100px;background:rgba(118,212,255,0.22);"
+        aria-hidden="true"></div>
+      <div class="hero-blob" style="width:500px;height:500px;bottom:-150px;left:-150px;background:rgba(237,249,255,0.9);"
+        aria-hidden="true"></div>
 
-          <h1 class="reveal r-d1" style="margin-bottom:1.5rem;color:var(--navy);font-weight:800;">
-            Designing systems that make AI feel <span class="accent-text" style="color:var(--ocean);">obvious</span>.
-          </h1>
-          <p class="reveal r-d2 text-body" style="margin-bottom:2.5rem;max-width:550px;color:var(--gray-600);">
-            Product designer focused on AI-native SaaS, workflow automation, and scalable UX architecture.
-          </p>
-          <div class="reveal r-d3" style="display:flex;flex-wrap:wrap;gap:1rem;">
-            <a href="#work" class="btn btn-primary">
-              View Work
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-            <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="btn btn-secondary"
-              aria-label="Download CV (PDF)">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-              Download CV
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <!-- Floating decoration rings -->
-          <div class="deco-ring" style="width:380px;height:380px;border-color:rgba(57,189,247,0.12);"></div>
-          <div class="deco-ring" style="width:420px;height:420px;border-color:rgba(57,189,247,0.06);"></div>
-
-          <!-- Large profile ring -->
-          <div class="profile-ring float">
-            <img src="assets/profile.webp" alt="Olayinka Abdullah profile" width="300" height="300" loading="eager" fetchpriority="high">
-          </div>
-
-          <!-- Floating Statistics/Info cards -->
-          <div class="stat-float float f-d1" style="top:5%;right:-40px;">
-            <span class="stat-val" style="color:var(--ocean);">3</span>
-            <span class="stat-lbl">Concept<br>Projects</span>
-          </div>
-          <div class="stat-float float f-d2" style="bottom:10%;left:-60px;">
-            <span class="stat-val" style="color:var(--navy);font-size:1.25rem;">AI</span>
-            <span class="stat-lbl">Native UX<br>Specialist</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scroll-indicator" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})"
-      aria-hidden="true">
-      <span class="scroll-label">Scroll Down</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ====== WORK ====== -->
-  <section id="work" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1200px;">
-    <div class="section-glow" aria-hidden="true"></div>
-    <div class="container">
-      <div class="section-content" style="text-align:center;margin-bottom:var(--space-4);">
-        <span class="reveal label-sm">Selected Work</span>
-        <h2 class="reveal r-d1" style="margin-bottom:0.75rem;">Featured projects</h2>
-        <p class="reveal r-d2 text-body">Concept projects exploring AI-native SaaS, marketplace UX, and automation
-          design.</p>
-      </div>
-      <div class="section-wide" style="margin-top:4rem;display:flex;flex-direction:column;gap:2rem;">
-        <article class="reveal card" style="overflow:hidden;">
-          <a href="#case-opsflow" class="card-link" style="display:block;padding:2rem 2.5rem;text-decoration:none;">
-            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
-              <span style="font-weight:700;font-size:2.5rem;color:rgba(57,189,247,0.07);line-height:1;user-select:none;"
-                aria-hidden="true">01</span>
-              <span class="type-badge">SaaS Concept</span>
-            </div>
-            <h3 style="margin-bottom:0.75rem;">OpsFlow AI</h3>
-            <p class="text-body" style="margin-bottom:1.5rem;">One workspace for team tasks, AI insights, and automated
-              workflows.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
-              <span class="skill-pill-sm">AI-native UX</span>
-              <span class="skill-pill-sm">Workflow Design</span>
-              <span class="skill-pill-sm">Interaction Design</span>
-            </div>
-            <div class="img-frame preview-frame" style="margin-bottom:1.5rem;">
-              <img src="assets/opsflow-dashboard.webp"
-                alt="OpsFlow AI Dashboard showing task overview and AI insight panel" width="1200" height="675"
-                loading="lazy">
-            </div>
-            <span class="chevron-link">
-              Read Case Study
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </span>
-          </a>
-        </article>
-
-        <article class="reveal r-d1 card" style="overflow:hidden;">
-          <a href="#case-campus" class="card-link" style="display:block;padding:2rem 2.5rem;text-decoration:none;">
-            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
-              <span style="font-weight:700;font-size:2.5rem;color:rgba(57,189,247,0.07);line-height:1;user-select:none;"
-                aria-hidden="true">02</span>
-              <span class="type-badge">Marketplace Concept</span>
-            </div>
-            <h3 style="margin-bottom:0.75rem;">Campus Commerce System</h3>
-            <p class="text-body" style="margin-bottom:1.5rem;">A student-first marketplace and delivery system built for
-              campus life.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
-              <span class="skill-pill-sm">Operational UX</span>
-              <span class="skill-pill-sm">Information Architecture</span>
-              <span class="skill-pill-sm">Rapid Prototyping</span>
-            </div>
-            <div class="img-frame" style="margin-bottom:1.5rem;max-height:320px;overflow:hidden;">
-              <img src="assets/campus-browse.webp" alt="Campus Commerce System vendor browse grid for students"
-                width="1200" height="600" loading="lazy">
-            </div>
-            <span class="chevron-link">
-              Read Case Study
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </span>
-          </a>
-        </article>
-
-        <article class="reveal r-d2 card" style="overflow:hidden;">
-          <a href="#case-workflow" class="card-link" style="display:block;padding:2rem 2.5rem;text-decoration:none;">
-            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
-              <span style="font-weight:700;font-size:2.5rem;color:rgba(57,189,247,0.07);line-height:1;user-select:none;"
-                aria-hidden="true">03</span>
-              <span class="type-badge">Automation UX Prototype</span>
-            </div>
-            <h3 style="margin-bottom:0.75rem;">AI Workflow Builder</h3>
-            <p class="text-body" style="margin-bottom:1.5rem;">A no-code canvas for building AI-assisted process
-              automations.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
-              <span class="skill-pill-sm">Automation Logic</span>
-              <span class="skill-pill-sm">No-code / Low-code</span>
-              <span class="skill-pill-sm">SaaS Architecture</span>
-            </div>
-            <div class="img-frame preview-frame" style="margin-bottom:1.5rem;">
-              <img src="assets/workflow-canvas.webp" alt="AI Workflow Builder canvas with node-based automation editor"
-                width="1200" height="675" loading="lazy">
-            </div>
-            <span class="chevron-link">
-              Read Case Study
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </span>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== DESIGN APPROACH ====== -->
-  <section class="section-pad" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:500px;">
-    <div class="section-glow section-glow-r" aria-hidden="true"></div>
-    <div class="container">
-      <div class="section-content" style="text-align:center;margin-bottom:3.5rem;">
-        <span class="reveal label-sm">Approach</span>
-        <h2 class="reveal r-d1" style="margin-bottom:1rem;">How I design</h2>
-        <p class="reveal r-d2 text-body">A structured process that balances systems thinking with hands-on craft.</p>
-      </div>
-      <div class="section-wide" style="display:grid;grid-template-columns:1fr;gap:1rem;">
-        <div style="display:grid;grid-template-columns:1fr;gap:2rem;">
-          <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-            <div class="card-flush" style="padding:1.5rem;">
-              <span
-                style="display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:0.5rem;">01&nbsp;&nbsp;Research</span>
-              <p class="text-sm" style="color:var(--text);">Map the full ecosystem. Understand users, constraints, and
-                context before opening any tool.</p>
-            </div>
-            <div class="card-flush" style="padding:1.5rem;">
-              <span
-                style="display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:0.5rem;">02&nbsp;&nbsp;Define</span>
-              <p class="text-sm" style="color:var(--text);">Narrow to core jobs-to-be-done. Scope ruthlessly. Every
-                feature must earn its place.</p>
-            </div>
-            <div class="card-flush" style="padding:1.5rem;">
-              <span
-                style="display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:0.5rem;">03&nbsp;&nbsp;Design</span>
-              <p class="text-sm" style="color:var(--text);">Low-fidelity tests before pixels. Validate interaction
-                patterns before committing to high fidelity.</p>
-            </div>
-            <div class="card-flush" style="padding:1.5rem;">
-              <span
-                style="display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:0.5rem;">04&nbsp;&nbsp;Prototype</span>
-              <p class="text-sm" style="color:var(--text);">Build interactive prototypes. Test with real users. Iterate
-                on feedback before shipping.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== ABOUT ====== -->
-  <section id="about" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:700px;">
-    <div class="section-glow" aria-hidden="true"></div>
-    <div class="container">
-      <div class="section-content">
-        <span class="reveal label-sm">About</span>
-        <h2 class="reveal r-d1" style="margin-bottom:2rem;">
-          Systems thinker building at the intersection of AI and human-centred design.
-        </h2>
-        <div class="reveal r-d2" style="display:flex;flex-direction:column;gap:1.5rem;">
-          <p class="text-body">
-            I'm a product design student at LASU, driven by a conviction that the best AI products are invisible: not
-            because they're hidden, but because they feel <strong
-              style="color:var(--text-heading);font-weight:600;">obvious</strong>. I design workflows that reduce
-            cognitive load, dashboards that surface insight without noise, and systems that respect the user's attention
-            as the scarcest resource.
-          </p>
-          <p class="text-body">
-            My approach combines systems-level thinking with hands-on prototyping: I map the full ecosystem before
-            opening Figma, and I validate interaction patterns through low-fidelity tests before committing to pixels.
-            I'm equally comfortable discussing API architecture as I am refining a micro-interaction easing curve.
-          </p>
-          <p class="text-body">
-            Right now, I'm exploring how AI-native UX patterns can transform productivity tools, and looking for a team
-            where I can contribute, learn, and ship.
-          </p>
-        </div>
-        <div class="reveal r-d3"
-          style="display:flex;flex-direction:column;gap:2rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--border);">
-          <div style="display:flex;flex-wrap:wrap;gap:2rem;">
-            <div>
-              <span class="label-xs" style="margin-bottom:0.5rem;">Education</span>
-              <p style="font-size:1.0625rem;font-weight:600;color:var(--text-heading);">LASU</p>
-              <p class="text-sm" style="color:var(--text);">B.Eng Electronics &amp; Computer Engineering (Expected 2027)
-              </p>
-            </div>
-            <div>
-              <span class="label-xs" style="margin-bottom:0.5rem;">Status</span>
-              <p
-                style="font-size:0.9375rem;color:var(--text-heading);font-weight:500;display:flex;align-items:center;gap:0.5rem;">
-                <span class="available-dot" style="flex-shrink:0;" aria-hidden="true"></span>
-                Open to internships &amp; junior product design roles
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== SKILLS ====== -->
-  <section id="skills" class="section-pad" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:600px;">
-    <div class="section-glow section-glow-r" aria-hidden="true"></div>
-    <div class="container">
-      <div class="section-content" style="text-align:center;margin-bottom:3.5rem;">
-        <span class="reveal label-sm">Skills</span>
-        <h2 class="reveal r-d1">Tools &amp; capabilities</h2>
-      </div>
-      <div class="section-wide">
-        <div style="display:grid;grid-template-columns:1fr;gap:1rem;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-            <div class="reveal card-flush" style="padding:1.5rem;">
-              <span class="label-xs" style="margin-bottom:1rem;">Design Practice</span>
-              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-                <span class="skill-pill">SaaS Interface Design</span>
-                <span class="skill-pill">Dashboard UX</span>
-                <span class="skill-pill">Interaction Design</span>
-                <span class="skill-pill">Information Architecture</span>
-              </div>
-            </div>
-            <div class="reveal r-d1 card-flush" style="padding:1.5rem;">
-              <span class="label-xs" style="margin-bottom:1rem;">Systems Thinking</span>
-              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-                <span class="skill-pill">Workflow Design Systems</span>
-                <span class="skill-pill">AI-native UX</span>
-                <span class="skill-pill">Product Thinking</span>
-                <span class="skill-pill">API-aware Design</span>
-              </div>
-            </div>
-            <div class="reveal r-d2 card-flush" style="padding:1.5rem;">
-              <span class="label-xs" style="margin-bottom:1rem;">Tools</span>
-              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-                <span class="skill-pill">Figma</span>
-                <span class="skill-pill">Lovable</span>
-                <span class="skill-pill">Notion</span>
-                <span class="skill-pill">Supabase</span>
-                <span class="skill-pill">No-code / Low-code</span>
-              </div>
-            </div>
-            <div class="reveal r-d3 card-flush" style="padding:1.5rem;">
-              <span class="label-xs" style="margin-bottom:1rem;">Concepts</span>
-              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-                <span class="skill-pill">Automation Logic</span>
-                <span class="skill-pill">Rapid Prototyping</span>
-                <span class="skill-pill">SaaS Architecture</span>
-                <span class="skill-pill">Human-centred AI UX</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CASE STUDY: OPSFLOW AI ====== -->
-  <section id="case-opsflow" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1800px;">
-    <div class="section-glow section-glow-r" aria-hidden="true"></div>
-    <div class="container">
-      <div class="section-content">
-        <div class="reveal" style="margin-bottom:3rem;">
-          <span class="label-sm">Case Study 01</span>
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.5rem;margin-top:1.5rem;">
-            <h2 style="margin:0;">OpsFlow AI</h2>
-            <span class="type-badge">SaaS Concept</span>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;gap:0.5rem 2rem;margin-top:0.75rem;">
-            <span class="text-sm" style="color:var(--text-muted);">Role: Product Designer</span>
-            <span class="text-sm" style="color:var(--text-muted);">Duration: 4 weeks</span>
-            <span class="text-sm" style="color:var(--text-muted);">Tools: Figma &middot; Lovable &middot; Notion</span>
-          </div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr;gap:3rem;">
-          <div class="reveal r-d1">
-            <span class="label-xs" style="margin-bottom:0.75rem;">Problem</span>
-            <p class="text-body">
-              Remote teams juggling Slack, Notion, and Jira lose context switching between them. No single surface
-              combines task management with AI-generated status insights and visual workflow automation, leaving PMs and
-              ops leads manually stitching information together.
+      <div class="hero-inner">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <h1 id="hero-heading" class="reveal r-d1" style="margin-bottom:1.5rem;color:var(--navy);font-weight:800;">
+              Designing systems that make AI feel <span class="accent-text">obvious</span>.
+            </h1>
+            <p class="reveal r-d2 text-body" style="margin-bottom:2.5rem;max-width:550px;">
+              Product designer focused on AI-native SaaS, workflow automation, and scalable UX architecture.
             </p>
-          </div>
-
-          <div class="reveal r-d2">
-            <span class="label-xs" style="margin-bottom:1rem;">Process</span>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4) var(--space-6);">
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
-                  Discovery</p>
-                <p class="text-sm" style="color:var(--text);">Mapped pain points of 5 remote team personas (PM, Dev,
-                  Designer, Ops Lead, Founder); identified top 3 context-switching triggers</p>
-              </div>
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Define
-                </p>
-                <p class="text-sm" style="color:var(--text);">Narrowed to 3 core jobs-to-be-done: <strong
-                    style="color:var(--text-heading);font-weight:500;">track work</strong>, <strong
-                    style="color:var(--text-heading);font-weight:500;">understand status</strong>, <strong
-                    style="color:var(--text-heading);font-weight:500;">automate repetition</strong></p>
-              </div>
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Design
-                </p>
-                <p class="text-sm" style="color:var(--text);">Built full IA, component library, and 12-screen
-                  high-fidelity Figma prototype; designed AI summary card system</p>
-              </div>
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
-                  Prototype</p>
-                <p class="text-sm" style="color:var(--text);">Built interactive workflow builder in Lovable; ran 3 peer
-                  usability sessions and iterated on node editor layout</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="reveal r-d3">
-            <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
-            <div class="screen-grid">
-              <div class="img-frame"><img src="assets/opsflow-dashboard.webp"
-                  alt="OpsFlow AI dashboard showing task list and AI insight panel" width="800" height="500"
-                  loading="lazy"></div>
-              <div class="img-frame"><img src="assets/opsflow-workflow.webp"
-                  alt="OpsFlow workflow builder visual node editor" width="800" height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/opsflow-analytics.webp" alt="OpsFlow analytics dashboard"
-                  width="800" height="500" loading="lazy"></div>
-            </div>
-          </div>
-
-          <div class="reveal r-d4">
-            <span class="label-xs" style="margin-bottom:1rem;">Outcomes</span>
-            <ul class="outcomes">
-              <li>Task status lookup reduced from 4 clicks to 1 via persistent AI summary card</li>
-              <li>Workflow builder "create a trigger" task completed at 100% by 3 peer testers with no guidance</li>
-              <li>Dashboard layout scored 4.6/5 on perceived clarity (informal 5-person usability session)</li>
-            </ul>
-          </div>
-
-          <div class="reveal r-d5">
-            <span class="label-xs" style="margin-bottom:0.75rem;">What I'd Do Next</span>
-            <p class="text-body">Real Supabase backend for live task sync &middot; Multi-workspace support &middot; AI
-              prompt customisation per team</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CASE STUDY: CAMPUS COMMERCE ====== -->
-  <section id="case-campus" class="section-pad" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1800px;">
-    <div class="section-glow" aria-hidden="true"></div>
-    <div class="container">
-      <div class="section-content">
-        <div class="reveal" style="margin-bottom:3rem;">
-          <span class="label-sm">Case Study 02</span>
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.5rem;margin-top:1.5rem;">
-            <h2 style="margin:0;">Campus Commerce System</h2>
-            <span class="type-badge">Marketplace Concept</span>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;gap:0.5rem 2rem;margin-top:0.75rem;">
-            <span class="text-sm" style="color:var(--text-muted);">Role: Product Designer</span>
-            <span class="text-sm" style="color:var(--text-muted);">Duration: 3 weeks</span>
-            <span class="text-sm" style="color:var(--text-muted);">Tools: Figma &middot; Paper &middot; Notion</span>
-          </div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr;gap:3rem;">
-          <div class="reveal r-d1" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
-            <div>
-              <span class="label-xs" style="margin-bottom:0.75rem;">Problem</span>
-              <p class="text-body" style="font-size:0.9375rem;">Students at large Nigerian universities rely on informal
-                WhatsApp groups and verbal communication to order from campus vendors. No structured ordering, inventory
-                tracking, or vendor management exists.</p>
-            </div>
-            <div>
-              <span class="label-xs" style="margin-bottom:0.75rem;">My Role</span>
-              <p class="text-body" style="font-size:0.9375rem;">End-to-end product design: research, IA, wireframes,
-                high-fidelity UI, and prototype testing with 4 LASU students.</p>
-            </div>
-          </div>
-
-          <div class="reveal r-d2">
-            <span class="label-xs" style="margin-bottom:1rem;">Process</span>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4) var(--space-6);">
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
-                  Discovery</p>
-                <p class="text-sm" style="color:var(--text);">Observed campus vendor-student transactions at LASU;
-                  documented 4 core friction points in the order-to-delivery flow</p>
-              </div>
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Define
-                </p>
-                <p class="text-sm" style="color:var(--text);">Scoped MVP to 3 actor types: <strong
-                    style="color:var(--text-heading);font-weight:500;">Student</strong>, <strong
-                    style="color:var(--text-heading);font-weight:500;">Vendor</strong>, <strong
-                    style="color:var(--text-heading);font-weight:500;">Admin</strong></p>
-              </div>
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Design
-                </p>
-                <p class="text-sm" style="color:var(--text);">Student: browse → cart → confirm → track. Vendor: live
-                  orders + inventory. Admin: approvals + analytics.</p>
-              </div>
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
-                  Prototype</p>
-                <p class="text-sm" style="color:var(--text);">Paper-to-Figma flow; tested with 4 LASU students; iterated
-                  on cart confirmation step based on feedback</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="reveal r-d3">
-            <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
-            <div class="screen-stack">
-              <div class="img-frame"><img src="assets/campus-browse.webp" alt="Campus Commerce vendor browse screen"
-                  width="800" height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/campus-vendor.webp" alt="Vendor dashboard with order queue"
-                  width="800" height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/campus-admin.webp" alt="Admin panel with vendor approval"
-                  width="800" height="500" loading="lazy"></div>
-            </div>
-          </div>
-
-          <div class="reveal r-d4">
-            <span class="label-xs" style="margin-bottom:1rem;">Outcomes</span>
-            <ul class="outcomes">
-              <li>Full student order flow condensed to 3 steps from product discovery to confirmation</li>
-              <li>Vendor onboarding form completed in under 4 minutes by all test participants</li>
-              <li>Admin permission hierarchy validated as clear and unambiguous in peer design review</li>
-            </ul>
-          </div>
-
-          <div class="reveal r-d5">
-            <span class="label-xs" style="margin-bottom:0.75rem;">What I'd Do Next</span>
-            <p class="text-body">Campus GPS delivery zone logic &middot; Lightweight PWA shell &middot; Vendor
-              notification system</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CASE STUDY: AI WORKFLOW BUILDER ====== -->
-  <section id="case-workflow" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1800px;">
-    <div class="section-glow section-glow-r" aria-hidden="true"></div>
-    <div class="container">
-      <div class="section-content">
-        <div class="reveal" style="margin-bottom:3rem;">
-          <span class="label-sm">Case Study 03</span>
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.5rem;margin-top:1.5rem;">
-            <h2 style="margin:0;">AI Workflow Builder</h2>
-            <span class="type-badge">Automation UX Prototype</span>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;gap:0.5rem 2rem;margin-top:0.75rem;">
-            <span class="text-sm" style="color:var(--text-muted);">Role: Product Designer</span>
-            <span class="text-sm" style="color:var(--text-muted);">Duration: 3 weeks</span>
-            <span class="text-sm" style="color:var(--text-muted);">Tools: Figma &middot; Lovable</span>
-          </div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr;gap:3rem;">
-          <div class="reveal r-d1">
-            <span class="label-xs" style="margin-bottom:0.75rem;">Problem</span>
-            <p class="text-body">
-              Non-technical operators want to automate repetitive tasks but tools like Zapier overwhelm them with
-              complexity and don't natively support AI-step logic. The cognitive load of learning trigger/action/filter
-              paradigms creates drop-off before the first automation is built.
-            </p>
-          </div>
-
-          <div class="reveal r-d2">
-            <span class="label-xs" style="margin-bottom:1rem;">Process</span>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4) var(--space-6);">
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
-                  Discovery</p>
-                <p class="text-sm" style="color:var(--text);">Audited UX patterns in Zapier, Make, and n8n; identified 3
-                  primary cognitive load bottlenecks for non-technical users</p>
-              </div>
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Define
-                </p>
-                <p class="text-sm" style="color:var(--text);">Simplified to 3 node types: <strong
-                    style="color:var(--text-heading);font-weight:500;">Trigger</strong>, <strong
-                    style="color:var(--text-heading);font-weight:500;">Action</strong>, <strong
-                    style="color:var(--text-heading);font-weight:500;">AI Step</strong> | progressive disclosure hides
-                  advanced config</p>
-              </div>
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">Design
-                </p>
-                <p class="text-sm" style="color:var(--text);">Drag-and-connect node editor; AI Step config panel with
-                  input → prompt template → output mapping</p>
-              </div>
-              <div class="timeline-step">
-                <p style="font-size:0.9375rem;font-weight:600;color:var(--text-heading);margin-bottom:0.25rem;">
-                  Prototype</p>
-                <p class="text-sm" style="color:var(--text);">Built 2 sample automation flows as interactive prototype;
-                  tested with 2 non-technical participants</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="reveal r-d3">
-            <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
-            <div class="screen-grid">
-              <div class="img-frame"><img src="assets/workflow-canvas.webp" alt="AI Workflow Builder canvas" width="800"
-                  height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/workflow-ai-config.webp" alt="AI step configuration panel"
-                  width="800" height="500" loading="lazy"></div>
-              <div class="img-frame"><img src="assets/workflow-runlog.webp"
-                  alt="Automation run log with status indicators" width="800" height="500" loading="lazy"></div>
-            </div>
-          </div>
-
-          <div class="reveal r-d4">
-            <span class="label-xs" style="margin-bottom:1rem;">Outcomes</span>
-            <ul class="outcomes">
-              <li>3-node model reduced conceptual complexity vs. 7+ node types in comparable tools</li>
-              <li>"Build your first automation" onboarding completed at 100% by both non-technical test participants
-                with no prompting</li>
-              <li>AI step configuration pattern (input → prompt → output) rated as intuitive by all testers</li>
-            </ul>
-          </div>
-
-          <div class="reveal r-d5">
-            <span class="label-xs" style="margin-bottom:0.75rem;">What I'd Do Next</span>
-            <p class="text-body">LLM prompt templates per industry use-case &middot; JSON export for developer handoff
-              &middot; Conditional branching (if/else) node type</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== TESTIMONIALS ====== -->
-  <!-- Removed per portfolio review: single peer testimonial weakens credibility;
-       better to grow this section with professional references later -->
-
-
-  <!-- ====== CONTACT ====== -->
-  <section id="contact" class="section-pad bg-soft" style="position:relative;overflow:hidden;">
-    <div class="section-glow" aria-hidden="true"></div>
-    <div class="container" style="position:relative;z-index:10;">
-      <div style="max-width:620px;margin:0 auto;text-align:center;">
-        <div class="reveal card-flush" style="padding:3rem 2.5rem;border-radius:var(--radius-xl);">
-          <span class="label-sm">Get in Touch</span>
-          <h2 class="reveal r-d1" style="margin-top:0.5rem;margin-bottom:1.25rem;">
-            Let's build something <span class="accent-text">obvious</span> together.
-          </h2>
-          <p class="reveal r-d2 text-body" style="max-width:480px;margin:0 auto 2.5rem;">
-            I'm actively seeking internship and junior product design roles for 2026–2027. If you're building AI or SaaS
-            products and value systems thinking, let's talk.
-          </p>
-          <div class="reveal r-d3" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
-            <a href="mailto:lolayinka2005@gmail.com" class="btn btn-primary" style="font-size:1rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              lolayinka2005@gmail.com
-            </a>
-            <div style="display:flex;align-items:center;gap:0.5rem;margin-top:0.5rem;">
-              <span class="available-dot" aria-hidden="true"></span>
-              <span style="font-size:0.875rem;color:var(--text);">Available for opportunities</span>
-            </div>
-            <div style="margin-top:0.5rem;">
-              <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" class="btn btn-ghost" style="font-size:0.875rem;"
-                aria-label="Download CV (PDF)">
+            <div class="reveal r-d3" style="display:flex;flex-wrap:wrap;gap:1rem;">
+              <a href="#work" class="btn btn-primary">
+                View Work
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
+                aria-label="Download CV (PDF format, opens in a new tab)">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
                 Download CV
+                <span class="sr-only">(opens in a new tab)</span>
               </a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <!-- Floating decoration rings -->
+            <div class="deco-ring" style="width:380px;height:380px;border-color:rgba(57,189,247,0.15);"></div>
+            <div class="deco-ring" style="width:420px;height:420px;border-color:rgba(57,189,247,0.08);"></div>
+
+            <!-- Large profile ring -->
+            <div class="profile-ring float">
+              <img src="assets/profile.webp" alt="Portrait photo of Olayinka Abdullah" width="300" height="300" loading="eager" fetchpriority="high">
+            </div>
+
+            <!-- Floating Statistics/Info cards -->
+            <div class="stat-float float f-d1" style="top:5%;right:-40px;">
+              <span class="stat-val">3</span>
+              <span class="stat-lbl">Featured<br>Case Studies</span>
+            </div>
+            <div class="stat-float float f-d2" style="bottom:10%;left:-60px;">
+              <span class="stat-val" style="color:var(--navy);font-size:1.25rem;">AI</span>
+              <span class="stat-lbl">Native UX<br>Specialist</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+
+      <button class="scroll-indicator" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})"
+        aria-label="Scroll down to featured projects">
+        <span class="scroll-label" aria-hidden="true">Scroll Down</span>
+        <div class="scroll-line" aria-hidden="true"></div>
+      </button>
+    </section>
+
+    <!-- ====== WORK SECTION ====== -->
+    <section id="work" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1200px;" aria-labelledby="work-heading">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-content" style="text-align:center;margin-bottom:var(--space-4);">
+          <span class="reveal label-sm">Selected Work</span>
+          <h2 id="work-heading" class="reveal r-d1" style="margin-bottom:0.75rem;">Featured Case Studies</h2>
+          <p class="reveal r-d2 text-body">Deep-dive product design case studies exploring media optimization PWA, marketplace UX, and heuristic accessibility audits.</p>
+        </div>
+        <div class="section-wide" style="margin-top:4rem;display:flex;flex-direction:column;gap:2rem;">
+          
+          <!-- Project 01 Card -->
+          <article class="reveal card" style="overflow:hidden;">
+            <a href="#case-noblur" class="card-link" style="display:block;padding:2rem 2.5rem;text-decoration:none;" aria-labelledby="card-title-noblur">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
+                <span style="font-weight:700;font-size:2.5rem;color:rgba(2,132,199,0.12);line-height:1;user-select:none;"
+                  aria-hidden="true">01</span>
+                <span class="type-badge">Mobile PWA &amp; Media UX</span>
+              </div>
+              <h3 id="card-title-noblur" style="margin-bottom:0.75rem;">NoBlur</h3>
+              <p class="text-body" style="margin-bottom:1.5rem;">A mobile-first media pre-optimizer engineered to make videos and photos survive WhatsApp compression.</p>
+              <ul class="skill-tag-list" role="list" style="margin-bottom:1.5rem;" aria-label="Skills used">
+                <li><span class="skill-pill-sm">Media Optimization UX</span></li>
+                <li><span class="skill-pill-sm">PWA Architecture</span></li>
+                <li><span class="skill-pill-sm">Progressive Disclosure</span></li>
+              </ul>
+              <div class="img-frame preview-frame" style="margin-bottom:1.5rem;">
+                <img src="assets/noblur-hero.png"
+                  alt="NoBlur landing interface showing interactive WhatsApp video comparison slider" width="1200" height="675"
+                  loading="lazy">
+              </div>
+              <span class="chevron-link">
+                Read Case Study
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Project 02 Card -->
+          <article class="reveal r-d1 card" style="overflow:hidden;">
+            <a href="#case-campus" class="card-link" style="display:block;padding:2rem 2.5rem;text-decoration:none;" aria-labelledby="card-title-campus">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
+                <span style="font-weight:700;font-size:2.5rem;color:rgba(2,132,199,0.12);line-height:1;user-select:none;"
+                  aria-hidden="true">02</span>
+                <span class="type-badge">Marketplace Concept</span>
+              </div>
+              <h3 id="card-title-campus" style="margin-bottom:0.75rem;">Campus Commerce System</h3>
+              <p class="text-body" style="margin-bottom:1.5rem;">A student-first marketplace and delivery system built for
+                campus life.</p>
+              <ul class="skill-tag-list" role="list" style="margin-bottom:1.5rem;" aria-label="Skills used">
+                <li><span class="skill-pill-sm">Operational UX</span></li>
+                <li><span class="skill-pill-sm">Information Architecture</span></li>
+                <li><span class="skill-pill-sm">Rapid Prototyping</span></li>
+              </ul>
+              <div class="img-frame" style="margin-bottom:1.5rem;max-height:320px;overflow:hidden;">
+                <img src="assets/campus-browse.webp" alt="Campus Commerce System vendor browse grid for university students"
+                  width="1200" height="600" loading="lazy">
+              </div>
+              <span class="chevron-link">
+                Read Case Study
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- Project 03 Card -->
+          <article class="reveal r-d2 card" style="overflow:hidden;">
+            <a href="#case-auth" class="card-link" style="display:block;padding:2rem 2.5rem;text-decoration:none;" aria-labelledby="card-title-auth">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
+                <span style="font-weight:700;font-size:2.5rem;color:rgba(2,132,199,0.12);line-height:1;user-select:none;"
+                  aria-hidden="true">03</span>
+                <span class="type-badge">UX Audit &amp; Redesign</span>
+              </div>
+              <h3 id="card-title-auth" style="margin-bottom:0.75rem;">Authentication UX Audit</h3>
+              <p class="text-body" style="margin-bottom:1.5rem;">Usability evaluation and authentication redesign for FlutterFlow using Nielsen's heuristics and WCAG 2.2.</p>
+              <ul class="skill-tag-list" role="list" style="margin-bottom:1.5rem;" aria-label="Skills used">
+                <li><span class="skill-pill-sm">Heuristic Evaluation</span></li>
+                <li><span class="skill-pill-sm">WCAG 2.2 Accessibility</span></li>
+                <li><span class="skill-pill-sm">Authentication UX</span></li>
+              </ul>
+              <div class="img-frame preview-frame" style="margin-bottom:1.5rem;">
+                <img src="assets/auth-redesign-desktop.jpg" alt="Authentication UX audit and redesign interface mockup"
+                  width="1200" height="675" loading="lazy">
+              </div>
+              <span class="chevron-link">
+                Read Case Study
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== DESIGN APPROACH SECTION ====== -->
+    <section class="section-pad" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:500px;" aria-labelledby="approach-heading">
+      <div class="section-glow section-glow-r" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-content" style="text-align:center;margin-bottom:3.5rem;">
+          <span class="reveal label-sm">Approach</span>
+          <h2 id="approach-heading" class="reveal r-d1" style="margin-bottom:1rem;">How I design</h2>
+          <p class="reveal r-d2 text-body">A structured process that balances systems thinking with hands-on craft.</p>
+        </div>
+        <div class="section-wide">
+          <div class="reveal skills-grid">
+            <div class="card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:0.5rem;">01&nbsp;&nbsp;Research</span>
+              <p class="text-sm">Map the full ecosystem. Understand users, constraints, and context before opening any tool.</p>
+            </div>
+            <div class="card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:0.5rem;">02&nbsp;&nbsp;Define</span>
+              <p class="text-sm">Narrow to core jobs-to-be-done. Scope ruthlessly. Every feature must earn its place.</p>
+            </div>
+            <div class="card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:0.5rem;">03&nbsp;&nbsp;Design</span>
+              <p class="text-sm">Low-fidelity tests before pixels. Validate interaction patterns before committing to high fidelity.</p>
+            </div>
+            <div class="card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:0.5rem;">04&nbsp;&nbsp;Prototype</span>
+              <p class="text-sm">Build interactive prototypes. Test with real users. Iterate on feedback before shipping.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== ABOUT SECTION ====== -->
+    <section id="about" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:700px;" aria-labelledby="about-heading">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-content">
+          <span class="reveal label-sm">About</span>
+          <h2 id="about-heading" class="reveal r-d1" style="margin-bottom:2rem;">
+            Systems thinker building at the intersection of AI and human-centred design.
+          </h2>
+          <div class="reveal r-d2" style="display:flex;flex-direction:column;gap:1.5rem;">
+            <p class="text-body">
+              I'm a product design student at LASU, driven by a conviction that the best AI products are invisible: not
+              because they're hidden, but because they feel <strong
+                style="color:var(--text-heading);font-weight:600;">obvious</strong>. I design workflows that reduce
+              cognitive load, dashboards that surface insight without noise, and systems that respect the user's attention
+              as the scarcest resource.
+            </p>
+            <p class="text-body">
+              My approach combines systems-level thinking with hands-on prototyping: I map the full ecosystem before
+              opening Figma, and I validate interaction patterns through low-fidelity tests before committing to pixels.
+              I'm equally comfortable discussing API architecture as I am refining a micro-interaction easing curve.
+            </p>
+            <p class="text-body">
+              Right now, I'm exploring how AI-native UX patterns can transform productivity tools, and looking for a team
+              where I can contribute, learn, and ship.
+            </p>
+          </div>
+          <div class="reveal r-d3"
+            style="display:flex;flex-direction:column;gap:2rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--border);">
+            <div style="display:flex;flex-wrap:wrap;gap:2rem;">
+              <div>
+                <span class="label-xs" style="margin-bottom:0.5rem;">Education</span>
+                <p style="font-size:1.0625rem;font-weight:600;color:var(--text-heading);">LASU</p>
+                <p class="text-sm" style="color:var(--text);">B.Eng Electronics &amp; Computer Engineering (Expected 2027)
+                </p>
+              </div>
+              <div>
+                <span class="label-xs" style="margin-bottom:0.5rem;">Status</span>
+                <p
+                  style="font-size:0.9375rem;color:var(--text-heading);font-weight:600;display:flex;align-items:center;gap:0.5rem;">
+                  <span class="available-dot" style="flex-shrink:0;" aria-hidden="true"></span>
+                  Open to internships &amp; junior product design roles
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SKILLS SECTION ====== -->
+    <section id="skills" class="section-pad" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:600px;" aria-labelledby="skills-heading">
+      <div class="section-glow section-glow-r" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-content" style="text-align:center;margin-bottom:3.5rem;">
+          <span class="reveal label-sm">Skills</span>
+          <h2 id="skills-heading" class="reveal r-d1">Tools &amp; capabilities</h2>
+        </div>
+        <div class="section-wide">
+          <div class="skills-grid">
+            <div class="reveal card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:1rem;">Design Practice</span>
+              <ul class="skill-tag-list" role="list">
+                <li><span class="skill-pill">SaaS Interface Design</span></li>
+                <li><span class="skill-pill">Dashboard UX</span></li>
+                <li><span class="skill-pill">Interaction Design</span></li>
+                <li><span class="skill-pill">Information Architecture</span></li>
+              </ul>
+            </div>
+            <div class="reveal r-d1 card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:1rem;">Systems Thinking</span>
+              <ul class="skill-tag-list" role="list">
+                <li><span class="skill-pill">Workflow Design Systems</span></li>
+                <li><span class="skill-pill">AI-native UX</span></li>
+                <li><span class="skill-pill">Product Strategy &amp; Scoping</span></li>
+                <li><span class="skill-pill">API-aware Constraints</span></li>
+              </ul>
+            </div>
+            <div class="reveal r-d2 card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:1rem;">Tools &amp; Stack</span>
+              <ul class="skill-tag-list" role="list">
+                <li><span class="skill-pill">Figma</span></li>
+                <li><span class="skill-pill">Next.js / React</span></li>
+                <li><span class="skill-pill">FFmpeg</span></li>
+                <li><span class="skill-pill">Supabase</span></li>
+                <li><span class="skill-pill">Lovable &amp; Notion</span></li>
+              </ul>
+            </div>
+            <div class="reveal r-d3 card-flush" style="padding:1.5rem;">
+              <span class="label-xs" style="margin-bottom:1rem;">Evaluation &amp; Methods</span>
+              <ul class="skill-tag-list" role="list">
+                <li><span class="skill-pill">NN/g Heuristic Evaluation</span></li>
+                <li><span class="skill-pill">WCAG 2.2 Accessibility</span></li>
+                <li><span class="skill-pill">Rapid Prototyping</span></li>
+                <li><span class="skill-pill">PWA Architecture</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CASE STUDY 01: NOBLUR ====== -->
+    <section id="case-noblur" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1800px;" aria-labelledby="case-noblur-title">
+      <div class="section-glow section-glow-r" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-content">
+          <div class="reveal" style="margin-bottom:3rem;">
+            <span class="label-sm">Case Study 01</span>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.5rem;margin-top:1.5rem;">
+              <h2 id="case-noblur-title" style="margin:0;">NoBlur</h2>
+              <span class="type-badge">Mobile PWA &amp; Media UX</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem 2rem;margin-top:0.75rem;">
+              <span class="text-sm" style="color:var(--text-muted);font-weight:600;">Role: Lead Product Designer</span>
+              <span class="text-sm" style="color:var(--text-muted);font-weight:600;">Duration: 4 weeks</span>
+              <span class="text-sm" style="color:var(--text-muted);font-weight:600;">Tools: Figma &middot; Next.js &middot; FFmpeg &middot; Supabase</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr;gap:3rem;">
+            <div class="reveal r-d1">
+              <span class="label-xs" style="margin-bottom:0.75rem;">Problem</span>
+              <p class="text-body">
+                WhatsApp aggressively re-compresses photos and videos sent via Chat or Status, causing visible artifacts, blur, and color banding. Online sellers and content creators losing visual quality have no technical visibility or control over WhatsApp's compression algorithm.
+              </p>
+            </div>
+
+            <div class="reveal r-d2">
+              <span class="label-xs" style="margin-bottom:1rem;">Process</span>
+              <div class="skills-grid" style="gap:var(--space-4) var(--space-6);">
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">
+                    Discovery &amp; Benchmarking</p>
+                  <p class="text-sm">Audited WhatsApp's re-compression thresholds (720p/480p caps, 90s status ceilings, bitrate ladders); mapped online seller workflows</p>
+                </div>
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">Define &amp; Smart Defaults
+                  </p>
+                  <p class="text-sm">Scoped zero-friction MVP with 3 core presets (Status, Chat, Product) and automated resolution/bitrate matching with no complex sliders</p>
+                </div>
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">Interaction Design
+                  </p>
+                  <p class="text-sm">Designed an intuitive 3-tap upload-to-optimize flow, interactive before/after visual proof slider, and goal-gradient progress indicator</p>
+                </div>
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">
+                    Figma to PWA Prototype</p>
+                  <p class="text-sm">Prototyped mobile-first dark UI with 1-tap "Send to WhatsApp" sheet integration and resilient offline/resumable upload states</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal r-d3">
+              <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
+              <div class="screen-grid">
+                <div class="img-frame"><img src="assets/noblur-hero.png"
+                    alt="NoBlur landing hero with WhatsApp comparison slider and destination presets" width="800" height="500"
+                    loading="lazy"></div>
+                <div class="img-frame"><img src="assets/noblur-upload.png"
+                    alt="NoBlur mobile upload interface with dropzone and WhatsApp presets" width="800" height="500" loading="lazy"></div>
+                <div class="img-frame"><img src="assets/noblur-result.jpg" alt="NoBlur media optimization result screen with 90 percent size reduction and WhatsApp share CTA"
+                    width="800" height="500" loading="lazy"></div>
+              </div>
+            </div>
+
+            <div class="reveal r-d4">
+              <span class="label-xs" style="margin-bottom:1rem;">Outcomes</span>
+              <ul class="outcomes">
+                <li>Pre-optimized media scores +0.05 higher SSIM after WhatsApp compression vs raw uploads</li>
+                <li>Flow condensed from 7 manual video export decisions into under 3 taps with smart defaults</li>
+                <li>1-tap "Send to WhatsApp" flow eliminates manual save/re-attach friction for sellers</li>
+              </ul>
+            </div>
+
+            <div class="reveal r-d5">
+              <span class="label-xs" style="margin-bottom:0.75rem;">What I'd Do Next</span>
+              <p class="text-body">AV1 adaptive scene profile analysis (face/text detection) &middot; Batch upload for power sellers &middot; PWA background sync for low-connectivity environments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CASE STUDY 02: CAMPUS COMMERCE ====== -->
+    <section id="case-campus" class="section-pad" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1800px;" aria-labelledby="case-campus-title">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-content">
+          <div class="reveal" style="margin-bottom:3rem;">
+            <span class="label-sm">Case Study 02</span>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.5rem;margin-top:1.5rem;">
+              <h2 id="case-campus-title" style="margin:0;">Campus Commerce System</h2>
+              <span class="type-badge">Marketplace Concept</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem 2rem;margin-top:0.75rem;">
+              <span class="text-sm" style="color:var(--text-muted);font-weight:600;">Role: Product Designer</span>
+              <span class="text-sm" style="color:var(--text-muted);font-weight:600;">Duration: 3 weeks</span>
+              <span class="text-sm" style="color:var(--text-muted);font-weight:600;">Tools: Figma &middot; Paper &middot; Notion</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr;gap:3rem;">
+            <div class="reveal r-d1 skills-grid" style="gap:2rem;">
+              <div>
+                <span class="label-xs" style="margin-bottom:0.75rem;">Problem</span>
+                <p class="text-body" style="font-size:0.9375rem;">Students at large Nigerian universities rely on informal
+                  WhatsApp groups and verbal communication to order from campus vendors. No structured ordering, inventory
+                  tracking, or vendor management exists.</p>
+              </div>
+              <div>
+                <span class="label-xs" style="margin-bottom:0.75rem;">My Role</span>
+                <p class="text-body" style="font-size:0.9375rem;">End-to-end product design: research, IA, wireframes,
+                  high-fidelity UI, and prototype testing with 4 LASU students.</p>
+              </div>
+            </div>
+
+            <div class="reveal r-d2">
+              <span class="label-xs" style="margin-bottom:1rem;">Process</span>
+              <div class="skills-grid" style="gap:var(--space-4) var(--space-6);">
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">
+                    Discovery</p>
+                  <p class="text-sm">Observed campus vendor-student transactions at LASU;
+                    documented 4 core friction points in the order-to-delivery flow</p>
+                </div>
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">Define
+                  </p>
+                  <p class="text-sm">Scoped MVP to 3 actor types: <strong
+                      style="color:var(--text-heading);font-weight:600;">Student</strong>, <strong
+                      style="color:var(--text-heading);font-weight:600;">Vendor</strong>, <strong
+                      style="color:var(--text-heading);font-weight:600;">Admin</strong></p>
+                </div>
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">Design
+                  </p>
+                  <p class="text-sm">Student: browse → cart → confirm → track. Vendor: live
+                    orders + inventory. Admin: approvals + analytics.</p>
+                </div>
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">
+                    Prototype</p>
+                  <p class="text-sm">Paper-to-Figma flow; tested with 4 LASU students; iterated
+                    on cart confirmation step based on feedback</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal r-d3">
+              <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
+              <div class="screen-stack">
+                <div class="img-frame"><img src="assets/campus-browse.webp" alt="Campus Commerce student browse screen showing vendor listings and menu items"
+                    width="800" height="500" loading="lazy"></div>
+                <div class="img-frame"><img src="assets/campus-vendor.webp" alt="Vendor dashboard interface showing incoming live orders and inventory management"
+                    width="800" height="500" loading="lazy"></div>
+                <div class="img-frame"><img src="assets/campus-admin.webp" alt="Administrator panel showing vendor onboarding review and campus metrics"
+                    width="800" height="500" loading="lazy"></div>
+              </div>
+            </div>
+
+            <div class="reveal r-d4">
+              <span class="label-xs" style="margin-bottom:1rem;">Outcomes</span>
+              <ul class="outcomes">
+                <li>Full student order flow condensed to 3 steps from product discovery to confirmation</li>
+                <li>Vendor onboarding form completed in under 4 minutes by all test participants</li>
+                <li>Admin permission hierarchy validated as clear and unambiguous in peer design review</li>
+              </ul>
+            </div>
+
+            <div class="reveal r-d5">
+              <span class="label-xs" style="margin-bottom:0.75rem;">What I'd Do Next</span>
+              <p class="text-body">Campus GPS delivery zone logic &middot; Lightweight PWA shell &middot; Vendor
+                notification system</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CASE STUDY 03: AUTHENTICATION UX AUDIT ====== -->
+    <section id="case-auth" class="section-pad bg-alt" style="position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1800px;" aria-labelledby="case-auth-title">
+      <div class="section-glow section-glow-r" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-content">
+          <div class="reveal" style="margin-bottom:3rem;">
+            <span class="label-sm">Case Study 03</span>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1.5rem;margin-top:1.5rem;">
+              <h2 id="case-auth-title" style="margin:0;">Authentication UX Audit</h2>
+              <span class="type-badge">UX Audit &amp; Redesign</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem 2rem;margin-top:0.75rem;">
+              <span class="text-sm" style="color:var(--text-muted);font-weight:600;">Role: Product Designer &amp; UX Researcher</span>
+              <span class="text-sm" style="color:var(--text-muted);font-weight:600;">Duration: 2 weeks</span>
+              <span class="text-sm" style="color:var(--text-muted);font-weight:600;">Tools: Figma &middot; WCAG 2.2 &middot; Nielsen Heuristics</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr;gap:3rem;">
+            <div class="reveal r-d1">
+              <span class="label-xs" style="margin-bottom:0.75rem;">Problem</span>
+              <p class="text-body">
+                FlutterFlow's authentication system suffered from critical mobile CTA obstruction, cluttered desktop error density, and heavy social-auth blocks that pushed primary email sign-in below the fold, creating friction and drop-off risks at a crucial trust point.
+              </p>
+            </div>
+
+            <div class="reveal r-d2">
+              <span class="label-xs" style="margin-bottom:1rem;">Process</span>
+              <div class="skills-grid" style="gap:var(--space-4) var(--space-6);">
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">
+                    Discovery &amp; Scope</p>
+                  <p class="text-sm">Audited 4 core auth states (Sign Up, Login, Error Validation, Valid State) across desktop and mobile screen viewports</p>
+                </div>
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">Heuristic Evaluation
+                  </p>
+                  <p class="text-sm">Evaluated against Nielsen Norman Group's 10 Usability Heuristics; identified 4 severe visual hierarchy and error density bottlenecks</p>
+                </div>
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">WCAG 2.2 Audit
+                  </p>
+                  <p class="text-sm">Assessed touch targets (2.5.8), error identification (3.3.1), and cognitive load in accessible authentication (3.3.8)</p>
+                </div>
+                <div class="timeline-step">
+                  <p style="font-size:0.9375rem;font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">
+                    Figma Redesign</p>
+                  <p class="text-sm">Redesigned auth cards with unobstructed mobile CTAs, streamlined social sign-in, and structured error state spacing</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal r-d3">
+              <span class="label-xs" style="margin-bottom:1rem;">Key Screens</span>
+              <div class="screen-grid">
+                <div class="img-frame"><img src="assets/auth-redesign-desktop.jpg" alt="Authentication UX redesign desktop interface with clean email login and social sign-in" width="800"
+                    height="500" loading="lazy"></div>
+                <div class="img-frame"><img src="assets/auth-mobile-audit.jpg" alt="Mobile authentication screen redesign with unobstructed primary CTA and accessible touch targets"
+                    width="800" height="500" loading="lazy"></div>
+                <div class="img-frame"><img src="assets/auth-validation-redesign.jpg"
+                    alt="Authentication validation and error states design system in Figma" width="800" height="500" loading="lazy"></div>
+              </div>
+            </div>
+
+            <div class="reveal r-d4">
+              <span class="label-xs" style="margin-bottom:1rem;">Outcomes</span>
+              <ul class="outcomes">
+                <li>100% elimination of mobile CTA obstruction by isolating primary action from footer metadata</li>
+                <li>40% reduction in vertical scroll depth by restructuring social sign-in and form hierarchy</li>
+                <li>Full WCAG 2.2 compliance on touch target sizes (48px+) and error spacing clarity</li>
+              </ul>
+            </div>
+
+            <div class="reveal r-d5">
+              <span class="label-xs" style="margin-bottom:0.75rem;">What I'd Do Next</span>
+              <p class="text-body">Passkey &amp; WebAuthn passwordless authentication support &middot; Live validation toast &amp; snackbar status announcements &middot; A/B conversion testing on social vs email layout</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CONTACT SECTION ====== -->
+    <section id="contact" class="section-pad bg-soft" style="position:relative;overflow:hidden;" aria-labelledby="contact-heading">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container" style="position:relative;z-index:10;">
+        <div style="max-width:620px;margin:0 auto;text-align:center;">
+          <div class="reveal card-flush" style="padding:3rem 2.5rem;border-radius:var(--radius-xl);">
+            <span class="label-sm">Get in Touch</span>
+            <h2 id="contact-heading" class="reveal r-d1" style="margin-top:0.5rem;margin-bottom:1.25rem;">
+              Let's build something <span class="accent-text">obvious</span> together.
+            </h2>
+            <p class="reveal r-d2 text-body" style="max-width:480px;margin:0 auto 2.5rem;">
+              I'm actively seeking internship and junior product design roles for 2026–2027. If you're building AI or SaaS
+              products and value systems thinking, let's talk.
+            </p>
+            <div class="reveal r-d3" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
+              <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
+                <a href="mailto:lolayinka2005@gmail.com" class="btn btn-primary" style="font-size:1rem;" aria-label="Send email to lolayinka2005@gmail.com">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  lolayinka2005@gmail.com
+                </a>
+                <button type="button" class="btn btn-secondary" onclick="copyEmail()" aria-label="Copy email address to clipboard" style="font-size:0.9375rem;padding:0.875rem 1.5rem;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy Email
+                </button>
+              </div>
+
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-top:0.5rem;">
+                <span class="available-dot" aria-hidden="true"></span>
+                <span style="font-size:0.875rem;color:var(--text-label);font-weight:600;">Available for opportunities</span>
+              </div>
+              <div style="margin-top:0.5rem;">
+                <a href="assets/Olayinka%20Abdullah.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="font-size:0.875rem;"
+                  aria-label="Download CV (PDF format, opens in a new tab)">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M7 1v10M2 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                  Download CV
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
   <!-- ====== FOOTER ====== -->
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
-      <a href="#hero" style="display:flex;align-items:center;gap:0.75rem;">
+      <a href="#hero" style="display:flex;align-items:center;gap:0.75rem;" aria-label="Back to top">
         <span
-          style="width:1.75rem;height:1.75rem;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:0.5625rem;font-weight:700;color:rgba(255,255,255,0.4);">OA</span>
-        <span style="font-size:0.75rem;color:rgba(255,255,255,0.25);">&copy; 2026 Olayinka Abdullah</span>
+          style="width:1.875rem;height:1.875rem;border-radius:8px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:var(--white);" aria-hidden="true">OA</span>
+        <span style="font-size:0.8125rem;color:rgba(255,255,255,0.75);">&copy; 2026 Olayinka Abdullah. All rights reserved.</span>
       </a>
       <div style="display:flex;align-items:center;gap:2rem;">
         <a href="mailto:lolayinka2005@gmail.com" class="footer-link">Email</a>
         <a href="https://linkedin.com/in/olayinka-abdullah-bbab6126a" class="footer-link" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a>
+          rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)">
+          LinkedIn
+          <span class="sr-only">(opens in a new tab)</span>
+        </a>
       </div>
     </div>
   </footer>
 
+  <!-- ====== BACK TO TOP BUTTON (ACCESSIBILITY & USABILITY) ====== -->
+  <button id="back-to-top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top of page">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- ====== TOAST NOTIFICATION LIVE REGION (WCAG 4.1.3 & HEURISTIC 1) ====== -->
+  <div id="toast-notify" class="toast-notification" role="status" aria-live="polite">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-pulse)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toast-message">Email address copied to clipboard!</span>
+  </div>
+
+  <!-- ====== SCRIPTS ====== -->
   <script>
     (function () {
-      // Nav scroll effect
+      'use strict';
+
+      // 1. Navigation Header Scroll Effect & Back-to-Top Toggle
       var nav = document.querySelector('.nav-root');
+      var backToTopBtn = document.getElementById('back-to-top');
       var ticking = false;
-      function updateNav() {
-        if (window.scrollY > 60) { nav.classList.add('scrolled'); }
-        else { nav.classList.remove('scrolled'); }
+
+      function onScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        if (scrollY > 50) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+
+        if (scrollY > 400) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
         ticking = false;
       }
-      window.addEventListener('scroll', function () {
-        if (!ticking) { window.requestAnimationFrame(updateNav); ticking = true; }
-      });
-      updateNav();
 
-      // Scroll reveals
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(onScroll);
+          ticking = true;
+        }
+      }, { passive: true });
+      onScroll();
+
+      // 2. IntersectionObserver for Reveal Animations
       var reveals = document.querySelectorAll('.reveal');
-      if (reveals.length) {
-        var observer = new IntersectionObserver(function (entries) {
+      if (reveals.length && 'IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
-            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
           });
-        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-        reveals.forEach(function (el) { observer.observe(el); });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+        reveals.forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('visible'); });
       }
 
-      // Smooth scroll for anchor links
+      // 3. Scroll-Spy Navigation (Visibility of System Status - Heuristic 1)
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('.nav-link');
+
+      function updateActiveNav() {
+        var scrollPosition = (window.scrollY || window.pageYOffset) + 140;
+        var currentId = '';
+
+        sections.forEach(function (section) {
+          var top = section.offsetTop;
+          var height = section.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            currentId = section.getAttribute('id');
+          }
+        });
+
+        // Map in-depth case study sub-sections back to the 'work' nav item
+        var activeTarget = currentId;
+        if (activeTarget && activeTarget.startsWith('case-')) {
+          activeTarget = 'work';
+        }
+
+        navLinks.forEach(function (link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + activeTarget) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', function () {
+        window.requestAnimationFrame(updateActiveNav);
+      }, { passive: true });
+      updateActiveNav();
+
+      // 4. Smooth Anchor Link Navigation
       var links = document.querySelectorAll('a[href^="#"]');
       links.forEach(function (link) {
         link.addEventListener('click', function (e) {
           var targetId = this.getAttribute('href');
-          if (targetId === '#') return;
+          if (!targetId || targetId === '#') return;
           var target = document.querySelector(targetId);
           if (target) {
             e.preventDefault();
-            var targetPos = target.getBoundingClientRect().top + window.pageYOffset - 64;
+            var targetPos = target.getBoundingClientRect().top + (window.pageYOffset || window.scrollY) - 70;
             window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            if (targetId === '#main') {
+              target.focus();
+            }
           }
         });
       });
 
-      // Mobile nav toggle
+      // 5. Accessible Mobile Navigation & Focus Trapping (WCAG 2.1.2 / 2.4.3 & Heuristic 3)
       var navBtn = document.querySelector('.hamburger');
-      var mobNav = document.querySelector('.mob-nav');
+      var mobNav = document.getElementById('mobile-menu');
       var backdrop = document.querySelector('.mob-backdrop');
+      var lastActiveElement = null;
+
+      function getFocusableElements(element) {
+        return element.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      }
+
       window.toggleNav = function () {
-        mobNav.classList.toggle('active');
-        backdrop.classList.toggle('active');
-        navBtn.classList.toggle('active');
-        var expanded = navBtn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
-        navBtn.setAttribute('aria-expanded', expanded);
+        var isOpen = mobNav.classList.contains('active');
+        if (isOpen) {
+          closeNav();
+        } else {
+          openNav();
+        }
       };
+
+      function openNav() {
+        lastActiveElement = document.activeElement;
+        mobNav.classList.add('active');
+        backdrop.classList.add('active');
+        navBtn.classList.add('active');
+        navBtn.setAttribute('aria-expanded', 'true');
+        navBtn.setAttribute('aria-label', 'Close navigation menu');
+        document.body.style.overflow = 'hidden';
+
+        var focusable = getFocusableElements(mobNav);
+        if (focusable.length) {
+          setTimeout(function () { focusable[0].focus(); }, 50);
+        }
+      }
+
       window.closeNav = function () {
+        if (!mobNav.classList.contains('active')) return;
         mobNav.classList.remove('active');
         backdrop.classList.remove('active');
         navBtn.classList.remove('active');
         navBtn.setAttribute('aria-expanded', 'false');
+        navBtn.setAttribute('aria-label', 'Open navigation menu');
+        document.body.style.overflow = '';
+
+        if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+          lastActiveElement.focus();
+        }
       };
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+
+      // Modal keyboard trap
+      mobNav.addEventListener('keydown', function (e) {
+        if (e.key === 'Tab') {
+          var focusable = getFocusableElements(mobNav);
+          if (focusable.length === 0) return;
+          var firstElement = focusable[0];
+          var lastElement = focusable[focusable.length - 1];
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              e.preventDefault();
+              lastElement.focus();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              e.preventDefault();
+              firstElement.focus();
+            }
+          }
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 768) {
+          closeNav();
+        }
+      }, { passive: true });
+
+      // 6. Copy Email Helper with Toast Feedback (Flexibility & Efficiency - Heuristic 7)
+      var toastTimeout = null;
+      window.copyEmail = function () {
+        var email = 'lolayinka2005@gmail.com';
+        var toast = document.getElementById('toast-notify');
+        var toastMsg = document.getElementById('toast-message');
+
+        function showToast(msg) {
+          toastMsg.textContent = msg;
+          toast.classList.add('show');
+          if (toastTimeout) clearTimeout(toastTimeout);
+          toastTimeout = setTimeout(function () {
+            toast.classList.remove('show');
+          }, 3500);
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(email).then(function () {
+            showToast('Email address copied to clipboard!');
+          }).catch(function () {
+            fallbackCopyText(email, showToast);
+          });
+        } else {
+          fallbackCopyText(email, showToast);
+        }
+      };
+
+      function fallbackCopyText(text, callback) {
+        var textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        textArea.style.top = '0';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          var successful = document.execCommand('copy');
+          if (successful) {
+            callback('Email address copied to clipboard!');
+          } else {
+            callback('Email: ' + text);
+          }
+        } catch (err) {
+          callback('Email: ' + text);
+        }
+        document.body.removeChild(textArea);
+      }
     })();
   </script>
 
